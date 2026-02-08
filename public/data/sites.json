@@ -1,0 +1,3341 @@
+{
+  "meta": {
+    "version": "2.0",
+    "lastUpdated": "2026-02-08",
+    "notes": "Site data for Lenny's Adventure Guide. Edit this file to add/remove sites or update fees."
+  },
+  "interests": {
+    "fishing": {
+      "icon": "\ud83c\udfa3",
+      "label": "Fishing"
+    },
+    "biking": {
+      "icon": "\ud83d\udeb2",
+      "label": "Biking"
+    },
+    "history": {
+      "icon": "\ud83d\udcdc",
+      "label": "History"
+    },
+    "easy": {
+      "icon": "\ud83d\udee4\ufe0f",
+      "label": "Easy Access"
+    }
+  },
+  "typeColors": {
+    "National Park": "#1B4332",
+    "Nat'l Monument": "#7F5539",
+    "Nat'l Recreation Area": "#3D5A80",
+    "Nat'l Seashore": "#3D5A80",
+    "Nat'l Forest": "#40916C",
+    "Wildlife Refuge": "#DDA15E",
+    "Historic Site": "#9B2226",
+    "Nat'l Historical Park": "#9B2226",
+    "Nat'l Lakeshore": "#3D5A80",
+    "Nat'l Preserve": "#40916C",
+    "Nat'l Battlefield": "#9B2226",
+    "Military Park": "#9B2226",
+    "Nat'l River": "#3D5A80",
+    "Army Corps": "#3D5A80",
+    "Nat'l Memorial": "#9B2226"
+  },
+  "typeBgColors": {
+    "National Park": "#E8F5E9",
+    "Nat'l Monument": "#FFF3E0",
+    "Nat'l Recreation Area": "#E3F2FD",
+    "Nat'l Seashore": "#E3F2FD",
+    "Nat'l Forest": "#E8F5E9",
+    "Wildlife Refuge": "#FFF8E1",
+    "Historic Site": "#FCE4EC",
+    "Nat'l Historical Park": "#FCE4EC",
+    "Nat'l Lakeshore": "#E3F2FD",
+    "Nat'l Preserve": "#E8F5E9",
+    "Nat'l Battlefield": "#FCE4EC",
+    "Military Park": "#FCE4EC",
+    "Nat'l River": "#E3F2FD",
+    "Army Corps": "#E3F2FD",
+    "Nat'l Memorial": "#FCE4EC"
+  },
+  "regions": {
+    "norcal": {
+      "name": "Northern California",
+      "center": [
+        39.2,
+        -121.5
+      ],
+      "zoom": 6,
+      "intro": "From coastal redwoods to Sierra peaks, these are the sites that match your interests best. Every site below accepts your Lifetime Senior Pass.",
+      "startHere": {
+        "siteId": "whiskeytown-nra",
+        "reason": "Outstanding fishing, Gold Rush history, and your pass saves $25. Just 2.5 hours from Sacramento \u2014 a perfect spring day trip."
+      }
+    },
+    "socal": {
+      "name": "Central & Southern California",
+      "center": [
+        36.2,
+        -118.8
+      ],
+      "zoom": 6,
+      "intro": "A weekend drive south from Sacramento opens up desert wonders, island adventures, and some of the most moving American history sites in the West.",
+      "startHere": {
+        "siteId": "manzanar-nhs",
+        "reason": "One of America's most powerful WWII sites \u2014 the internment camp where 10,000 Japanese Americans were confined. 4.5 hours from Sacramento, and your pass saves $15."
+      }
+    },
+    "newengland": {
+      "name": "New England",
+      "center": [
+        43,
+        -71
+      ],
+      "zoom": 6,
+      "intro": "New England combines American history with rugged coastlines and mountain forests. The concentration of Revolutionary War, industrial, and maritime sites here is unmatched.",
+      "startHere": {
+        "siteId": "minute-man-nhp",
+        "reason": "You already know this one \u2014 and the 5-mile paved Battle Road Trail is perfect for a February bike ride. Free entry, always."
+      }
+    },
+    "nationwide": {
+      "name": "Rest of USA",
+      "center": [
+        39.5,
+        -98
+      ],
+      "zoom": 4,
+      "intro": "Your pass works everywhere \u2014 these are 75 of the best sites across the rest of the country, curated for fishing, biking, history, and easy access.",
+      "subregions": {
+        "west": "West",
+        "southwest": "Southwest",
+        "southeast": "Southeast",
+        "midatlantic": "Mid-Atlantic & DC",
+        "midwest": "Midwest & Plains",
+        "rivers_lakes": "Rivers & Lakes",
+        "battlefields": "Battlefields & Military History"
+      }
+    }
+  },
+  "fishingLicenses": {
+    "california": {
+      "state": "California",
+      "seniorDiscount": false,
+      "details": "Standard annual sport fishing license (~$55 for residents). No general senior discount \u2014 the reduced fee (~$8) is only for low-income seniors on SSI/CAPI.",
+      "url": "https://wildlife.ca.gov/Licensing/Fishing",
+      "tip": "Purchase online at wildlife.ca.gov or at sporting goods stores. Remember to buy any required report cards for salmon, steelhead, or sturgeon."
+    },
+    "massachusetts": {
+      "state": "Massachusetts",
+      "seniorDiscount": true,
+      "details": "FREE for residents age 70+ (you qualify!). Still need to register and obtain the license. A $5 Wildlands Conservation Stamp is added to your first license each year.",
+      "url": "https://www.mass.gov/how-to/get-a-freshwater-fishing-license",
+      "tip": "Even though it's free, you must carry the license while fishing."
+    },
+    "maine": {
+      "state": "Maine",
+      "seniorDiscount": true,
+      "details": "One-time $8 lifetime license for residents age 65+. Covers fishing, hunting, and more \u2014 an incredible deal.",
+      "url": "https://www.maine.gov/ifw/fishing-boating/fishing/laws-rules/license-requirements.html",
+      "tip": "Apply at maine.gov/ifw. This is one of the best senior fishing deals in the country."
+    },
+    "newhampshire": {
+      "state": "New Hampshire",
+      "seniorDiscount": true,
+      "details": "Discounted senior freshwater license for residents born in/after 1948 who are 68+. Free permanent license for residents born in/before 1947.",
+      "url": "https://www.wildlife.nh.gov/licenses-and-permits/senior-and-milestone-licenses",
+      "tip": "NH saltwater license is separate \u2014 but it's reciprocal with MA and ME coastal waters."
+    },
+    "vermont": {
+      "state": "Vermont",
+      "seniorDiscount": true,
+      "details": "Lifetime license available for residents age 66+ ($60 one-time). Annual licenses also available.",
+      "url": "https://vtfishandwildlife.com/licenses-and-lotteries/fishing",
+      "tip": "VT and NH have reciprocal agreements for the Connecticut River."
+    },
+    "connecticut": {
+      "state": "Connecticut",
+      "seniorDiscount": true,
+      "details": "FREE for residents age 65+.",
+      "url": "https://portal.ct.gov/DEEP/Fishing/General-Information/Fishing-License-Information",
+      "tip": "CT marine license is reciprocal with ME, MA, RI, and NY coastal waters."
+    }
+  },
+  "sites": [
+    {
+      "id": "yosemite-np",
+      "name": "Yosemite National Park",
+      "region": "norcal",
+      "lat": 37.8651,
+      "lng": -119.5383,
+      "type": "National Park",
+      "fee": "$35/visit",
+      "passSaves": true,
+      "interests": [
+        "fishing",
+        "easy"
+      ],
+      "description": "World Heritage Site with Half Dome, El Capitan, and iconic waterfalls.",
+      "highlights": {
+        "fishing": "Trout fishing in the Merced and Tuolumne rivers. Mirror Lake offers peaceful shoreline fishing.",
+        "easy": "Glacier Point paved viewpoint; valley shuttle accessible; Mirror Lake trail partially paved."
+      },
+      "seasonal": {
+        "best": "May\u2013Oct",
+        "note": "Tioga Road closed Nov\u2013May. Valley accessible year-round."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "3 hrs",
+        "boston": null
+      },
+      "npsCode": "yose"
+    },
+    {
+      "id": "redwood-np",
+      "name": "Redwood National Park",
+      "region": "norcal",
+      "lat": 41.2132,
+      "lng": -124.0046,
+      "type": "National Park",
+      "fee": "Free",
+      "passSaves": false,
+      "interests": [
+        "fishing",
+        "easy"
+      ],
+      "description": "Home to Earth's tallest trees \u2014 coast redwoods exceeding 380 feet.",
+      "highlights": {
+        "fishing": "Steelhead and salmon in Redwood Creek and Smith River.",
+        "easy": "Big Tree Trail: paved 0.3-mi loop. Newton B. Drury Parkway: 10-mi drive through old-growth."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Drier months (Jun\u2013Sep) best for trails. Elk viewing peaks in fall."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "5 hrs",
+        "boston": null
+      },
+      "npsCode": "redw"
+    },
+    {
+      "id": "lassen-volcanic-np",
+      "name": "Lassen Volcanic NP",
+      "region": "norcal",
+      "lat": 40.4977,
+      "lng": -121.508,
+      "type": "National Park",
+      "fee": "$30/visit",
+      "passSaves": true,
+      "interests": [
+        "fishing",
+        "easy"
+      ],
+      "description": "The only place on Earth with all four volcano types. Active mud pots and fumaroles.",
+      "highlights": {
+        "fishing": "Manzanita Lake and Summit Lake \u2014 quiet trout fishing with mountain reflections.",
+        "easy": "Sulphur Works boardwalk from car; 30-mile scenic drive with pullouts."
+      },
+      "seasonal": {
+        "best": "Jun\u2013Oct",
+        "note": "Main park road closed by snow Nov\u2013May. Manzanita Lake area may open earlier."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "3.5 hrs",
+        "boston": null
+      },
+      "npsCode": "lavo"
+    },
+    {
+      "id": "point-reyes-ns",
+      "name": "Point Reyes Nat'l Seashore",
+      "region": "norcal",
+      "lat": 38.0682,
+      "lng": -122.88,
+      "type": "Nat'l Seashore",
+      "fee": "Free",
+      "passSaves": false,
+      "interests": [
+        "fishing",
+        "biking",
+        "history",
+        "easy"
+      ],
+      "description": "Dramatic coastal cliffs on the San Andreas Fault with tule elk herds.",
+      "highlights": {
+        "fishing": "Quiet kayak fishing in Tomales Bay \u2014 bass, halibut, and perch.",
+        "biking": "Fire roads with sweeping Pacific views. Relatively flat terrain for road bikes.",
+        "history": "Historic Point Reyes Lighthouse and Coast Miwok village sites.",
+        "easy": "Earthquake Trail: 0.7-mile fully paved and level."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Whale watching best Jan\u2013Apr. Elk rut in Sep. Foggy in summer."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "2 hrs",
+        "boston": null
+      },
+      "npsCode": "pore"
+    },
+    {
+      "id": "muir-woods-nm",
+      "name": "Muir Woods Nat'l Monument",
+      "region": "norcal",
+      "lat": 37.897,
+      "lng": -122.5811,
+      "type": "Nat'l Monument",
+      "fee": "$15/person",
+      "passSaves": true,
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "Old-growth coast redwoods 600\u20131,200 years old, closest grove to San Francisco.",
+      "highlights": {
+        "history": "Site of preliminary UN Charter meetings in 1945.",
+        "easy": "Main loop: 0.5-mile accessible boardwalk through ancient redwoods."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Reservation required for parking and shuttle. Weekday mornings are quietest."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "2 hrs",
+        "boston": null
+      },
+      "npsCode": "muwo"
+    },
+    {
+      "id": "golden-gate-nra",
+      "name": "Golden Gate NRA",
+      "region": "norcal",
+      "lat": 37.82,
+      "lng": -122.478,
+      "type": "Nat'l Recreation Area",
+      "fee": "Free",
+      "passSaves": false,
+      "interests": [
+        "biking",
+        "history",
+        "easy"
+      ],
+      "description": "19 ecosystems spanning SF Bay Area \u2014 Alcatraz, Presidio, Marin Headlands.",
+      "highlights": {
+        "biking": "Extensive paved bike paths through the Presidio and along the Bay.",
+        "history": "Alcatraz prison, Fort Point (Civil War), Presidio from 1776, Nike missile sites.",
+        "easy": "Crissy Field: fully paved with Bay views."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Alcatraz sells out weeks ahead \u2014 book early. Sept\u2013Oct warmest weather."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "1.5 hrs",
+        "boston": null
+      },
+      "npsCode": "goga"
+    },
+    {
+      "id": "whiskeytown-nra",
+      "name": "Whiskeytown NRA",
+      "region": "norcal",
+      "lat": 40.5969,
+      "lng": -122.5528,
+      "type": "Nat'l Recreation Area",
+      "fee": "$25/visit",
+      "passSaves": true,
+      "interests": [
+        "fishing",
+        "biking",
+        "history"
+      ],
+      "description": "Crystal-clear lake with excellent fishing and Gold Rush history near Redding.",
+      "highlights": {
+        "fishing": "Outstanding bass, trout, and kokanee salmon. Superb boat fishing.",
+        "biking": "Over 20 miles of mountain bike trails.",
+        "history": "Camden House and Tower House \u2014 Gold Rush era."
+      },
+      "seasonal": {
+        "best": "Apr\u2013Oct",
+        "note": "Spring fishing is excellent. Summer gets hot (100\u00b0F+). Fall is ideal."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "2.5 hrs",
+        "boston": null
+      },
+      "npsCode": "whis"
+    },
+    {
+      "id": "john-muir-nhs",
+      "name": "John Muir NHS",
+      "region": "norcal",
+      "lat": 37.9928,
+      "lng": -122.1311,
+      "type": "Historic Site",
+      "fee": "$15/visit",
+      "passSaves": true,
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "Home of the 'Father of National Parks' in Martinez.",
+      "highlights": {
+        "history": "Tour the Victorian home and fruit ranch of John Muir.",
+        "easy": "Grounds and first floor fully accessible."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Open Wed\u2013Sun. Check nps.gov for tour times."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "1.5 hrs",
+        "boston": null
+      },
+      "npsCode": "jomu"
+    },
+    {
+      "id": "rosie-riveter-nhp",
+      "name": "Rosie the Riveter NHP",
+      "region": "norcal",
+      "lat": 37.91,
+      "lng": -122.363,
+      "type": "Historic Site",
+      "fee": "Free",
+      "passSaves": false,
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "Honors WWII home front workers in Richmond.",
+      "highlights": {
+        "history": "WWII \u2014 stories of women and minorities who powered the war effort.",
+        "easy": "Fully accessible visitor center with excellent exhibits."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Visitor center open daily. SS Red Oak Victory ship tours available."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "1.5 hrs",
+        "boston": null
+      },
+      "npsCode": "rori"
+    },
+    {
+      "id": "sacramento-nwr",
+      "name": "Sacramento NWR",
+      "region": "norcal",
+      "lat": 39.3714,
+      "lng": -122.1981,
+      "type": "Wildlife Refuge",
+      "fee": "Free",
+      "passSaves": false,
+      "interests": [
+        "easy"
+      ],
+      "description": "Winter home to 600,000+ ducks and 200,000+ geese.",
+      "highlights": {
+        "easy": "6-mile auto tour with accessible observation decks."
+      },
+      "seasonal": {
+        "best": "Nov\u2013Feb",
+        "note": "Peak waterfowl season is winter. You're in the perfect window right now!"
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "1.5 hrs",
+        "boston": null
+      }
+    },
+    {
+      "id": "fort-ord-nm",
+      "name": "Fort Ord Nat'l Monument",
+      "region": "norcal",
+      "lat": 36.6339,
+      "lng": -121.7356,
+      "type": "Nat'l Monument",
+      "fee": "Free",
+      "passSaves": false,
+      "interests": [
+        "biking"
+      ],
+      "description": "Former military base with 86 miles of trails in Monterey County.",
+      "highlights": {
+        "biking": "Extensive mountain biking network \u2014 86 miles of trails."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Mild coastal climate. Spring wildflowers are spectacular."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "3 hrs",
+        "boston": null
+      }
+    },
+    {
+      "id": "eagle-lake-lassen-nf",
+      "name": "Eagle Lake (Lassen NF)",
+      "region": "norcal",
+      "lat": 40.573,
+      "lng": -120.744,
+      "type": "Nat'l Forest",
+      "fee": "$5\u201310/day",
+      "passSaves": true,
+      "interests": [
+        "fishing",
+        "easy"
+      ],
+      "description": "California's second-largest natural lake with accessible facilities.",
+      "highlights": {
+        "fishing": "Renowned Eagle Lake trout \u2014 excellent boat fishing on calm waters.",
+        "easy": "Accessible boat launch and lakeside facilities."
+      },
+      "seasonal": {
+        "best": "May\u2013Oct",
+        "note": "Eagle Lake trout fishing peaks in late spring and fall."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "3.5 hrs",
+        "boston": null
+      }
+    },
+    {
+      "id": "hat-creek-lassen-nf",
+      "name": "Hat Creek (Lassen NF)",
+      "region": "norcal",
+      "lat": 40.844,
+      "lng": -121.428,
+      "type": "Nat'l Forest",
+      "fee": "Day use waived",
+      "passSaves": true,
+      "interests": [
+        "fishing"
+      ],
+      "description": "World-renowned fly fishing in the shadow of Lassen Peak.",
+      "highlights": {
+        "fishing": "Wild trout section \u2014 world-class fly fishing in pristine mountain stream."
+      },
+      "seasonal": {
+        "best": "Apr\u2013Oct",
+        "note": "Best fly fishing is late spring through early fall."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "3 hrs",
+        "boston": null
+      }
+    },
+    {
+      "id": "tahoe-nf-downieville",
+      "name": "Tahoe NF / Downieville",
+      "region": "norcal",
+      "lat": 39.5596,
+      "lng": -120.827,
+      "type": "Nat'l Forest",
+      "fee": "$5\u201310/day",
+      "passSaves": true,
+      "interests": [
+        "biking",
+        "fishing"
+      ],
+      "description": "Historic Donner Pass, Sierra Buttes, world-class trails.",
+      "highlights": {
+        "biking": "Downieville Downhill and great road cycling on forest roads.",
+        "fishing": "Truckee River, Yuba River, and alpine lakes."
+      },
+      "seasonal": {
+        "best": "May\u2013Oct",
+        "note": "Snow closes higher elevations in winter. Downieville trails best Jun\u2013Oct."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "2 hrs",
+        "boston": null
+      }
+    },
+    {
+      "id": "don-edwards-nwr",
+      "name": "Don Edwards SF Bay NWR",
+      "region": "norcal",
+      "lat": 37.465,
+      "lng": -122.088,
+      "type": "Wildlife Refuge",
+      "fee": "Free",
+      "passSaves": false,
+      "interests": [
+        "biking",
+        "easy"
+      ],
+      "description": "Urban refuge with 30 miles of trails along San Francisco Bay.",
+      "highlights": {
+        "biking": "Paved multi-use trails for easy road biking with bay views.",
+        "easy": "Flat, paved paths accessible for all abilities."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Migratory bird season peaks Oct\u2013Apr."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "2 hrs",
+        "boston": null
+      }
+    },
+    {
+      "id": "lava-beds-nm",
+      "name": "Lava Beds Nat'l Monument",
+      "region": "norcal",
+      "lat": 41.757,
+      "lng": -121.507,
+      "type": "Nat'l Monument",
+      "fee": "$25/visit",
+      "passSaves": true,
+      "interests": [
+        "history"
+      ],
+      "description": "Over 800 lava tube caves \u2014 North America's largest concentration.",
+      "highlights": {
+        "history": "Captain Jack's Stronghold: 1872\u201373 Modoc War battlefields and rock art."
+      },
+      "seasonal": {
+        "best": "May\u2013Oct",
+        "note": "Cave temperature is constant 55\u00b0F year-round. Bring a jacket underground."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "5 hrs",
+        "boston": null
+      },
+      "npsCode": "labe"
+    },
+    {
+      "id": "tule-lake-nm",
+      "name": "Tule Lake Nat'l Monument",
+      "region": "norcal",
+      "lat": 41.89,
+      "lng": -121.373,
+      "type": "Nat'l Monument",
+      "fee": "Free",
+      "passSaves": false,
+      "interests": [
+        "history"
+      ],
+      "description": "Site of the largest WWII Japanese American internment camp.",
+      "highlights": {
+        "history": "One of America's most significant WWII civil rights sites."
+      },
+      "seasonal": {
+        "best": "May\u2013Oct",
+        "note": "Combine with Lava Beds \u2014 they're adjacent."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "5 hrs",
+        "boston": null
+      },
+      "npsCode": "tule"
+    },
+    {
+      "id": "frazier-falls-plumas-nf",
+      "name": "Frazier Falls (Plumas NF)",
+      "region": "norcal",
+      "lat": 39.756,
+      "lng": -120.749,
+      "type": "Nat'l Forest",
+      "fee": "$5\u201310/day",
+      "passSaves": true,
+      "interests": [
+        "easy"
+      ],
+      "description": "Spectacular 178-foot waterfall in the Lost Sierra.",
+      "highlights": {
+        "easy": "1-mile fully paved trail to waterfall viewpoint."
+      },
+      "seasonal": {
+        "best": "Jun\u2013Oct",
+        "note": "Best waterfall flow in late spring / early summer."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "3 hrs",
+        "boston": null
+      }
+    },
+    {
+      "id": "humboldt-bay-nwr",
+      "name": "Humboldt Bay NWR",
+      "region": "norcal",
+      "lat": 40.725,
+      "lng": -124.15,
+      "type": "Wildlife Refuge",
+      "fee": "Free",
+      "passSaves": false,
+      "interests": [
+        "easy"
+      ],
+      "description": "Coastal refuge along Highway 101 with excellent birdwatching.",
+      "highlights": {
+        "easy": "Wheelchair-accessible deck, boardwalk, and observation platform."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Peak shorebird migration in spring and fall."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "5 hrs",
+        "boston": null
+      }
+    },
+    {
+      "id": "lower-klamath-nwr",
+      "name": "Lower Klamath NWR",
+      "region": "norcal",
+      "lat": 42.0,
+      "lng": -121.75,
+      "type": "Wildlife Refuge",
+      "fee": "Free",
+      "passSaves": false,
+      "interests": [
+        "easy"
+      ],
+      "description": "Nation's first waterfowl refuge (est. 1908 by Teddy Roosevelt).",
+      "highlights": {
+        "easy": "Auto tour through one of the largest bald eagle concentrations in the lower 48."
+      },
+      "seasonal": {
+        "best": "Nov\u2013Mar",
+        "note": "Peak bald eagle season is winter."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "5 hrs",
+        "boston": null
+      }
+    },
+    {
+      "id": "port-chicago-memorial",
+      "name": "Port Chicago Memorial",
+      "region": "norcal",
+      "lat": 38.056,
+      "lng": -122.023,
+      "type": "Nat'l Memorial",
+      "fee": "Free",
+      "passSaves": false,
+      "interests": [
+        "history"
+      ],
+      "description": "Site of worst home front disaster of WWII.",
+      "highlights": {
+        "history": "1944 explosion killed 320 and sparked civil rights movement in the Navy."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Reservation required \u2014 access is through a military base. Plan ahead."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "1.5 hrs",
+        "boston": null
+      }
+    },
+    {
+      "id": "pinnacles-np",
+      "name": "Pinnacles National Park",
+      "region": "socal",
+      "lat": 36.4906,
+      "lng": -121.1825,
+      "type": "National Park",
+      "fee": "$30/visit",
+      "passSaves": true,
+      "interests": [
+        "easy"
+      ],
+      "description": "Dramatic volcanic spires, talus caves, and California condors.",
+      "highlights": {
+        "easy": "Balconies Cave and Bear Gulch Cave are walkable. Condor viewing from easy trails."
+      },
+      "seasonal": {
+        "best": "Feb\u2013May, Oct\u2013Nov",
+        "note": "Summer is brutally hot (100\u00b0F+). Spring wildflowers are spectacular."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "3 hrs",
+        "boston": null
+      },
+      "npsCode": "pinn"
+    },
+    {
+      "id": "sequoia-kings-canyon-np",
+      "name": "Sequoia & Kings Canyon NP",
+      "region": "socal",
+      "lat": 36.4864,
+      "lng": -118.5658,
+      "type": "National Park",
+      "fee": "$35/visit",
+      "passSaves": true,
+      "interests": [
+        "fishing",
+        "easy"
+      ],
+      "description": "Home to General Sherman \u2014 Earth's largest living tree \u2014 and the deepest canyon in the US.",
+      "highlights": {
+        "fishing": "Kaweah River and high-country lakes for trout in pristine Sierra settings.",
+        "easy": "Giant Forest paved trails to General Sherman and Moro Rock overlook. Scenic drives throughout."
+      },
+      "seasonal": {
+        "best": "May\u2013Oct",
+        "note": "Generals Highway may close in winter. Giant Forest accessible most of the year."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "4.5 hrs",
+        "boston": null
+      }
+    },
+    {
+      "id": "manzanar-nhs",
+      "name": "Manzanar NHS",
+      "region": "socal",
+      "lat": 36.7281,
+      "lng": -118.1543,
+      "type": "Historic Site",
+      "fee": "$15/visit",
+      "passSaves": true,
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "WWII Japanese American internment camp where 10,000+ were confined 1942\u201345.",
+      "highlights": {
+        "history": "Restored barracks, mess hall, guard tower, and deeply moving interpretive exhibits. One of the most important civil rights sites in America.",
+        "easy": "Visitor center fully accessible. 3.2-mile auto tour through the camp grounds."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Spring and fall are mild. Summer is hot. Winter can be cold but uncrowded."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "4.5 hrs",
+        "boston": null
+      },
+      "npsCode": "manz"
+    },
+    {
+      "id": "death-valley-np",
+      "name": "Death Valley NP",
+      "region": "socal",
+      "lat": 36.505,
+      "lng": -116.933,
+      "type": "National Park",
+      "fee": "$30/visit",
+      "passSaves": true,
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "Hottest, driest, lowest \u2014 extremes define this otherworldly landscape.",
+      "highlights": {
+        "history": "Scotty's Castle, Harmony Borax Works, ghost towns.",
+        "easy": "Badwater Basin, Artist's Drive, Zabriskie Point all accessible from car."
+      },
+      "seasonal": {
+        "best": "Nov\u2013Mar",
+        "note": "Visit in winter or spring. Summer temperatures exceed 120\u00b0F \u2014 dangerous."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "7 hrs",
+        "boston": null
+      },
+      "npsCode": "deva"
+    },
+    {
+      "id": "joshua-tree-np",
+      "name": "Joshua Tree NP",
+      "region": "socal",
+      "lat": 33.8734,
+      "lng": -115.901,
+      "type": "National Park",
+      "fee": "$30/visit",
+      "passSaves": true,
+      "interests": [
+        "easy"
+      ],
+      "description": "Where Mojave and Colorado deserts meet \u2014 iconic twisted trees and boulder landscapes.",
+      "highlights": {
+        "easy": "Park Boulevard scenic drive with dozens of pullouts. Skull Rock and Arch Rock short walks."
+      },
+      "seasonal": {
+        "best": "Oct\u2013May",
+        "note": "Spring wildflower bloom (Mar\u2013Apr) can be extraordinary. Avoid summer heat."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "7.5 hrs",
+        "boston": null
+      },
+      "npsCode": "jotr"
+    },
+    {
+      "id": "channel-islands-np",
+      "name": "Channel Islands NP",
+      "region": "socal",
+      "lat": 34.0069,
+      "lng": -119.7785,
+      "type": "National Park",
+      "fee": "Free",
+      "passSaves": false,
+      "interests": [
+        "fishing",
+        "easy"
+      ],
+      "description": "Five remote islands off the coast \u2014 California's Gal\u00e1pagos. Accessible only by boat.",
+      "highlights": {
+        "fishing": "Outstanding ocean fishing on the boat ride over and around the islands. Kelp forests with incredible marine life.",
+        "easy": "Visitor center in Ventura is fully accessible. Island Access requires boat \u2014 moderate physical ability."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Whale watching Dec\u2013Apr. Clearest water Jul\u2013Oct. Book Island Packers boat early."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "6 hrs",
+        "boston": null
+      },
+      "npsCode": "chis"
+    },
+    {
+      "id": "santa-monica-mtns-nra",
+      "name": "Santa Monica Mountains NRA",
+      "region": "socal",
+      "lat": 34.0975,
+      "lng": -118.9042,
+      "type": "Nat'l Recreation Area",
+      "fee": "Free",
+      "passSaves": false,
+      "interests": [
+        "biking",
+        "easy"
+      ],
+      "description": "Mediterranean landscape between LA and the Pacific \u2014 the world's largest urban national park.",
+      "highlights": {
+        "biking": "Backbone Trail and Mulholland Drive offer road and mountain biking with ocean views.",
+        "easy": "Paramount Ranch (former movie set), Satwiwa Cultural Center, accessible visitor areas."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Wildflower season Feb\u2013May. Summer can be hot inland."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "6 hrs",
+        "boston": null
+      }
+    },
+    {
+      "id": "cesar-chavez-nm",
+      "name": "C\u00e9sar E. Ch\u00e1vez NM",
+      "region": "socal",
+      "lat": 35.2241,
+      "lng": -118.561,
+      "type": "Nat'l Monument",
+      "fee": "Free",
+      "passSaves": false,
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "Headquarters of the United Farm Workers \u2014 where C\u00e9sar Ch\u00e1vez lived and is buried.",
+      "highlights": {
+        "history": "The labor movement that changed American agriculture. Ch\u00e1vez's office preserved as it was. A powerful piece of modern American history.",
+        "easy": "Visitor center and memorial garden fully accessible."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Open Mon\u2013Sat. Located in Keene, CA between Bakersfield and LA."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "4.5 hrs",
+        "boston": null
+      },
+      "npsCode": "cech"
+    },
+    {
+      "id": "devils-postpile-nm",
+      "name": "Devils Postpile NM",
+      "region": "socal",
+      "lat": 37.6246,
+      "lng": -119.0846,
+      "type": "Nat'l Monument",
+      "fee": "$10/visit",
+      "passSaves": true,
+      "interests": [
+        "fishing",
+        "easy"
+      ],
+      "description": "Remarkable columnar basalt formation and Rainbow Falls near Mammoth Lakes.",
+      "highlights": {
+        "fishing": "Middle Fork San Joaquin River for trout in a spectacular canyon setting.",
+        "easy": "Short trail from shuttle stop to the Postpile. Rainbow Falls trail is 2.5 mi round trip."
+      },
+      "seasonal": {
+        "best": "Jun\u2013Oct",
+        "note": "Only accessible mid-June to October. Mandatory shuttle in summer."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "4.5 hrs",
+        "boston": null
+      },
+      "npsCode": "depo"
+    },
+    {
+      "id": "mojave-np",
+      "name": "Mojave National Preserve",
+      "region": "socal",
+      "lat": 35.1415,
+      "lng": -115.5109,
+      "type": "Nat'l Preserve",
+      "fee": "Free",
+      "passSaves": false,
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "1.6 million acres of desert beauty \u2014 singing dunes, lava flows, and Joshua tree forests.",
+      "highlights": {
+        "history": "Kelso Depot: beautifully restored 1924 Union Pacific railroad station, now the visitor center.",
+        "easy": "Kelso Dunes and Hole-in-the-Wall accessible by car. Scenic drives through vast open desert."
+      },
+      "seasonal": {
+        "best": "Oct\u2013Apr",
+        "note": "Avoid summer. Spring wildflowers can be extraordinary."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "8 hrs",
+        "boston": null
+      },
+      "npsCode": "moja"
+    },
+    {
+      "id": "cabrillo-nm",
+      "name": "Cabrillo Nat'l Monument",
+      "region": "socal",
+      "lat": 32.6735,
+      "lng": -117.2425,
+      "type": "Nat'l Monument",
+      "fee": "$20/visit",
+      "passSaves": true,
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "Where European exploration of the West Coast began \u2014 stunning views of San Diego Bay.",
+      "highlights": {
+        "history": "Juan Rodr\u00edguez Cabrillo landed here in 1542. Old Point Loma Lighthouse (1855). WWII coastal defense exhibits.",
+        "easy": "Bayside Trail is paved. Tide pools accessible at low tide. All viewpoints accessible."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Whale watching Dec\u2013Mar from the overlook. Tide pools best at low tide \u2014 check schedules."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": "8 hrs",
+        "boston": null
+      },
+      "npsCode": "cabr"
+    },
+    {
+      "id": "acadia-np",
+      "name": "Acadia National Park",
+      "region": "newengland",
+      "lat": 44.3386,
+      "lng": -68.2733,
+      "type": "National Park",
+      "fee": "$35/visit",
+      "passSaves": true,
+      "interests": [
+        "fishing",
+        "biking",
+        "easy"
+      ],
+      "description": "Rugged coastline, granite peaks, and 45+ miles of historic carriage roads.",
+      "highlights": {
+        "fishing": "Jordan Pond and Eagle Lake \u2014 quiet freshwater fishing. Ocean fishing off Bass Harbor.",
+        "biking": "45+ mi crushed stone carriage roads. Gentle grades, no cars \u2014 built by Rockefeller Jr.",
+        "easy": "Many carriage roads accommodate wheelchairs; accessible visitor centers."
+      },
+      "seasonal": {
+        "best": "May\u2013Oct",
+        "note": "Fall foliage (late Sep\u2013mid Oct) is spectacular. Carriage roads open Apr\u2013Nov."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": "4.5 hrs"
+      },
+      "npsCode": "acad"
+    },
+    {
+      "id": "cape-cod-ns",
+      "name": "Cape Cod Nat'l Seashore",
+      "region": "newengland",
+      "lat": 41.9242,
+      "lng": -70.0369,
+      "type": "Nat'l Seashore",
+      "fee": "$25/visit",
+      "passSaves": true,
+      "interests": [
+        "fishing",
+        "biking",
+        "history",
+        "easy"
+      ],
+      "description": "40 miles of pristine sandy beaches, marshes, ponds, and lighthouses.",
+      "highlights": {
+        "fishing": "Kettle ponds for secluded freshwater fishing. Surf fishing for striped bass.",
+        "biking": "Province Lands Trail (5.5 mi paved), Nauset Trail, Head of the Meadow.",
+        "history": "Pilgrim history, maritime heritage, Marconi wireless station.",
+        "easy": "Buttonbush Trail fully accessible; beach wheelchairs available."
+      },
+      "seasonal": {
+        "best": "May\u2013Oct",
+        "note": "Surf fishing for stripers peaks Sep\u2013Oct. Summer beaches are crowded \u2014 go early."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": "1.5 hrs"
+      },
+      "npsCode": "caco"
+    },
+    {
+      "id": "white-mountain-nf",
+      "name": "White Mountain NF",
+      "region": "newengland",
+      "lat": 44.0903,
+      "lng": -71.3913,
+      "type": "Nat'l Forest",
+      "fee": "$5+/day",
+      "passSaves": true,
+      "interests": [
+        "fishing",
+        "biking"
+      ],
+      "description": "800,000 acres with the Northeast's highest peaks including Mt. Washington.",
+      "highlights": {
+        "fishing": "Outstanding mountain streams and lakes for trout.",
+        "biking": "Forest roads ideal for road cycling through mountain scenery."
+      },
+      "seasonal": {
+        "best": "May\u2013Oct",
+        "note": "Fall foliage is world-class. Kancamagus Highway scenic drive peaks late Sep."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": "2.5 hrs"
+      }
+    },
+    {
+      "id": "green-mountain-nf",
+      "name": "Green Mountain NF",
+      "region": "newengland",
+      "lat": 43.86,
+      "lng": -72.888,
+      "type": "Nat'l Forest",
+      "fee": "Fees waived",
+      "passSaves": true,
+      "interests": [
+        "fishing",
+        "biking"
+      ],
+      "description": "400,000 acres of Vermont's mountain forests with 900 miles of trails.",
+      "highlights": {
+        "fishing": "Excellent trout streams and mountain ponds.",
+        "biking": "Robert Frost Trail and forest road cycling."
+      },
+      "seasonal": {
+        "best": "May\u2013Oct",
+        "note": "Maple syrup season (Feb\u2013Mar) is a fun side trip. Fall colors peak early Oct."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": "3 hrs"
+      }
+    },
+    {
+      "id": "boston-nhp",
+      "name": "Boston NHP",
+      "region": "newengland",
+      "lat": 42.3601,
+      "lng": -71.0589,
+      "type": "Nat'l Historical Park",
+      "fee": "Free",
+      "passSaves": false,
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "Freedom Trail \u2014 Faneuil Hall, Old North Church, Bunker Hill, USS Constitution.",
+      "highlights": {
+        "history": "Revolutionary War history \u2014 walk through America's founding.",
+        "easy": "Urban setting with excellent accessibility."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Spring and fall are ideal. USS Constitution tours available daily."
+      },
+      "visited": true,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": "0 hrs"
+      },
+      "npsCode": "bost"
+    },
+    {
+      "id": "minute-man-nhp",
+      "name": "Minute Man NHP",
+      "region": "newengland",
+      "lat": 42.449,
+      "lng": -71.299,
+      "type": "Nat'l Historical Park",
+      "fee": "Free",
+      "passSaves": false,
+      "interests": [
+        "history",
+        "biking",
+        "easy"
+      ],
+      "description": "Where the American Revolution began \u2014 April 19, 1775.",
+      "highlights": {
+        "history": "'The shot heard round the world.' Battle Road traces the first clashes.",
+        "biking": "5 mi paved, flat \u2014 perfect for road bikes.",
+        "easy": "Battle Road Trail: fully paved, flat, accessible."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Patriots' Day (3rd Mon in April) has reenactments. Trail is great for winter biking too."
+      },
+      "visited": true,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": "30 min"
+      },
+      "npsCode": "mima"
+    },
+    {
+      "id": "adams-nhp",
+      "name": "Adams NHP",
+      "region": "newengland",
+      "lat": 42.258,
+      "lng": -71.01,
+      "type": "Historic Site",
+      "fee": "$15/visit",
+      "passSaves": true,
+      "interests": [
+        "history"
+      ],
+      "description": "Birthplaces and homes of Presidents John Adams and John Quincy Adams.",
+      "highlights": {
+        "history": "Tour the homes of two presidents \u2014 father and son."
+      },
+      "seasonal": {
+        "best": "May\u2013Nov",
+        "note": "Tours run seasonally. Check nps.gov for current schedule."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": "20 min"
+      },
+      "npsCode": "adam"
+    },
+    {
+      "id": "salem-maritime-nhs",
+      "name": "Salem Maritime NHS",
+      "region": "newengland",
+      "lat": 42.5195,
+      "lng": -70.886,
+      "type": "Historic Site",
+      "fee": "Free",
+      "passSaves": false,
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "America's first National Historic Site (1938) \u2014 600 years of maritime history.",
+      "highlights": {
+        "history": "12 historic buildings, wharves, replica ship. Maritime golden age.",
+        "easy": "Waterfront areas mostly accessible."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Salem in October has Halloween festivities but huge crowds."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": "40 min"
+      },
+      "npsCode": "sama"
+    },
+    {
+      "id": "lowell-nhp",
+      "name": "Lowell NHP",
+      "region": "newengland",
+      "lat": 42.646,
+      "lng": -71.311,
+      "type": "Nat'l Historical Park",
+      "fee": "Free",
+      "passSaves": false,
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "Birthplace of America's Industrial Revolution.",
+      "highlights": {
+        "history": "Restored 19th-century mill buildings and canal system.",
+        "easy": "Excellent urban accessibility."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Boat tours on the canals run summer months. Folk Festival in July."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": "45 min"
+      },
+      "npsCode": "lowe"
+    },
+    {
+      "id": "saint-gaudens-nhp",
+      "name": "Saint-Gaudens NHP",
+      "region": "newengland",
+      "lat": 43.5,
+      "lng": -72.371,
+      "type": "Historic Site",
+      "fee": "$10/visit",
+      "passSaves": true,
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "Home and studios of America's foremost sculptor.",
+      "highlights": {
+        "history": "Saint-Gaudens sculpted the Lincoln, Sherman, and Shaw memorials.",
+        "easy": "Main house and gardens accessible."
+      },
+      "seasonal": {
+        "best": "May\u2013Oct",
+        "note": "Grounds open year-round; buildings and exhibits seasonal."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": "2.5 hrs"
+      },
+      "npsCode": "saga"
+    },
+    {
+      "id": "marsh-billings-rockefeller-nhp",
+      "name": "Marsh-Billings-Rockefeller NHP",
+      "region": "newengland",
+      "lat": 43.633,
+      "lng": -72.537,
+      "type": "Historic Site",
+      "fee": "Free",
+      "passSaves": false,
+      "interests": [
+        "history",
+        "biking"
+      ],
+      "description": "Only NPS site focused on conservation history.",
+      "highlights": {
+        "history": "150 years of stewardship from Marsh to the Rockefellers.",
+        "biking": "Carriage roads for gentle cycling."
+      },
+      "seasonal": {
+        "best": "May\u2013Oct",
+        "note": "Mansion tours summer only. Grounds and trails year-round."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": "2.5 hrs"
+      }
+    },
+    {
+      "id": "parker-river-nwr",
+      "name": "Parker River NWR",
+      "region": "newengland",
+      "lat": 42.767,
+      "lng": -70.81,
+      "type": "Wildlife Refuge",
+      "fee": "$5/visit",
+      "passSaves": true,
+      "interests": [
+        "fishing",
+        "biking"
+      ],
+      "description": "Plum Island barrier beach \u2014 premier fishing destination.",
+      "highlights": {
+        "fishing": "Surf fishing \u2014 striped bass, bluefish, flounder.",
+        "biking": "Refuge Road open to cycling along the coast."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Surf fishing peaks Sep\u2013Oct. Beach closes partially for nesting piping plovers Apr\u2013Aug."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": "1 hr"
+      }
+    },
+    {
+      "id": "new-bedford-whaling-nhp",
+      "name": "New Bedford Whaling NHP",
+      "region": "newengland",
+      "lat": 41.636,
+      "lng": -70.923,
+      "type": "Historic Site",
+      "fee": "Free",
+      "passSaves": false,
+      "interests": [
+        "history"
+      ],
+      "description": "America's whaling capital at its 19th-century peak.",
+      "highlights": {
+        "history": "Melville set Moby-Dick here \u2014 the city that lit the world's lamps."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Whaling Museum is separate (admission fee). NHP sites are free."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": "1 hr"
+      },
+      "npsCode": "nebe"
+    },
+    {
+      "id": "roger-williams-memorial",
+      "name": "Roger Williams Memorial",
+      "region": "newengland",
+      "lat": 41.831,
+      "lng": -71.411,
+      "type": "Historic Site",
+      "fee": "Free",
+      "passSaves": false,
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "Honors Rhode Island's founder and pioneer of religious freedom.",
+      "highlights": {
+        "history": "Roger Williams championed separation of church and state.",
+        "easy": "Accessible park."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Small site \u2014 combine with other Providence attractions."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": "1 hr"
+      }
+    },
+    {
+      "id": "weir-farm-nhp",
+      "name": "Weir Farm NHP",
+      "region": "newengland",
+      "lat": 41.256,
+      "lng": -73.454,
+      "type": "Historic Site",
+      "fee": "Free",
+      "passSaves": false,
+      "interests": [
+        "history"
+      ],
+      "description": "Only NPS site dedicated to American painting.",
+      "highlights": {
+        "history": "Studios of American Impressionist J. Alden Weir."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Summer painting workshops. Fall colors are a natural canvas."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": "2 hrs"
+      },
+      "npsCode": "wefa"
+    },
+    {
+      "id": "assabet-river-nwr",
+      "name": "Assabet River NWR",
+      "region": "newengland",
+      "lat": 42.446,
+      "lng": -71.534,
+      "type": "Wildlife Refuge",
+      "fee": "Free",
+      "passSaves": false,
+      "interests": [
+        "biking"
+      ],
+      "description": "Former military base converted to wildlife refuge.",
+      "highlights": {
+        "biking": "15+ miles of trails \u2014 flat and easy."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Some trails may be muddy in spring. Great fall foliage riding."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": "45 min"
+      }
+    },
+    {
+      "id": "great-meadows-nwr",
+      "name": "Great Meadows NWR",
+      "region": "newengland",
+      "lat": 42.468,
+      "lng": -71.337,
+      "type": "Wildlife Refuge",
+      "fee": "$5/visit",
+      "passSaves": true,
+      "interests": [
+        "easy"
+      ],
+      "description": "Freshwater wetlands near Concord with 220+ bird species.",
+      "highlights": {
+        "easy": "Dike trails flat and accessible \u2014 peaceful birdwatching."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Spring migration is spectacular. Near Walden Pond and Concord historic sites."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": "30 min"
+      }
+    },
+    {
+      "id": "rachel-carson-nwr",
+      "name": "Rachel Carson NWR",
+      "region": "newengland",
+      "lat": 43.346,
+      "lng": -70.557,
+      "type": "Wildlife Refuge",
+      "fee": "Free",
+      "passSaves": false,
+      "interests": [
+        "easy"
+      ],
+      "description": "5,600+ acres of salt marshes along southern Maine coast.",
+      "highlights": {
+        "easy": "1-mile Carson Trail with accessible sections."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Named for the author of Silent Spring. Combines well with a Maine coast trip."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": "1.5 hrs"
+      }
+    },
+    {
+      "id": "blackstone-river-nhp",
+      "name": "Blackstone River Valley NHP",
+      "region": "newengland",
+      "lat": 42.11,
+      "lng": -71.65,
+      "type": "Nat'l Historical Park",
+      "fee": "Free",
+      "passSaves": false,
+      "interests": [
+        "history",
+        "biking"
+      ],
+      "description": "America's Industrial Revolution began in this river valley.",
+      "highlights": {
+        "history": "Slater Mill and the birth of American industry.",
+        "biking": "Blackstone Bikeway connects historic sites."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Bikeway is a great year-round ride. Mill tours seasonal."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": "1 hr"
+      }
+    },
+    {
+      "id": "yellowstone-np",
+      "name": "Yellowstone NP",
+      "region": "nationwide",
+      "subregion": "west",
+      "lat": 44.428,
+      "lng": -110.588,
+      "type": "National Park",
+      "fee": "$35/visit",
+      "passSaves": true,
+      "state": "Wyoming",
+      "interests": [
+        "fishing",
+        "easy"
+      ],
+      "description": "America's first national park \u2014 geysers, hot springs, and abundant wildlife.",
+      "highlights": {
+        "fishing": "World-class fly fishing in the Yellowstone, Madison, and Firehole rivers.",
+        "easy": "Old Faithful boardwalks, Grand Prismatic overlook, and scenic drives."
+      },
+      "seasonal": {
+        "best": "May\u2013Oct",
+        "note": "Most roads closed Nov\u2013Apr. Old Faithful area accessible year-round."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "yell"
+    },
+    {
+      "id": "grand-teton-np",
+      "name": "Grand Teton NP",
+      "region": "nationwide",
+      "subregion": "west",
+      "lat": 43.741,
+      "lng": -110.802,
+      "type": "National Park",
+      "fee": "$35/visit",
+      "passSaves": true,
+      "state": "Wyoming",
+      "interests": [
+        "fishing",
+        "biking",
+        "easy"
+      ],
+      "description": "Dramatic Teton Range rising 7,000 feet above the valley floor.",
+      "highlights": {
+        "fishing": "Jenny Lake and the Snake River \u2014 outstanding trout fishing.",
+        "biking": "20+ miles of paved multi-use pathway through the park.",
+        "easy": "Jenny Lake boat shuttle; many paved viewpoints."
+      },
+      "seasonal": {
+        "best": "Jun\u2013Sep",
+        "note": "Teton Park Road closed Nov\u2013Apr. Combine with Yellowstone."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "grte"
+    },
+    {
+      "id": "glacier-np",
+      "name": "Glacier NP",
+      "region": "nationwide",
+      "subregion": "west",
+      "lat": 48.7596,
+      "lng": -113.787,
+      "type": "National Park",
+      "fee": "$35/visit",
+      "passSaves": true,
+      "state": "Montana",
+      "interests": [
+        "fishing",
+        "easy"
+      ],
+      "description": "Crown of the Continent \u2014 130+ named lakes, 25 glaciers.",
+      "highlights": {
+        "fishing": "Lake McDonald, St. Mary Lake for cutthroat trout.",
+        "easy": "Going-to-the-Sun Road: 50-mile scenic drive with accessible overlooks."
+      },
+      "seasonal": {
+        "best": "Jul\u2013Sep",
+        "note": "Going-to-the-Sun Road opens mid-June to mid-October. Vehicle reservations required."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "glac"
+    },
+    {
+      "id": "olympic-np",
+      "name": "Olympic NP",
+      "region": "nationwide",
+      "subregion": "west",
+      "lat": 47.802,
+      "lng": -123.604,
+      "type": "National Park",
+      "fee": "$30/visit",
+      "passSaves": true,
+      "state": "Washington",
+      "interests": [
+        "fishing",
+        "easy"
+      ],
+      "description": "Temperate rainforest, alpine peaks, and rugged Pacific coast.",
+      "highlights": {
+        "fishing": "Lake Crescent, Hoh River, Sol Duc River for trout and salmon.",
+        "easy": "Hall of Mosses: 0.8-mi trail. Hurricane Ridge: paved trails with mountain views."
+      },
+      "seasonal": {
+        "best": "Jun\u2013Sep",
+        "note": "Rain is heavy Oct\u2013May. Rainforest is lush year-round."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "olym"
+    },
+    {
+      "id": "mount-rainier-np",
+      "name": "Mount Rainier NP",
+      "region": "nationwide",
+      "subregion": "west",
+      "lat": 46.852,
+      "lng": -121.76,
+      "type": "National Park",
+      "fee": "$30/visit",
+      "passSaves": true,
+      "state": "Washington",
+      "interests": [
+        "easy"
+      ],
+      "description": "Iconic volcanic peak with glaciers and wildflower meadows.",
+      "highlights": {
+        "easy": "Paradise area: paved trails. Sunrise has accessible overlooks."
+      },
+      "seasonal": {
+        "best": "Jul\u2013Sep",
+        "note": "Wildflower peak is late July. Paradise road open year-round; other roads seasonal."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "mora"
+    },
+    {
+      "id": "crater-lake-np",
+      "name": "Crater Lake NP",
+      "region": "nationwide",
+      "subregion": "west",
+      "lat": 42.868,
+      "lng": -122.168,
+      "type": "National Park",
+      "fee": "$30/visit",
+      "passSaves": true,
+      "state": "Oregon",
+      "interests": [
+        "fishing",
+        "easy"
+      ],
+      "description": "Deepest lake in the US \u2014 stunning sapphire blue water in a volcanic caldera.",
+      "highlights": {
+        "fishing": "Rainbow trout and kokanee \u2014 no license required in the lake.",
+        "easy": "33-mile Rim Drive with 30+ scenic overlooks."
+      },
+      "seasonal": {
+        "best": "Jul\u2013Oct",
+        "note": "Rim Drive opens late June. North entrance may not open until July."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "crla"
+    },
+    {
+      "id": "rocky-mountain-np",
+      "name": "Rocky Mountain NP",
+      "region": "nationwide",
+      "subregion": "west",
+      "lat": 40.343,
+      "lng": -105.688,
+      "type": "National Park",
+      "fee": "$30/visit",
+      "passSaves": true,
+      "state": "Colorado",
+      "interests": [
+        "fishing",
+        "easy"
+      ],
+      "description": "Alpine tundra, peaks, and pristine lakes above 12,000 feet.",
+      "highlights": {
+        "fishing": "Sprague Lake, Bear Lake, Big Thompson River for trout.",
+        "easy": "Trail Ridge Road: highest paved road in any NP (12,183 ft). Bear Lake paved."
+      },
+      "seasonal": {
+        "best": "Jun\u2013Oct",
+        "note": "Trail Ridge Road closed mid-Oct to Memorial Day. Timed entry required in summer."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "romo"
+    },
+    {
+      "id": "hawaii-volcanoes-np",
+      "name": "Hawaii Volcanoes NP",
+      "region": "nationwide",
+      "subregion": "west",
+      "lat": 19.441,
+      "lng": -155.234,
+      "type": "National Park",
+      "fee": "$30/visit",
+      "passSaves": true,
+      "state": "Hawaii",
+      "interests": [
+        "easy"
+      ],
+      "description": "Two active volcanoes \u2014 K\u012blauea and Mauna Loa.",
+      "highlights": {
+        "easy": "Crater Rim Drive with accessible overlooks; Devastation Trail is paved boardwalk."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Volcanic activity varies \u2014 check nps.gov for current eruption status."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      }
+    },
+    {
+      "id": "denali-np",
+      "name": "Denali NP",
+      "region": "nationwide",
+      "subregion": "west",
+      "lat": 63.113,
+      "lng": -151.193,
+      "type": "National Park",
+      "fee": "$15/visit",
+      "passSaves": true,
+      "state": "Alaska",
+      "interests": [
+        "fishing",
+        "easy"
+      ],
+      "description": "Six million acres surrounding North America's tallest peak.",
+      "highlights": {
+        "fishing": "Horseshoe Lake and area rivers for grayling and trout.",
+        "easy": "Park bus tours: see wildlife and Denali from your seat."
+      },
+      "seasonal": {
+        "best": "Jun\u2013Sep",
+        "note": "Park road beyond Mile 15 is bus-access only. Book bus tours well in advance."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      }
+    },
+    {
+      "id": "great-sand-dunes-np",
+      "name": "Great Sand Dunes NP",
+      "region": "nationwide",
+      "subregion": "west",
+      "lat": 37.733,
+      "lng": -105.512,
+      "type": "National Park",
+      "fee": "$25/visit",
+      "passSaves": true,
+      "state": "Colorado",
+      "interests": [
+        "easy"
+      ],
+      "description": "Tallest sand dunes in North America \u2014 750 feet.",
+      "highlights": {
+        "easy": "Walk from parking lot onto dunes. Accessible boardwalk to dune field."
+      },
+      "seasonal": {
+        "best": "May\u2013Sep",
+        "note": "Medano Creek flows late May\u2013early July \u2014 a unique experience."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "grsa"
+    },
+    {
+      "id": "grand-canyon-np",
+      "name": "Grand Canyon NP",
+      "region": "nationwide",
+      "subregion": "southwest",
+      "lat": 36.107,
+      "lng": -112.113,
+      "type": "National Park",
+      "fee": "$35/visit",
+      "passSaves": true,
+      "state": "Arizona",
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "277 miles of layered rock revealing two billion years of Earth's history.",
+      "highlights": {
+        "history": "Ancestral Puebloan sites, Mary Colter architecture, Desert View Watchtower.",
+        "easy": "South Rim Trail: 13 mi paved. Shuttle accessible. All overlooks paved."
+      },
+      "seasonal": {
+        "best": "Mar\u2013May, Sep\u2013Nov",
+        "note": "South Rim open year-round. North Rim closes mid-Oct to mid-May."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "grca"
+    },
+    {
+      "id": "zion-np",
+      "name": "Zion NP",
+      "region": "nationwide",
+      "subregion": "southwest",
+      "lat": 37.298,
+      "lng": -113.026,
+      "type": "National Park",
+      "fee": "$35/visit",
+      "passSaves": true,
+      "state": "Utah",
+      "interests": [
+        "biking",
+        "easy"
+      ],
+      "description": "Towering sandstone cliffs and narrow slot canyons.",
+      "highlights": {
+        "biking": "Pa'rus Trail: 3.5 mi paved, flat, bikes allowed, along the Virgin River.",
+        "easy": "Shuttle scenic drive; Riverside Walk partially paved."
+      },
+      "seasonal": {
+        "best": "Mar\u2013May, Sep\u2013Nov",
+        "note": "Summer is very hot and crowded. Spring and fall are ideal."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "zion"
+    },
+    {
+      "id": "bryce-canyon-np",
+      "name": "Bryce Canyon NP",
+      "region": "nationwide",
+      "subregion": "southwest",
+      "lat": 37.593,
+      "lng": -112.187,
+      "type": "National Park",
+      "fee": "$35/visit",
+      "passSaves": true,
+      "state": "Utah",
+      "interests": [
+        "easy"
+      ],
+      "description": "Largest concentration of hoodoos on Earth \u2014 otherworldly red rock spires.",
+      "highlights": {
+        "easy": "Rim Trail between Sunset and Sunrise Points is paved and mostly level."
+      },
+      "seasonal": {
+        "best": "May\u2013Sep",
+        "note": "At 8,000 ft, snow is possible Oct\u2013May. Stargazing is extraordinary."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "brca"
+    },
+    {
+      "id": "arches-np",
+      "name": "Arches NP",
+      "region": "nationwide",
+      "subregion": "southwest",
+      "lat": 38.733,
+      "lng": -109.593,
+      "type": "National Park",
+      "fee": "$30/visit",
+      "passSaves": true,
+      "state": "Utah",
+      "interests": [
+        "easy"
+      ],
+      "description": "Over 2,000 natural stone arches in southeastern Utah.",
+      "highlights": {
+        "easy": "Scenic drive; many arches visible from car; short paved viewpoint trails."
+      },
+      "seasonal": {
+        "best": "Mar\u2013May, Sep\u2013Nov",
+        "note": "Timed entry required Apr\u2013Oct. Book at recreation.gov."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "arch"
+    },
+    {
+      "id": "carlsbad-caverns-np",
+      "name": "Carlsbad Caverns NP",
+      "region": "nationwide",
+      "subregion": "southwest",
+      "lat": 32.175,
+      "lng": -104.445,
+      "type": "National Park",
+      "fee": "$15/visit",
+      "passSaves": true,
+      "state": "New Mexico",
+      "interests": [
+        "easy"
+      ],
+      "description": "Massive underground chambers with spectacular formations.",
+      "highlights": {
+        "easy": "Elevator into Big Room; 1.25 mi paved underground trail."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Cave is 56\u00b0F always. Bat flight program May\u2013Oct at sunset."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "cave"
+    },
+    {
+      "id": "white-sands-np",
+      "name": "White Sands NP",
+      "region": "nationwide",
+      "subregion": "southwest",
+      "lat": 32.787,
+      "lng": -106.326,
+      "type": "National Park",
+      "fee": "$25/visit",
+      "passSaves": true,
+      "state": "New Mexico",
+      "interests": [
+        "easy"
+      ],
+      "description": "275 square miles of brilliant white gypsum dunes.",
+      "highlights": {
+        "easy": "8-mi scenic drive. Interdune Boardwalk wheelchair accessible."
+      },
+      "seasonal": {
+        "best": "Oct\u2013Apr",
+        "note": "Sunset is magical. Check for missile range closures (1\u20132 hrs, sporadic)."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "whsa"
+    },
+    {
+      "id": "petrified-forest-np",
+      "name": "Petrified Forest NP",
+      "region": "nationwide",
+      "subregion": "southwest",
+      "lat": 34.91,
+      "lng": -109.789,
+      "type": "National Park",
+      "fee": "$25/visit",
+      "passSaves": true,
+      "state": "Arizona",
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "Petrified wood, painted desert, and ancient pueblo ruins.",
+      "highlights": {
+        "history": "Puerco Pueblo: Ancestral Puebloan dwelling and petroglyphs from 650 CE.",
+        "easy": "28-mile scenic drive with short paved trails at every stop."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Mild fall and spring. Summer is hot but manageable with the scenic drive."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "pefo"
+    },
+    {
+      "id": "saguaro-np",
+      "name": "Saguaro NP",
+      "region": "nationwide",
+      "subregion": "southwest",
+      "lat": 32.175,
+      "lng": -111.166,
+      "type": "National Park",
+      "fee": "$25/visit",
+      "passSaves": true,
+      "state": "Arizona",
+      "interests": [
+        "biking",
+        "easy"
+      ],
+      "description": "Giant saguaro cacti in the Sonoran Desert near Tucson.",
+      "highlights": {
+        "biking": "Cactus Forest Loop: 8 mi paved, popular with road cyclists.",
+        "easy": "Scenic drives; Desert Discovery Nature Trail is flat and accessible."
+      },
+      "seasonal": {
+        "best": "Oct\u2013Apr",
+        "note": "Saguaro blooms May\u2013Jun. Avoid summer midday heat."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "sagu"
+    },
+    {
+      "id": "mesa-verde-np",
+      "name": "Mesa Verde NP",
+      "region": "nationwide",
+      "subregion": "southwest",
+      "lat": 37.231,
+      "lng": -108.488,
+      "type": "National Park",
+      "fee": "$30/visit",
+      "passSaves": true,
+      "state": "Colorado",
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "Spectacular 800-year-old cliff dwellings \u2014 600+ in the park.",
+      "highlights": {
+        "history": "Cliff Palace and Balcony House: apartment complexes in sandstone alcoves.",
+        "easy": "Mesa Top Loop: 6-mi drive with overlooks of cliff dwellings from above."
+      },
+      "seasonal": {
+        "best": "May\u2013Sep",
+        "note": "Cliff Palace tours summer only. Mesa Top Loop year-round."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "meve"
+    },
+    {
+      "id": "bandelier-nm",
+      "name": "Bandelier Nat'l Monument",
+      "region": "nationwide",
+      "subregion": "southwest",
+      "lat": 35.779,
+      "lng": -106.269,
+      "type": "Nat'l Monument",
+      "fee": "$25/visit",
+      "passSaves": true,
+      "state": "New Mexico",
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "Ancestral Puebloan homes carved into volcanic cliffs.",
+      "highlights": {
+        "history": "Cliff dwellings, cave rooms, and ceremonial kiva from the 1100s.",
+        "easy": "Main Loop: 1.2 mi paved through pueblo ruins."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Shuttle required in summer from White Rock. Fall is uncrowded and beautiful."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      }
+    },
+    {
+      "id": "great-smoky-mountains-np",
+      "name": "Great Smoky Mountains NP",
+      "region": "nationwide",
+      "subregion": "southeast",
+      "lat": 35.611,
+      "lng": -83.489,
+      "type": "National Park",
+      "fee": "Free",
+      "passSaves": false,
+      "state": "TN / NC",
+      "interests": [
+        "fishing",
+        "easy"
+      ],
+      "description": "America's most visited NP \u2014 misty peaks and old-growth forest.",
+      "highlights": {
+        "fishing": "700+ miles of streams. Excellent smallmouth bass and trout.",
+        "easy": "Cades Cove: 11-mi scenic loop with wildlife. Sugarlands accessible trails."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Fall colors peak mid-Oct. Synchronous fireflies display in late May/early Jun."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      }
+    },
+    {
+      "id": "shenandoah-np",
+      "name": "Shenandoah NP",
+      "region": "nationwide",
+      "subregion": "southeast",
+      "lat": 38.533,
+      "lng": -78.351,
+      "type": "National Park",
+      "fee": "$30/visit",
+      "passSaves": true,
+      "state": "Virginia",
+      "interests": [
+        "fishing",
+        "easy"
+      ],
+      "description": "Blue Ridge Mountains with the iconic 105-mile Skyline Drive.",
+      "highlights": {
+        "fishing": "60+ trout streams within the park.",
+        "easy": "Skyline Drive: 75 overlooks. Limberlost Trail wheelchair accessible."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Fall foliage peaks mid-Oct. Skyline Drive may close in ice/snow."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "shen"
+    },
+    {
+      "id": "everglades-np",
+      "name": "Everglades NP",
+      "region": "nationwide",
+      "subregion": "southeast",
+      "lat": 25.287,
+      "lng": -80.898,
+      "type": "National Park",
+      "fee": "$30/visit",
+      "passSaves": true,
+      "state": "Florida",
+      "interests": [
+        "fishing",
+        "easy"
+      ],
+      "description": "Largest subtropical wilderness \u2014 alligators, manatees, and mangroves.",
+      "highlights": {
+        "fishing": "World-class backcountry: snook, tarpon, redfish.",
+        "easy": "Anhinga Trail: 0.8-mi boardwalk. Shark Valley tram tour."
+      },
+      "seasonal": {
+        "best": "Dec\u2013Apr",
+        "note": "Dry season is best. Summer is hot, buggy, and hurricane season."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "ever"
+    },
+    {
+      "id": "dry-tortugas-np",
+      "name": "Dry Tortugas NP",
+      "region": "nationwide",
+      "subregion": "southeast",
+      "lat": 24.628,
+      "lng": -82.872,
+      "type": "National Park",
+      "fee": "$15/visit",
+      "passSaves": true,
+      "state": "Florida",
+      "interests": [
+        "fishing",
+        "history"
+      ],
+      "description": "Remote island fortress 70 miles west of Key West.",
+      "highlights": {
+        "fishing": "Outstanding snorkeling and fishing in crystal-clear waters.",
+        "history": "Fort Jefferson: massive 19th-century fort. Held Dr. Mudd after Lincoln's assassination."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Ferry or seaplane from Key West. Book well in advance."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "drto"
+    },
+    {
+      "id": "congaree-np",
+      "name": "Congaree NP",
+      "region": "nationwide",
+      "subregion": "southeast",
+      "lat": 33.783,
+      "lng": -80.782,
+      "type": "National Park",
+      "fee": "Free",
+      "passSaves": false,
+      "state": "S. Carolina",
+      "interests": [
+        "fishing",
+        "easy"
+      ],
+      "description": "Largest old-growth bottomland hardwood forest in the Southeast.",
+      "highlights": {
+        "fishing": "Canoe fishing on Cedar Creek for bass and catfish.",
+        "easy": "2.4-mile boardwalk loop \u2014 flat and accessible."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Synchronous fireflies late May. Flooding adds beauty but check conditions."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "cong"
+    },
+    {
+      "id": "mammoth-cave-np",
+      "name": "Mammoth Cave NP",
+      "region": "nationwide",
+      "subregion": "southeast",
+      "lat": 37.187,
+      "lng": -86.101,
+      "type": "National Park",
+      "fee": "Free",
+      "passSaves": false,
+      "state": "Kentucky",
+      "interests": [
+        "fishing",
+        "easy"
+      ],
+      "description": "World's longest cave system \u2014 420+ mapped miles underground.",
+      "highlights": {
+        "fishing": "Green and Nolin Rivers for bass and catfish.",
+        "easy": "Accessible cave tour; Heritage Trail is paved."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Cave is 54\u00b0F always. Accessible tour available \u2014 book at recreation.gov."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "maca"
+    },
+    {
+      "id": "hot-springs-np",
+      "name": "Hot Springs NP",
+      "region": "nationwide",
+      "subregion": "southeast",
+      "lat": 34.521,
+      "lng": -93.042,
+      "type": "National Park",
+      "fee": "Free",
+      "passSaves": false,
+      "state": "Arkansas",
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "America's oldest federal reserve \u2014 thermal springs and Bathhouse Row.",
+      "highlights": {
+        "history": "Eight ornate early-1900s bathhouses, including a working 1915 bathhouse.",
+        "easy": "Grand Promenade: 0.5-mi paved. Bathhouses accessible."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "The hot springs flow year-round. Buckstaff Bathhouse still offers baths."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      }
+    },
+    {
+      "id": "gettysburg-nmp",
+      "name": "Gettysburg NMP",
+      "region": "nationwide",
+      "subregion": "battlefields",
+      "lat": 39.811,
+      "lng": -77.231,
+      "type": "Military Park",
+      "fee": "Free",
+      "passSaves": false,
+      "state": "Pennsylvania",
+      "interests": [
+        "history",
+        "biking",
+        "easy"
+      ],
+      "description": "Decisive Civil War battle \u2014 July 1863. Lincoln's Gettysburg Address.",
+      "highlights": {
+        "history": "Turning point of the Civil War. 1,300+ monuments and markers.",
+        "biking": "40+ miles of paved battlefield roads \u2014 excellent for cycling.",
+        "easy": "Auto tour loop. Museum and Cyclorama accessible."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Anniversary events in early July. Fall is beautiful and less crowded."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "gett"
+    },
+    {
+      "id": "vicksburg-nmp",
+      "name": "Vicksburg NMP",
+      "region": "nationwide",
+      "subregion": "battlefields",
+      "lat": 32.363,
+      "lng": -90.851,
+      "type": "Military Park",
+      "fee": "Free",
+      "passSaves": false,
+      "state": "Mississippi",
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "Pivotal 1863 siege that split the Confederacy.",
+      "highlights": {
+        "history": "47-day siege gave the Union control of the Mississippi. 1,300+ monuments.",
+        "easy": "16-mile auto tour \u2014 mostly accessible from the car."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Spring and fall are mildest. USS Cairo museum is a highlight."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "vick"
+    },
+    {
+      "id": "antietam-nb",
+      "name": "Antietam Nat'l Battlefield",
+      "region": "nationwide",
+      "subregion": "battlefields",
+      "lat": 39.474,
+      "lng": -77.744,
+      "type": "Nat'l Battlefield",
+      "fee": "$10/visit",
+      "passSaves": true,
+      "state": "Maryland",
+      "interests": [
+        "history",
+        "biking",
+        "easy"
+      ],
+      "description": "Bloodiest single day in American history \u2014 September 17, 1862.",
+      "highlights": {
+        "history": "23,000 casualties in one day. Burnside Bridge and Dunker Church.",
+        "biking": "8.5-mile tour road popular with cyclists.",
+        "easy": "Driving tour with accessible waysides."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Anniversary commemoration in September. Dawn and dusk are especially moving."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "anti"
+    },
+    {
+      "id": "manassas-nbp",
+      "name": "Manassas NBP",
+      "region": "nationwide",
+      "subregion": "battlefields",
+      "lat": 38.813,
+      "lng": -77.522,
+      "type": "Nat'l Battlefield",
+      "fee": "$25/visit",
+      "passSaves": true,
+      "state": "Virginia",
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "Two major Civil War battles \u2014 First and Second Bull Run.",
+      "highlights": {
+        "history": "Where Stonewall Jackson earned his name.",
+        "easy": "Driving tour with accessible waysides."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Less crowded than Gettysburg but equally important."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      }
+    },
+    {
+      "id": "fredericksburg-spotsylvania",
+      "name": "Fredericksburg & Spotsylvania",
+      "region": "nationwide",
+      "subregion": "battlefields",
+      "lat": 38.299,
+      "lng": -77.471,
+      "type": "Military Park",
+      "fee": "Free",
+      "passSaves": false,
+      "state": "Virginia",
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "Four major Civil War battles \u2014 85,000 total casualties.",
+      "highlights": {
+        "history": "Fredericksburg, Chancellorsville, Wilderness, and Spotsylvania.",
+        "easy": "Driving tours with accessible stops."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Stonewall Jackson's death site at Chancellorsville is deeply moving."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      }
+    },
+    {
+      "id": "little-bighorn-nm",
+      "name": "Little Bighorn Battlefield",
+      "region": "nationwide",
+      "subregion": "battlefields",
+      "lat": 45.57,
+      "lng": -107.426,
+      "type": "Nat'l Monument",
+      "fee": "$25/visit",
+      "passSaves": true,
+      "state": "Montana",
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "Custer's Last Stand \u2014 June 25, 1876.",
+      "highlights": {
+        "history": "Lakota, Cheyenne, and Arapaho defeated the 7th Cavalry. Markers show where soldiers fell.",
+        "easy": "4.5-mi driving tour with accessible overlooks."
+      },
+      "seasonal": {
+        "best": "May\u2013Sep",
+        "note": "Anniversary reenactment in late June. Haunting at any time of year."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      }
+    },
+    {
+      "id": "pearl-harbor-nm",
+      "name": "Pearl Harbor NM",
+      "region": "nationwide",
+      "subregion": "battlefields",
+      "lat": 21.365,
+      "lng": -157.95,
+      "type": "Nat'l Monument",
+      "fee": "Free",
+      "passSaves": false,
+      "state": "Hawaii",
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "USS Arizona Memorial \u2014 December 7, 1941.",
+      "highlights": {
+        "history": "The attack that brought America into WWII. Arizona, Missouri, and submarine tours.",
+        "easy": "Visitor center accessible; boat to memorial is wheelchair accessible."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Reserve free tickets at recreation.gov well in advance. Arrive early."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      }
+    },
+    {
+      "id": "statue-of-liberty-nm",
+      "name": "Statue of Liberty NM",
+      "region": "nationwide",
+      "subregion": "midatlantic",
+      "lat": 40.689,
+      "lng": -74.044,
+      "type": "Nat'l Monument",
+      "fee": "Free",
+      "passSaves": false,
+      "state": "New York",
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "Symbol of freedom since 1886. Ellis Island next door.",
+      "highlights": {
+        "history": "Gift from France. Ellis Island processed 12 million immigrants.",
+        "easy": "Grounds accessible; pedestal elevator. Ellis Island fully accessible."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Crown access requires advance booking months ahead. Pedestal is more accessible."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      }
+    },
+    {
+      "id": "independence-nhp",
+      "name": "Independence NHP",
+      "region": "nationwide",
+      "subregion": "midatlantic",
+      "lat": 39.949,
+      "lng": -75.15,
+      "type": "Nat'l Historical Park",
+      "fee": "Free",
+      "passSaves": false,
+      "state": "Pennsylvania",
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "Independence Hall and the Liberty Bell \u2014 birthplace of the nation.",
+      "highlights": {
+        "history": "Declaration of Independence and Constitution both signed here.",
+        "easy": "Urban, all major sites accessible."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Timed tickets for Independence Hall \u2014 get early morning slots."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "inde"
+    },
+    {
+      "id": "valley-forge-nhp",
+      "name": "Valley Forge NHP",
+      "region": "nationwide",
+      "subregion": "midatlantic",
+      "lat": 40.097,
+      "lng": -75.445,
+      "type": "Nat'l Historical Park",
+      "fee": "Free",
+      "passSaves": false,
+      "state": "Pennsylvania",
+      "interests": [
+        "history",
+        "biking",
+        "easy"
+      ],
+      "description": "Washington's Continental Army winter encampment, 1777\u201378.",
+      "highlights": {
+        "history": "The winter that forged an army. Headquarters, soldier huts, monuments.",
+        "biking": "6-mile paved loop with dedicated bike lanes.",
+        "easy": "Driving tour with accessible stops."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Washington's birthday events in February. Fall colors are gorgeous."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "vafo"
+    },
+    {
+      "id": "harpers-ferry-nhp",
+      "name": "Harpers Ferry NHP",
+      "region": "nationwide",
+      "subregion": "midatlantic",
+      "lat": 39.325,
+      "lng": -77.729,
+      "type": "Nat'l Historical Park",
+      "fee": "$20/visit",
+      "passSaves": true,
+      "state": "West Virginia",
+      "interests": [
+        "history",
+        "biking"
+      ],
+      "description": "Where rivers meet \u2014 John Brown's 1859 raid.",
+      "highlights": {
+        "history": "Raid that helped spark the Civil War.",
+        "biking": "C&O Canal Towpath: 185 miles of flat, packed gravel."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "The confluence of the Potomac and Shenandoah is stunning in fall."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "hafe"
+    },
+    {
+      "id": "fords-theatre-nhs",
+      "name": "Ford's Theatre NHS",
+      "region": "nationwide",
+      "subregion": "midatlantic",
+      "lat": 38.897,
+      "lng": -77.026,
+      "type": "Historic Site",
+      "fee": "Free",
+      "passSaves": false,
+      "state": "Washington DC",
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "Where President Lincoln was assassinated \u2014 April 14, 1865.",
+      "highlights": {
+        "history": "The theater, the presidential box, and Petersen House where Lincoln died.",
+        "easy": "Fully accessible museum and theater."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Free timed tickets required. Get them online at recreation.gov."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      }
+    },
+    {
+      "id": "fdr-memorial",
+      "name": "FDR Memorial",
+      "region": "nationwide",
+      "subregion": "midatlantic",
+      "lat": 38.884,
+      "lng": -77.044,
+      "type": "Nat'l Monument",
+      "fee": "Free",
+      "passSaves": false,
+      "state": "Washington DC",
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "Four galleries tracing FDR's terms through the Depression and WWII.",
+      "highlights": {
+        "history": "Chronological journey through Depression, New Deal, and WWII.",
+        "easy": "Entirely open-air, level, wheelchair accessible."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Cherry blossom season (late Mar\u2013early Apr) is magical here. Best at night."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      }
+    },
+    {
+      "id": "wwii-memorial",
+      "name": "WWII Memorial",
+      "region": "nationwide",
+      "subregion": "midatlantic",
+      "lat": 38.889,
+      "lng": -77.04,
+      "type": "Nat'l Monument",
+      "fee": "Free",
+      "passSaves": false,
+      "state": "Washington DC",
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "Honors 16 million who served and 400,000+ who died in WWII.",
+      "highlights": {
+        "history": "Pillars for each state. Freedom Wall: 4,048 gold stars \u2014 one per 100 who died.",
+        "easy": "Open plaza, fully accessible."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Visit at dawn or dusk for the most powerful experience."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      }
+    },
+    {
+      "id": "wright-brothers-nm",
+      "name": "Wright Brothers NM",
+      "region": "nationwide",
+      "subregion": "midatlantic",
+      "lat": 36.015,
+      "lng": -75.668,
+      "type": "Nat'l Monument",
+      "fee": "$15/visit",
+      "passSaves": true,
+      "state": "N. Carolina",
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "Where powered flight began \u2014 December 17, 1903.",
+      "highlights": {
+        "history": "Stand where the Wright Flyer took off. Markers show all four flight distances.",
+        "easy": "Flat terrain, paved paths, accessible visitor center."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "December 17 anniversary flight celebrations. Outer Banks beaches nearby."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "wrbr"
+    },
+    {
+      "id": "fort-sumter-nm",
+      "name": "Fort Sumter NM",
+      "region": "nationwide",
+      "subregion": "midatlantic",
+      "lat": 32.752,
+      "lng": -79.875,
+      "type": "Nat'l Monument",
+      "fee": "Free",
+      "passSaves": false,
+      "state": "S. Carolina",
+      "interests": [
+        "history"
+      ],
+      "description": "Where the Civil War began \u2014 April 12, 1861.",
+      "highlights": {
+        "history": "The first shots of the Civil War. Ferry from Charleston."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Ferry required \u2014 book at fort-sumter-tours.com. Anniversary events in April."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      }
+    },
+    {
+      "id": "voyageurs-np",
+      "name": "Voyageurs NP",
+      "region": "nationwide",
+      "subregion": "midwest",
+      "lat": 48.5,
+      "lng": -92.883,
+      "type": "National Park",
+      "fee": "Free",
+      "passSaves": false,
+      "state": "Minnesota",
+      "interests": [
+        "fishing"
+      ],
+      "description": "Water-based park \u2014 interconnected lakes on the Canadian border.",
+      "highlights": {
+        "fishing": "Walleye, northern pike, smallmouth bass \u2014 some of the best lake fishing in America."
+      },
+      "seasonal": {
+        "best": "Jun\u2013Sep",
+        "note": "Boat or canoe required for most of the park. Ice fishing in winter."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "voya"
+    },
+    {
+      "id": "indiana-dunes-np",
+      "name": "Indiana Dunes NP",
+      "region": "nationwide",
+      "subregion": "midwest",
+      "lat": 41.653,
+      "lng": -87.053,
+      "type": "National Park",
+      "fee": "$25/visit",
+      "passSaves": true,
+      "state": "Indiana",
+      "interests": [
+        "biking",
+        "easy"
+      ],
+      "description": "15 miles of Lake Michigan shoreline with towering sand dunes.",
+      "highlights": {
+        "biking": "Calumet Trail: 9.2 mi paved between communities.",
+        "easy": "West Beach accessible boardwalk and short paved trails."
+      },
+      "seasonal": {
+        "best": "May\u2013Oct",
+        "note": "Swimming in Lake Michigan Jun\u2013Sep. Uncrowded in shoulder seasons."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "indu"
+    },
+    {
+      "id": "theodore-roosevelt-np",
+      "name": "Theodore Roosevelt NP",
+      "region": "nationwide",
+      "subregion": "midwest",
+      "lat": 46.979,
+      "lng": -103.538,
+      "type": "National Park",
+      "fee": "$30/visit",
+      "passSaves": true,
+      "state": "N. Dakota",
+      "interests": [
+        "easy"
+      ],
+      "description": "Rugged badlands where Teddy Roosevelt fell in love with conservation.",
+      "highlights": {
+        "easy": "36-mile Scenic Loop with accessible pullouts and wildlife viewing."
+      },
+      "seasonal": {
+        "best": "May\u2013Sep",
+        "note": "Bison and wild horses visible from the road. Painted Canyon overlook is stunning."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "thro"
+    },
+    {
+      "id": "badlands-np",
+      "name": "Badlands NP",
+      "region": "nationwide",
+      "subregion": "midwest",
+      "lat": 43.855,
+      "lng": -102.34,
+      "type": "National Park",
+      "fee": "$30/visit",
+      "passSaves": true,
+      "state": "S. Dakota",
+      "interests": [
+        "easy"
+      ],
+      "description": "Sharply eroded buttes and pinnacles \u2014 one of Earth's great landscapes.",
+      "highlights": {
+        "easy": "Badlands Loop: 30 mi with 14 scenic overlooks. Short accessible trails."
+      },
+      "seasonal": {
+        "best": "Apr\u2013Oct",
+        "note": "Combine with Mount Rushmore (1 hr away). Night sky program is excellent."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "badl"
+    },
+    {
+      "id": "mount-rushmore-nm",
+      "name": "Mount Rushmore NM",
+      "region": "nationwide",
+      "subregion": "midwest",
+      "lat": 43.879,
+      "lng": -103.459,
+      "type": "Nat'l Monument",
+      "fee": "Free",
+      "passSaves": false,
+      "state": "S. Dakota",
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "Washington, Jefferson, Roosevelt, and Lincoln carved in granite.",
+      "highlights": {
+        "history": "14 years to carve. Borglum's tribute to American democracy.",
+        "easy": "Presidential Trail: 0.6-mi paved. All viewing terraces accessible."
+      },
+      "seasonal": {
+        "best": "May\u2013Oct",
+        "note": "Evening lighting ceremony summer nights. Parking fee ($10) not covered by pass."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      }
+    },
+    {
+      "id": "harry-truman-nhs",
+      "name": "Harry S. Truman NHS",
+      "region": "nationwide",
+      "subregion": "midwest",
+      "lat": 38.925,
+      "lng": -94.518,
+      "type": "Historic Site",
+      "fee": "Free",
+      "passSaves": false,
+      "state": "Missouri",
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "Home of the 33rd President who ended WWII.",
+      "highlights": {
+        "history": "The president who made the hardest decisions of the 20th century.",
+        "easy": "Visitor center accessible; guided home tours."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Tours fill up \u2014 arrive early or get tickets online."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      }
+    },
+    {
+      "id": "kennesaw-mountain-nbp",
+      "name": "Kennesaw Mountain NBP",
+      "region": "nationwide",
+      "subregion": "battlefields",
+      "lat": 33.983,
+      "lng": -84.578,
+      "type": "Nat'l Battlefield",
+      "fee": "Free",
+      "passSaves": false,
+      "state": "Georgia",
+      "interests": [
+        "history",
+        "biking",
+        "easy"
+      ],
+      "description": "1864 Civil War battlefield from Sherman's Atlanta Campaign.",
+      "highlights": {
+        "history": "Three weeks of fighting. Well-preserved earthworks.",
+        "biking": "16 mi of trails including roads popular with cyclists.",
+        "easy": "Drive to summit. Visitor center accessible."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Very popular with local cyclists on weekends."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      }
+    },
+    {
+      "id": "new-river-gorge-np",
+      "name": "New River Gorge NP",
+      "region": "nationwide",
+      "subregion": "rivers_lakes",
+      "lat": 38.066,
+      "lng": -81.084,
+      "type": "National Park",
+      "fee": "Free",
+      "passSaves": false,
+      "state": "West Virginia",
+      "interests": [
+        "fishing",
+        "biking",
+        "easy"
+      ],
+      "description": "America's newest NP (2020) \u2014 dramatic gorge and whitewater.",
+      "highlights": {
+        "fishing": "Smallmouth bass in the New and Gauley Rivers.",
+        "biking": "Road cycling routes along the gorge rim.",
+        "easy": "Canyon Rim boardwalk with gorge overlooks."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Bridge Day (3rd Sat in Oct) \u2014 BASE jumpers from the New River Gorge Bridge."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "neri"
+    },
+    {
+      "id": "lake-mead-nra",
+      "name": "Lake Mead NRA",
+      "region": "nationwide",
+      "subregion": "rivers_lakes",
+      "lat": 36.016,
+      "lng": -114.738,
+      "type": "Nat'l Recreation Area",
+      "fee": "$25/visit",
+      "passSaves": true,
+      "state": "Nevada",
+      "interests": [
+        "fishing",
+        "easy"
+      ],
+      "description": "Largest US reservoir \u2014 Hoover Dam holds back the Colorado River.",
+      "highlights": {
+        "fishing": "Striped bass, largemouth bass, catfish \u2014 great boat fishing.",
+        "easy": "Scenic drives, accessible overlooks. Near Hoover Dam."
+      },
+      "seasonal": {
+        "best": "Oct\u2013Apr",
+        "note": "Summer is extremely hot. Hoover Dam tours separate fee."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      }
+    },
+    {
+      "id": "glen-canyon-nra",
+      "name": "Glen Canyon NRA",
+      "region": "nationwide",
+      "subregion": "rivers_lakes",
+      "lat": 37.07,
+      "lng": -111.49,
+      "type": "Nat'l Recreation Area",
+      "fee": "$30/visit",
+      "passSaves": true,
+      "state": "Utah",
+      "interests": [
+        "fishing",
+        "easy"
+      ],
+      "description": "Lake Powell \u2014 186 miles surrounded by red rock canyons.",
+      "highlights": {
+        "fishing": "Striped bass, smallmouth bass, walleye on the lake.",
+        "easy": "Marinas accessible. Glen Canyon Dam overlook paved."
+      },
+      "seasonal": {
+        "best": "Apr\u2013Oct",
+        "note": "Houseboat rentals available. Water levels have been recovering."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      }
+    },
+    {
+      "id": "sleeping-bear-dunes-nl",
+      "name": "Sleeping Bear Dunes NL",
+      "region": "nationwide",
+      "subregion": "rivers_lakes",
+      "lat": 44.859,
+      "lng": -86.039,
+      "type": "Nat'l Lakeshore",
+      "fee": "$25/visit",
+      "passSaves": true,
+      "state": "Michigan",
+      "interests": [
+        "biking",
+        "easy"
+      ],
+      "description": "Towering dunes on Lake Michigan \u2014 voted 'Most Beautiful Place in America.'",
+      "highlights": {
+        "biking": "Heritage Trail: 22 mi paved through dunes, forest, and towns.",
+        "easy": "Pierce Stocking Scenic Drive: 7.4 mi with stunning overlooks."
+      },
+      "seasonal": {
+        "best": "Jun\u2013Oct",
+        "note": "Fall colors are spectacular. Cherry season in July."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "slbe"
+    },
+    {
+      "id": "cuyahoga-valley-np",
+      "name": "Cuyahoga Valley NP",
+      "region": "nationwide",
+      "subregion": "rivers_lakes",
+      "lat": 41.241,
+      "lng": -81.548,
+      "type": "National Park",
+      "fee": "Free",
+      "passSaves": false,
+      "state": "Ohio",
+      "interests": [
+        "biking",
+        "easy"
+      ],
+      "description": "Winding river, waterfalls, and forests between Cleveland and Akron.",
+      "highlights": {
+        "biking": "Ohio & Erie Towpath: 20+ mi paved through the park.",
+        "easy": "Brandywine Falls boardwalk. Scenic railroad rides."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Cuyahoga Valley Scenic Railroad runs spring through fall."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "cuva"
+    },
+    {
+      "id": "lewis-clark-nhp",
+      "name": "Lewis & Clark NHP",
+      "region": "nationwide",
+      "subregion": "west",
+      "lat": 46.133,
+      "lng": -123.878,
+      "type": "Nat'l Historical Park",
+      "fee": "$5/visit",
+      "passSaves": true,
+      "state": "Oregon",
+      "interests": [
+        "history",
+        "easy"
+      ],
+      "description": "Where Lewis and Clark reached the Pacific \u2014 November 1805.",
+      "highlights": {
+        "history": "Fort Clatsop replica where the expedition wintered 1805\u201306.",
+        "easy": "Fort and trails accessible; visitor center with exhibits."
+      },
+      "seasonal": {
+        "best": "Year-round",
+        "note": "Living history demonstrations in summer. It rains a lot \u2014 bring rain gear."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      }
+    },
+    {
+      "id": "big-bend-np",
+      "name": "Big Bend NP",
+      "region": "nationwide",
+      "subregion": "rivers_lakes",
+      "lat": 29.247,
+      "lng": -103.25,
+      "type": "National Park",
+      "fee": "$30/visit",
+      "passSaves": true,
+      "state": "Texas",
+      "interests": [
+        "fishing",
+        "easy"
+      ],
+      "description": "Remote desert where the Rio Grande carves dramatic canyons.",
+      "highlights": {
+        "fishing": "Catfish and bass in the Rio Grande.",
+        "easy": "Ross Maxwell Drive: 30 mi to Santa Elena Canyon overlook."
+      },
+      "seasonal": {
+        "best": "Oct\u2013Apr",
+        "note": "Summer is dangerously hot (110\u00b0F+). Spring wildflowers can be incredible."
+      },
+      "visited": false,
+      "driveFrom": {
+        "sacramento": null,
+        "boston": null
+      },
+      "npsCode": "bibe"
+    }
+  ]
+}

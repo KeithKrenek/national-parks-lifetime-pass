@@ -1,0 +1,10 @@
+{
+  "name": "lennys-adventure-guide",
+  "version": "2.0.0",
+  "description": "Lenny's Lifetime Senior Pass Adventure Guide — interactive map and trip planner",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve public -l 3000",
+    "build": "echo 'Static site — no build step required'"
+  }
+}

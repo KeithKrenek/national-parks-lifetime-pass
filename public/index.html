@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Lenny's Guide">
+<meta name="theme-color" content="#1B4332">
+<title>Lenny's Adventure Guide</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.Default.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#1B4332;--forest-light:#2D6A4F;--forest-muted:#40916C;--brown:#7F5539;--brown-light:#B08968;--cream:#FEFAE0;--cream-dark:#F0EBD8;--sand:#DDA15E;--slate:#3D5A80;--red:#9B2226;--white:#FFFFFF;--text:#1A1A1A;--text-muted:#555555;--bg:#F5F3ED}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.header{background:linear-gradient(135deg,var(--forest) 0%,var(--forest-light) 60%,var(--forest-muted) 100%);color:white;text-align:center;padding:2.2rem 1rem 1.8rem;position:relative;overflow:hidden}
+.header::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.header-eyebrow{font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;opacity:.75;margin-bottom:.4rem;position:relative}
+.header h1{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;margin-bottom:.25rem;position:relative}
+.header-sub{font-size:.9rem;opacity:.8;font-weight:300;position:relative}
+.tabs{display:flex;background:white;border-bottom:1px solid #ddd;position:sticky;top:0;z-index:1000}
+.tab{flex:1;padding:.85rem .3rem;text-align:center;font-size:.78rem;font-weight:600;cursor:pointer;border:none;background:none;color:var(--text-muted);border-bottom:3px solid transparent;transition:all .2s;font-family:inherit}
+.tab:hover{background:#f8f8f8}
+.tab.active{color:var(--forest);border-bottom-color:var(--forest);background:#f0f7ec}
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;padding:1rem 1.25rem}
+.filter-btn{padding:.4rem .9rem;border-radius:2rem;font-size:.82rem;font-weight:600;cursor:pointer;border:2px solid transparent;background:#e8e8e8;color:var(--text);transition:all .15s;font-family:inherit}
+.filter-btn:hover{background:#ddd}
+.filter-btn.active{background:var(--forest);color:white;border-color:var(--forest)}
+.map-container{width:100%;height:420px;border-bottom:3px solid var(--forest-muted)}
+.custom-marker{border-radius:50%;border:2.5px solid white;box-shadow:0 2px 6px rgba(0,0,0,.35);transition:transform .15s;cursor:pointer}
+.custom-marker:hover{transform:scale(1.3)}
+.custom-marker.selected{transform:scale(1.4);border-color:#FFD700;box-shadow:0 0 0 3px rgba(255,215,0,.4),0 2px 8px rgba(0,0,0,.4)}
+.leaflet-popup-content-wrapper{border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,.15);padding:0}
+.leaflet-popup-content{margin:0;width:280px !important}
+.popup-inner{padding:1rem}
+.popup-inner h3{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--forest);margin-bottom:.25rem}
+.popup-type{font-size:.75rem;color:var(--text-muted);font-style:italic;margin-bottom:.4rem}
+.popup-fee{display:inline-block;background:var(--forest);color:white;font-size:.7rem;font-weight:700;padding:.15rem .5rem;border-radius:1rem;margin-bottom:.5rem}
+.popup-desc{font-size:.82rem;color:var(--text-muted);line-height:1.45;margin-bottom:.5rem}
+.popup-highlight{font-size:.8rem;padding:.5rem;background:#f5f5f5;border-radius:6px;margin-bottom:.35rem;line-height:1.4}
+.popup-highlight strong{color:var(--forest)}
+.popup-visited{display:inline-block;background:var(--sand);color:white;font-size:.65rem;font-weight:700;padding:.1rem .45rem;border-radius:1rem;margin-left:.4rem;vertical-align:middle}
+.popup-seasonal{font-size:.75rem;color:var(--brown);background:var(--cream);padding:.35rem .5rem;border-radius:6px;margin-top:.35rem;line-height:1.35}
+.site-list{padding:.75rem 1.25rem 2rem}
+.site-count{font-size:.82rem;color:var(--text-muted);margin-bottom:.75rem;padding-left:.2rem}
+.site-card{border-radius:10px;padding:1rem;margin-bottom:.75rem;border:2px solid #ddd;cursor:pointer;transition:all .15s;position:relative}
+.site-card:hover{border-color:var(--forest-muted);box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.site-card.active{border-color:var(--forest);box-shadow:0 2px 12px rgba(27,67,50,.15)}
+.site-card h4{font-family:'Playfair Display',serif;font-size:1rem;color:var(--forest);margin-bottom:.2rem}
+.site-meta{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;margin-bottom:.4rem}
+.site-type-tag{font-size:.7rem;padding:.1rem .5rem;border-radius:1rem;font-weight:600}
+.site-interest-icon{font-size:.85rem}
+.site-fee{position:absolute;top:1rem;right:1rem;background:var(--forest);color:white;font-size:.7rem;font-weight:700;padding:.15rem .55rem;border-radius:1rem}
+.site-desc{font-size:.85rem;color:var(--text-muted);line-height:1.45;margin-bottom:.4rem}
+.site-highlight{font-size:.82rem;padding:.45rem .6rem;border-radius:6px;background:rgba(0,0,0,.03);margin-bottom:.3rem;line-height:1.4}
+.site-highlight strong{font-weight:700}
+.site-state{font-size:.72rem;color:var(--brown-light);font-weight:600;margin-bottom:.15rem}
+.site-visited-badge{display:inline-block;background:var(--sand);color:white;font-size:.65rem;font-weight:700;padding:.1rem .45rem;border-radius:1rem;margin-left:.35rem;vertical-align:middle}
+.site-seasonal{font-size:.78rem;color:var(--brown);margin-top:.3rem}
+.site-drive{font-size:.75rem;color:var(--slate);margin-top:.2rem}
+.overview{padding:1.25rem;max-width:800px;margin:0 auto}
+.overview-hero{text-align:center;padding:2rem 1.5rem;background:var(--cream);border-radius:12px;margin-bottom:1.5rem}
+.overview-hero h2{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--forest);margin-bottom:.5rem}
+.overview-hero p{font-size:.95rem;color:var(--text-muted);line-height:1.6}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin-bottom:1.5rem}
+@media(max-width:600px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
+.stat-card{border:1px solid #ddd;border-radius:10px;padding:1rem .5rem;text-align:center;background:white}
+.stat-num{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--forest)}
+.stat-label{font-size:.82rem;font-weight:600;color:var(--text)}
+.stat-sub{font-size:.72rem;color:var(--text-muted)}
+.info-section{margin-bottom:1.5rem}
+.info-section h3{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--forest);margin-bottom:.75rem}
+.info-card{border-left:4px solid var(--sand);background:#fefcf6;padding:.75rem 1rem;border-radius:0 8px 8px 0;margin-bottom:.6rem}
+.info-card-title{font-weight:700;font-size:.88rem;color:var(--brown);margin-bottom:.2rem}
+.info-card-text{font-size:.85rem;color:var(--text-muted);line-height:1.5}
+.savings-row{display:flex;align-items:center;margin-bottom:.6rem}
+.savings-label{width:45%;font-size:.85rem;color:var(--text);text-align:right;padding-right:.75rem}
+.savings-bar-track{flex:1;height:28px;background:#eee;border-radius:6px;overflow:hidden}
+.savings-bar-fill{height:100%;border-radius:6px;display:flex;align-items:center;justify-content:flex-end;padding-right:.6rem;font-size:.78rem;font-weight:700;color:white}
+.not-covered{background:#fff5f5;border:1px solid #f0d0d0;border-radius:8px;padding:1rem;margin-bottom:1.5rem}
+.not-covered h4{color:var(--red);font-size:.88rem;margin-bottom:.3rem}
+.not-covered p{font-size:.85rem;color:var(--text-muted);line-height:1.5}
+.websites{display:grid;grid-template-columns:1fr 1fr;gap:.4rem;background:var(--cream-dark);padding:1rem;border-radius:8px}
+@media(max-width:500px){.websites{grid-template-columns:1fr}}
+.website-item{font-size:.85rem;color:var(--text-muted)}
+.website-item strong{color:var(--slate)}
+.footer{text-align:center;padding:2rem 1.5rem;background:var(--cream);margin-top:2rem}
+.footer p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--brown);line-height:1.6;max-width:550px;margin:0 auto .75rem}
+.footer .signoff{font-family:'Source Sans 3',sans-serif;font-style:normal;font-weight:700;color:var(--forest);font-size:1rem}
+.hidden{display:none}
+.legend-strip{display:flex;flex-wrap:wrap;gap:.75rem;padding:.5rem 1.25rem;background:white;border-bottom:1px solid #eee;font-size:.75rem;color:var(--text-muted)}
+.legend-item{display:flex;align-items:center;gap:.3rem}
+.legend-dot{width:10px;height:10px;border-radius:50%;border:1.5px solid white;box-shadow:0 1px 2px rgba(0,0,0,.2);display:inline-block}
+.region-intro{padding:.8rem 1.25rem;background:var(--cream);border-bottom:1px solid #e8e0c8}
+.region-intro p{font-size:.88rem;color:var(--brown);font-style:italic;max-width:700px}
+.region-intro strong{color:var(--forest);font-style:normal}
+.start-here{margin:.75rem 1.25rem;padding:.75rem 1rem;background:linear-gradient(135deg,#E8F5E9,#C8E6C9);border:2px solid var(--forest-muted);border-radius:10px}
+.start-here-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:var(--forest);font-weight:700;margin-bottom:.3rem}
+.start-here-text{font-size:.85rem;color:var(--text);line-height:1.5}
+.loading{text-align:center;padding:3rem;color:var(--text-muted);font-size:.9rem}
+.subregion-header{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--forest);padding:.6rem 0 .3rem;margin-top:.75rem;border-bottom:2px solid var(--forest-muted);margin-bottom:.5rem}
+.subregion-header:first-of-type{margin-top:0}
+.site-fee-free{position:absolute;top:1rem;right:1rem;background:var(--slate);color:white;font-size:.7rem;font-weight:700;padding:.15rem .55rem;border-radius:1rem}
+.site-directions{display:inline-block;font-size:.75rem;color:var(--slate);text-decoration:none;margin-top:.3rem;padding:.2rem .5rem;background:#E3F2FD;border-radius:4px;transition:background .15s}
+.site-directions:hover{background:#BBDEFB}
+.popup-directions{display:inline-block;font-size:.75rem;color:var(--slate);text-decoration:none;margin-top:.4rem;padding:.25rem .6rem;background:#E3F2FD;border-radius:4px}
+.popup-directions:hover{background:#BBDEFB}
+.checklist{columns:2;column-gap:1rem;margin-top:.5rem}
+@media(max-width:500px){.checklist{columns:1}}
+.checklist-item{font-size:.85rem;color:var(--text-muted);break-inside:avoid;padding:.2rem 0;line-height:1.4}
+.checklist-item strong{color:var(--text);font-weight:600}
+.booklet-note{background:#E8F5E9;border:1px solid #C8E6C9;border-radius:8px;padding:.75rem 1rem;margin-bottom:1.5rem;font-size:.85rem;color:var(--forest);line-height:1.5}
+.back-to-map{display:none;position:fixed;bottom:1rem;right:1rem;z-index:999;background:var(--forest);color:white;border:none;border-radius:2rem;padding:.55rem 1rem;font-size:.82rem;font-weight:700;cursor:pointer;box-shadow:0 3px 12px rgba(0,0,0,.3);font-family:inherit;transition:opacity .2s,transform .2s}
+.back-to-map:hover{transform:scale(1.05)}
+.back-to-map.visible{display:block}
+.pwa-install-banner{display:none;background:linear-gradient(135deg,var(--forest),var(--forest-light));color:white;padding:.65rem 1rem;text-align:center;font-size:.82rem;line-height:1.4;position:relative}
+.pwa-install-banner.visible{display:block}
+.pwa-install-banner button{background:white;color:var(--forest);border:none;border-radius:2rem;padding:.3rem .8rem;font-size:.78rem;font-weight:700;cursor:pointer;margin-left:.5rem;font-family:inherit}
+.pwa-install-banner .dismiss{position:absolute;right:.6rem;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.7);font-size:1.1rem;cursor:pointer;padding:.3rem;margin:0}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media(max-width:768px){
+  body{font-size:16px;-webkit-text-size-adjust:100%}
+  .header{padding:1.5rem .75rem 1.2rem}
+  .header h1{font-size:1.6rem}
+  .header-sub{font-size:.82rem}
+  .tabs{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory}
+  .tab{min-width:0;padding:.75rem .25rem;font-size:.72rem;min-height:44px;scroll-snap-align:center}
+  .map-container{height:280px}
+  .map-container[style*="height:500px"]{height:320px !important}
+  .filters{padding:.6rem .75rem;gap:.4rem}
+  .filter-btn{padding:.5rem .75rem;font-size:.8rem;min-height:44px;display:inline-flex;align-items:center}
+  .legend-strip{padding:.4rem .75rem;gap:.5rem;font-size:.72rem;overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch}
+  .legend-item{white-space:nowrap}
+  .site-list{padding:.5rem .75rem 5rem}
+  .site-card{padding:.85rem;margin-bottom:.6rem}
+  .site-card h4{font-size:1.05rem;padding-right:4.5rem}
+  .site-desc{font-size:.88rem;line-height:1.5}
+  .site-highlight{font-size:.85rem;padding:.5rem .65rem}
+  .site-fee,.site-fee-free{font-size:.72rem;padding:.2rem .55rem}
+  .site-interest-icon{font-size:1rem}
+  .site-seasonal{font-size:.82rem}
+  .site-drive{font-size:.8rem}
+  .site-directions{font-size:.8rem;padding:.35rem .6rem;min-height:40px;display:inline-flex;align-items:center}
+  .leaflet-popup-content{width:260px !important;max-width:85vw !important}
+  .popup-inner{padding:.85rem}
+  .popup-inner h3{font-size:1rem}
+  .popup-desc{font-size:.85rem}
+  .popup-highlight{font-size:.82rem}
+  .popup-directions{font-size:.8rem;padding:.35rem .65rem;min-height:40px;display:inline-flex;align-items:center}
+  .overview{padding:.75rem}
+  .overview-hero{padding:1.25rem 1rem}
+  .overview-hero h2{font-size:1.35rem}
+  .overview-hero p{font-size:.9rem}
+  .stat-card{padding:.75rem .35rem}
+  .stat-num{font-size:1.3rem}
+  .info-card{padding:.65rem .8rem}
+  .info-card-text{font-size:.88rem}
+  .savings-label{font-size:.8rem;width:40%}
+  .savings-bar-fill{font-size:.75rem}
+  .subregion-header{font-size:1rem;padding:.5rem 0 .25rem}
+  .region-intro{padding:.65rem .75rem}
+  .region-intro p{font-size:.85rem}
+  .start-here{margin:.6rem .75rem}
+  .start-here-text{font-size:.88rem}
+  .websites{padding:.75rem}
+  .not-covered{padding:.85rem}
+  .checklist-item{font-size:.88rem}
+  .booklet-note{font-size:.88rem;padding:.65rem .85rem}
+  .footer p{font-size:.88rem}
+}
+
+/* Marker cluster custom styling */
+.marker-cluster-small{background-color:rgba(45,106,79,.4) !important}
+.marker-cluster-small div{background-color:rgba(45,106,79,.7) !important;color:white !important;font-weight:700}
+.marker-cluster-medium{background-color:rgba(27,67,50,.4) !important}
+.marker-cluster-medium div{background-color:rgba(27,67,50,.7) !important;color:white !important;font-weight:700}
+.marker-cluster-large{background-color:rgba(27,67,50,.5) !important}
+.marker-cluster-large div{background-color:rgba(27,67,50,.8) !important;color:white !important;font-weight:700}
+
+/* Extra small phones */
+@media(max-width:380px){
+  .header h1{font-size:1.35rem}
+  .tab{font-size:.65rem;padding:.65rem .15rem}
+  .stats-grid{gap:.4rem}
+  .stat-num{font-size:1.1rem}
+  .stat-label{font-size:.75rem}
+  .stat-sub{font-size:.65rem}
+  .leaflet-popup-content{width:230px !important}
+}
+
+/* Landscape phone */
+@media(max-height:500px) and (orientation:landscape){
+  .map-container{height:200px}
+  .header{padding:1rem .75rem .8rem}
+}
+
+/* ===== ALERTS ===== */
+.region-alerts{padding:.5rem 1.25rem 0}
+.alert-banner{padding:.5rem .75rem;border-radius:8px;margin-bottom:.4rem;font-size:.82rem;line-height:1.4;display:flex;align-items:flex-start;gap:.4rem}
+.alert-banner.danger{background:#FFEBEE;border-left:4px solid #C62828;color:#B71C1C}
+.alert-banner.caution{background:#FFF8E1;border-left:4px solid #F9A825;color:#E65100}
+.alert-banner.closure{background:#FFEBEE;border-left:4px solid #C62828;color:#B71C1C}
+.alert-banner.info{background:#E3F2FD;border-left:4px solid var(--slate);color:#1565C0}
+.alert-icon{font-size:1rem;flex-shrink:0;margin-top:.05rem}
+.alert-text{flex:1}
+.alert-text strong{font-weight:700}
+.alert-text a{color:inherit;font-weight:600}
+.alert-loading{font-size:.78rem;color:var(--text-muted);padding:.3rem 1.25rem;font-style:italic}
+.site-alert-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#C62828;margin-left:.35rem;vertical-align:middle;animation:pulse-dot 2s infinite}
+@keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* ===== FAVORITES & TRIP LIST ===== */
+.fav-btn{position:absolute;top:2.4rem;right:1rem;background:none;border:none;cursor:pointer;font-size:1.1rem;padding:.2rem;line-height:1;opacity:.4;transition:opacity .15s,transform .15s;z-index:1}
+.fav-btn:hover,.fav-btn.saved{opacity:1}
+.fav-btn.saved{transform:scale(1.15)}
+.trip-fab{position:fixed;bottom:1rem;left:1rem;z-index:999;background:var(--sand);color:white;border:none;border-radius:2rem;padding:.55rem 1rem;font-size:.82rem;font-weight:700;cursor:pointer;box-shadow:0 3px 12px rgba(0,0,0,.25);font-family:inherit;transition:transform .2s}
+.trip-fab:hover{transform:scale(1.05)}
+.trip-fab .badge{display:inline-block;background:white;color:var(--sand);font-size:.7rem;font-weight:700;border-radius:50%;min-width:18px;height:18px;line-height:18px;text-align:center;margin-left:.3rem}
+.trip-panel{position:fixed;bottom:0;left:0;right:0;z-index:1001;background:white;border-radius:16px 16px 0 0;box-shadow:0 -4px 30px rgba(0,0,0,.2);transform:translateY(100%);transition:transform .3s ease;max-height:75vh;display:flex;flex-direction:column}
+.trip-panel.open{transform:translateY(0)}
+.trip-panel-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem .5rem;border-bottom:1px solid #eee}
+.trip-panel-header h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--forest)}
+.trip-panel-close{background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--text-muted);padding:.3rem}
+.trip-panel-body{overflow-y:auto;padding:.75rem 1.25rem;flex:1}
+.trip-empty{text-align:center;padding:2rem 1rem;color:var(--text-muted);font-size:.9rem}
+.trip-site{display:flex;align-items:center;gap:.75rem;padding:.6rem 0;border-bottom:1px solid #f0f0f0}
+.trip-site:last-child{border-bottom:none}
+.trip-site-info{flex:1;min-width:0}
+.trip-site-name{font-family:'Playfair Display',serif;font-size:.95rem;color:var(--forest);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.trip-site-meta{font-size:.75rem;color:var(--text-muted)}
+.trip-site-remove{background:none;border:none;color:#ccc;cursor:pointer;font-size:1rem;padding:.3rem;transition:color .15s}
+.trip-site-remove:hover{color:var(--red)}
+.trip-panel-footer{padding:.75rem 1.25rem;border-top:1px solid #eee;display:flex;gap:.5rem}
+.trip-panel-footer button{flex:1;padding:.5rem;border-radius:8px;font-size:.82rem;font-weight:600;cursor:pointer;font-family:inherit;border:none}
+.trip-share-btn{background:var(--forest);color:white}
+.trip-clear-btn{background:#f5f5f5;color:var(--text-muted)}
+.trip-panel-overlay{position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:1000;opacity:0;pointer-events:none;transition:opacity .3s}
+.trip-panel-overlay.open{opacity:1;pointer-events:auto}
+
+@media(max-width:768px){
+  .fav-btn{top:2.2rem;font-size:1.2rem}
+  .trip-panel{max-height:85vh}
+  .region-alerts{padding:.4rem .75rem 0}
+  .alert-banner{font-size:.82rem;padding:.45rem .65rem}
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-eyebrow">America the Beautiful — Lifetime Senior Pass</div>
+  <h1>Lenny's Adventure Guide</h1>
+  <div class="header-sub">Your key to 2,000+ federal recreation sites — for life</div>
+</div>
+<div class="pwa-install-banner" id="pwa-banner">
+  📱 Add to your home screen for offline access in parks
+  <button id="pwa-install-btn">Install</button>
+  <button class="dismiss" id="pwa-dismiss" aria-label="Dismiss">✕</button>
+</div>
+<div class="tabs">
+  <button class="tab active" data-tab="overview">🏔️ Overview</button>
+  <button class="tab" data-tab="norcal">🌲 N. California</button>
+  <button class="tab" data-tab="socal">🌴 S. California</button>
+  <button class="tab" data-tab="newengland">🍂 New England</button>
+  <button class="tab" data-tab="nationwide">🇺🇸 Rest of USA</button>
+</div>
+
+<div id="tab-overview" class="tab-content">
+  <div class="overview">
+    <div class="overview-hero"><h2>Welcome to Your America, Lenny</h2><p>Your Lifetime Senior Pass unlocks free entrance to over 2,000 federal recreation sites — national parks, forests, monuments, wildlife refuges, and historic sites — for the rest of your life. Plus 50% off camping at most federal campgrounds.</p></div>
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-num">$80</div><div class="stat-label">One-Time Cost</div><div class="stat-sub">Never expires</div></div>
+      <div class="stat-card"><div class="stat-num">2,000+</div><div class="stat-label">Sites Unlocked</div><div class="stat-sub">Coast to coast</div></div>
+      <div class="stat-card"><div class="stat-num">50%</div><div class="stat-label">Off Camping</div><div class="stat-sub">Federal campgrounds</div></div>
+      <div class="stat-card"><div class="stat-num">Everyone</div><div class="stat-label">In Your Vehicle</div><div class="stat-sub">Family rides free</div></div>
+    </div>
+    <div class="info-section"><h3>Annual Savings Scenarios</h3>
+      <div class="savings-row"><div class="savings-label">3 parks/year</div><div class="savings-bar-track"><div class="savings-bar-fill" style="width:13%;background:var(--forest-muted)">$105</div></div></div>
+      <div class="savings-row"><div class="savings-label">6 parks + camping</div><div class="savings-bar-track"><div class="savings-bar-fill" style="width:42%;background:var(--forest-light)">$335</div></div></div>
+      <div class="savings-row"><div class="savings-label">12 parks + 30 nights</div><div class="savings-bar-track"><div class="savings-bar-fill" style="width:100%;background:var(--forest)">$796+</div></div></div>
+      <p style="font-size:.82rem;color:var(--text-muted);text-align:center;margin-top:.5rem">The $80 pass pays for itself in just 2–3 park visits</p>
+    </div>
+    <div class="info-section"><h3>How to Use Your Pass</h3>
+      <div class="info-card"><div class="info-card-title">At the Entrance</div><div class="info-card-text">Show your pass and photo ID at the entrance station. The ranger will wave you through. At self-service stations, display it on your dashboard.</div></div>
+      <div class="info-card"><div class="info-card-title">For Camping Discounts</div><div class="info-card-text">Enter your pass number on Recreation.gov when reserving a campsite. At first-come sites, show your pass to the campground host. Note: the 50% discount applies to the campsite fee only — reservation fees ($6–$10) and utility hookups are not discounted.</div></div>
+      <div class="info-card"><div class="info-card-title">Companion Coverage</div><div class="info-card-text">At most parks: covers everyone in your vehicle. At per-person sites: you plus up to 3 adults. Kids under 16 always free.</div></div>
+    </div>
+    <div class="not-covered"><h4>What the Pass Does NOT Cover</h4><p>State parks (separate state passes needed), concession-operated facilities (lodges, restaurants, gift shops), special tours with separate fees, utility hookups at campgrounds, backcountry permits, gear rentals, and <strong>state fishing licenses</strong> (see below).</p></div>
+    <div class="info-section" id="fishing-licenses"><h3>🎣 State Fishing Licenses</h3>
+      <p style="font-size:.85rem;color:var(--text-muted);line-height:1.5;margin-bottom:.75rem">Your Senior Pass covers entrance fees, but each state requires its own fishing license. Here's what you need to know for the states where you fish most:</p>
+      <div id="fishing-license-cards"></div>
+    </div>
+    <div class="info-section"><h3>🎒 What to Bring on Every Visit</h3>
+      <div class="checklist">
+        <div class="checklist-item">✅ <strong>Senior Pass card</strong> (signed)</div>
+        <div class="checklist-item">✅ <strong>Photo ID</strong> (driver's license)</div>
+        <div class="checklist-item">✅ <strong>State fishing license</strong> if fishing</div>
+        <div class="checklist-item">✅ Water and snacks</div>
+        <div class="checklist-item">✅ Sunscreen and hat</div>
+        <div class="checklist-item">✅ Layers (mountain weather changes fast)</div>
+        <div class="checklist-item">✅ Comfortable walking shoes</div>
+        <div class="checklist-item">✅ Phone charger / power bank</div>
+        <div class="checklist-item">✅ Binoculars (for wildlife and birds)</div>
+        <div class="checklist-item">✅ Camera</div>
+      </div>
+    </div>
+    <div class="booklet-note">📖 <strong>Have your printed booklet?</strong> It covers Northern California, Southern California, and New England in detail with maps you can take in the car. This online guide adds 57 more sites nationwide, plus interactive maps and filters.</div>
+    <div class="info-section"><h3>Helpful Websites</h3>
+      <div class="websites">
+        <div class="website-item"><strong>nps.gov</strong> — Trip planning & maps</div>
+        <div class="website-item"><strong>recreation.gov</strong> — Campground reservations</div>
+        <div class="website-item"><strong>fws.gov</strong> — Wildlife refuge info</div>
+        <div class="website-item"><strong>fs.usda.gov</strong> — National forest info</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="tab-norcal" class="tab-content hidden">
+  <div class="region-alerts" id="alerts-norcal"></div>
+  <div class="region-intro" id="intro-norcal"></div>
+  <div id="start-here-norcal"></div>
+  <div class="filters" id="filters-norcal"></div>
+  <div class="legend-strip" id="legend-norcal"></div>
+  <div id="map-norcal" class="map-container"></div>
+  <div class="site-list" id="list-norcal"></div>
+</div>
+
+<div id="tab-socal" class="tab-content hidden">
+  <div class="region-alerts" id="alerts-socal"></div>
+  <div class="region-intro" id="intro-socal"></div>
+  <div id="start-here-socal"></div>
+  <div class="filters" id="filters-socal"></div>
+  <div class="legend-strip" id="legend-socal"></div>
+  <div id="map-socal" class="map-container"></div>
+  <div class="site-list" id="list-socal"></div>
+</div>
+
+<div id="tab-newengland" class="tab-content hidden">
+  <div class="region-alerts" id="alerts-newengland"></div>
+  <div class="region-intro" id="intro-newengland"></div>
+  <div id="start-here-newengland"></div>
+  <div class="filters" id="filters-newengland"></div>
+  <div class="legend-strip" id="legend-newengland"></div>
+  <div id="map-newengland" class="map-container"></div>
+  <div class="site-list" id="list-newengland"></div>
+</div>
+
+<div id="tab-nationwide" class="tab-content hidden">
+  <div class="region-alerts" id="alerts-nationwide"></div>
+  <div class="region-intro" id="intro-nationwide"></div>
+  <div class="filters" id="filters-nationwide"></div>
+  <div class="legend-strip" id="legend-nationwide"></div>
+  <div id="map-nationwide" class="map-container" style="height:500px"></div>
+  <div class="site-list" id="list-nationwide"></div>
+</div>
+
+<button class="trip-fab" id="trip-fab" style="display:none" aria-label="My Trip List">📋 My Trip <span class="badge" id="trip-count">0</span></button>
+<div class="trip-panel-overlay" id="trip-overlay"></div>
+<div class="trip-panel" id="trip-panel">
+  <div class="trip-panel-header">
+    <h3>📋 My Trip List</h3>
+    <button class="trip-panel-close" id="trip-close" aria-label="Close">✕</button>
+  </div>
+  <div class="trip-panel-body" id="trip-body">
+    <div class="trip-empty">Tap the ♡ on any site to add it to your trip list.</div>
+  </div>
+  <div class="trip-panel-footer">
+    <button class="trip-share-btn" id="trip-share">📤 Share List</button>
+    <button class="trip-clear-btn" id="trip-clear">Clear All</button>
+  </div>
+</div>
+
+<button class="back-to-map" id="back-to-map" aria-label="Back to map">🗺️ Back to Map</button>
+
+<div class="footer">
+  <p>"The world is big and I want to have a good look at it before it gets dark." — John Muir</p>
+  <p class="signoff">Your pass. Your guide. Your America. 🌿</p>
+  <p style="font-family:'Source Sans 3',sans-serif;font-style:normal;font-size:.72rem;color:#bbb;margin-top:.5rem">Lenny's Adventure Guide v2 · Data last updated Feb 2026 · Made with ❤️</p>
+</div>
+
+<script>
+// ===== APP STATE =====
+let DATA = null;
+const maps = {}, mkrs = {}, activeFilter = {}, selected = {}, initialized = {};
+const REGIONS = ['norcal', 'socal', 'newengland', 'nationwide'];
+
+// ===== LOAD DATA =====
+async function loadData() {
+  try {
+    const resp = await fetch('/data/sites.json');
+    DATA = await resp.json();
+    boot();
+  } catch (e) {
+    // Fallback: try relative path (for local dev)
+    try {
+      const resp = await fetch('data/sites.json');
+      DATA = await resp.json();
+      boot();
+    } catch (e2) {
+      console.error('Failed to load site data:', e2);
+      document.querySelector('.overview-hero p').textContent = 'Unable to load site data. Please check your connection and refresh.';
+    }
+  }
+}
+
+function boot() {
+  REGIONS.forEach(r => { activeFilter[r] = 'all'; selected[r] = null; });
+  renderFishingLicenses();
+  initFavorites();
+  setupTabs();
+}
+
+// ===== FAVORITES / TRIP LIST =====
+let favorites = new Set();
+const alertsCache = {}; // { parkCode: [alert, ...] }
+const alertsFetched = new Set(); // regions already fetched
+
+function initFavorites() {
+  try {
+    const saved = localStorage.getItem('lennys-favorites');
+    if (saved) favorites = new Set(JSON.parse(saved));
+  } catch (e) {}
+  updateTripFab();
+}
+
+function saveFavorites() {
+  try {
+    localStorage.setItem('lennys-favorites', JSON.stringify([...favorites]));
+  } catch (e) {}
+  updateTripFab();
+}
+
+function toggleFavorite(siteId) {
+  if (favorites.has(siteId)) {
+    favorites.delete(siteId);
+  } else {
+    favorites.add(siteId);
+  }
+  saveFavorites();
+  // Re-render current region list to update heart icons
+  const activeTab = document.querySelector('.tab.active');
+  if (activeTab) {
+    const r = activeTab.dataset.tab;
+    if (r !== 'overview') renderList(r);
+  }
+  renderTripPanel();
+}
+
+function updateTripFab() {
+  const fab = document.getElementById('trip-fab');
+  const count = document.getElementById('trip-count');
+  if (favorites.size > 0) {
+    fab.style.display = 'block';
+    count.textContent = favorites.size;
+  } else {
+    fab.style.display = 'none';
+  }
+}
+
+function renderTripPanel() {
+  const body = document.getElementById('trip-body');
+  if (favorites.size === 0) {
+    body.innerHTML = '<div class="trip-empty">Tap the ♡ on any site to add it to your trip list.</div>';
+    return;
+  }
+  const sites = DATA.sites.filter(s => favorites.has(s.id));
+  // Group by region
+  const groups = { norcal: [], socal: [], newengland: [], nationwide: [] };
+  sites.forEach(s => { if (groups[s.region]) groups[s.region].push(s); });
+  const regionLabels = { norcal: '🌲 Northern California', socal: '🌴 Southern California', newengland: '🍂 New England', nationwide: '🇺🇸 Nationwide' };
+
+  let h = '';
+  for (const [r, rSites] of Object.entries(groups)) {
+    if (rSites.length === 0) continue;
+    h += `<div style="font-size:.75rem;color:var(--forest-muted);font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-top:.5rem;margin-bottom:.2rem">${regionLabels[r]}</div>`;
+    rSites.forEach(site => {
+      const drive = site.driveFrom ? (site.driveFrom.sacramento || site.driveFrom.boston || '') : '';
+      h += `<div class="trip-site">
+        <div class="trip-site-info">
+          <div class="trip-site-name">${site.name}</div>
+          <div class="trip-site-meta">${site.type}${drive ? ' · ' + drive : ''}</div>
+        </div>
+        <button class="trip-site-remove" data-id="${site.id}" aria-label="Remove">✕</button>
+      </div>`;
+    });
+  }
+  body.innerHTML = h;
+
+  // Remove handlers
+  body.querySelectorAll('.trip-site-remove').forEach(btn => {
+    btn.addEventListener('click', () => {
+      toggleFavorite(btn.dataset.id);
+    });
+  });
+}
+
+// Trip panel open/close
+(function() {
+  const fab = document.getElementById('trip-fab');
+  const panel = document.getElementById('trip-panel');
+  const overlay = document.getElementById('trip-overlay');
+  const closeBtn = document.getElementById('trip-close');
+  const shareBtn = document.getElementById('trip-share');
+  const clearBtn = document.getElementById('trip-clear');
+
+  function openPanel() {
+    renderTripPanel();
+    panel.classList.add('open');
+    overlay.classList.add('open');
+  }
+  function closePanel() {
+    panel.classList.remove('open');
+    overlay.classList.remove('open');
+  }
+
+  fab.addEventListener('click', openPanel);
+  closeBtn.addEventListener('click', closePanel);
+  overlay.addEventListener('click', closePanel);
+
+  shareBtn.addEventListener('click', () => {
+    const sites = DATA.sites.filter(s => favorites.has(s.id));
+    const text = "Lenny's Trip List:\n" + sites.map(s => `• ${s.name} (${s.type})`).join('\n');
+    if (navigator.share) {
+      navigator.share({ title: "Lenny's Trip List", text }).catch(() => {});
+    } else {
+      navigator.clipboard.writeText(text).then(() => {
+        shareBtn.textContent = '✓ Copied!';
+        setTimeout(() => { shareBtn.textContent = '📤 Share List'; }, 2000);
+      });
+    }
+  });
+
+  clearBtn.addEventListener('click', () => {
+    if (confirm('Remove all sites from your trip list?')) {
+      favorites.clear();
+      saveFavorites();
+      renderTripPanel();
+      closePanel();
+      // Re-render active list
+      const activeTab = document.querySelector('.tab.active');
+      if (activeTab && activeTab.dataset.tab !== 'overview') renderList(activeTab.dataset.tab);
+    }
+  });
+})();
+
+// ===== NPS ALERTS =====
+async function fetchAlertsForRegion(r) {
+  if (alertsFetched.has(r)) return;
+  alertsFetched.add(r);
+
+  const sites = getSitesForRegion(r);
+  const codes = sites.filter(s => s.npsCode).map(s => s.npsCode);
+  if (codes.length === 0) return;
+
+  const el = document.getElementById('alerts-' + r);
+  if (el) el.innerHTML = '<div class="alert-loading">🔄 Checking for park alerts...</div>';
+
+  try {
+    // Batch in groups of 20 (NPS API limit)
+    const batches = [];
+    for (let i = 0; i < codes.length; i += 20) {
+      batches.push(codes.slice(i, i + 20).join(','));
+    }
+
+    const allAlerts = [];
+    for (const batch of batches) {
+      const resp = await fetch(`/api/alerts?parkCode=${batch}`);
+      if (resp.ok) {
+        const data = await resp.json();
+        allAlerts.push(...(data.alerts || []));
+      }
+    }
+
+    // Cache alerts by parkCode
+    allAlerts.forEach(a => {
+      if (!alertsCache[a.parkCode]) alertsCache[a.parkCode] = [];
+      alertsCache[a.parkCode].push(a);
+    });
+
+    // Show important alerts (Danger, Closure, Caution) at top of region
+    const important = allAlerts.filter(a =>
+      ['Danger', 'Park Closure', 'Caution'].includes(a.category)
+    ).slice(0, 5); // Max 5 shown at region level
+
+    if (el) {
+      if (important.length === 0) {
+        el.innerHTML = '';
+      } else {
+        el.innerHTML = important.map(a => {
+          const cat = a.category.toLowerCase().replace(' ', '-').replace('park-', '');
+          const icon = cat === 'danger' || cat === 'closure' ? '🚨' : cat === 'caution' ? '⚠️' : 'ℹ️';
+          const parkName = DATA.sites.find(s => s.npsCode === a.parkCode)?.name || a.parkCode;
+          return `<div class="alert-banner ${cat}">
+            <span class="alert-icon">${icon}</span>
+            <div class="alert-text"><strong>${parkName}:</strong> ${a.title}${a.url ? ` <a href="${a.url}" target="_blank">[details]</a>` : ''}</div>
+          </div>`;
+        }).join('');
+      }
+    }
+
+    // Re-render list to add alert dots to cards
+    renderList(r);
+
+  } catch (err) {
+    console.log('Alerts fetch skipped (offline or API unavailable):', err.message);
+    if (el) el.innerHTML = '';
+  }
+}
+
+// ===== INTEREST CONFIG =====
+function getInterests() { return DATA.interests; }
+function getTypeColor(type) { return DATA.typeColors[type] || '#888'; }
+function getTypeBg(type) { return DATA.typeBgColors[type] || '#F5F5F5'; }
+function getSitesForRegion(region) { return DATA.sites.filter(s => s.region === region); }
+
+// ===== FISHING LICENSES =====
+function renderFishingLicenses() {
+  const el = document.getElementById('fishing-license-cards');
+  if (!el || !DATA.fishingLicenses) return;
+  let html = '';
+  for (const [key, lic] of Object.entries(DATA.fishingLicenses)) {
+    const color = lic.seniorDiscount ? 'var(--forest)' : 'var(--sand)';
+    html += `<div class="info-card" style="border-left-color:${color}">
+      <div class="info-card-title">${lic.state} ${lic.seniorDiscount ? '✅' : '⚠️'}</div>
+      <div class="info-card-text">${lic.details}<br><em style="font-size:.8rem;color:var(--brown)">${lic.tip}</em></div>
+    </div>`;
+  }
+  el.innerHTML = html;
+}
+
+// ===== TABS =====
+function setupTabs() {
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
+      tab.classList.add('active');
+      const r = tab.dataset.tab;
+      document.getElementById('tab-' + r).classList.remove('hidden');
+      if (r !== 'overview' && !initialized[r]) initRegion(r);
+      if (maps[r]) setTimeout(() => maps[r].invalidateSize(), 100);
+      // Fetch NPS alerts when region tab is opened
+      if (r !== 'overview') fetchAlertsForRegion(r);
+    });
+  });
+}
+
+// ===== REGION INIT =====
+function initRegion(r) {
+  initialized[r] = true;
+  const sites = getSitesForRegion(r);
+  const regionConf = DATA.regions[r];
+  const I = getInterests();
+
+  // Region intro
+  const introEl = document.getElementById('intro-' + r);
+  if (introEl && regionConf.intro) {
+    introEl.innerHTML = `<p>${regionConf.intro}</p>`;
+  }
+
+  // Start Here recommendation
+  if (regionConf.startHere) {
+    const shEl = document.getElementById('start-here-' + r);
+    if (shEl) {
+      const site = DATA.sites.find(s => s.id === regionConf.startHere.siteId);
+      const name = site ? site.name : '';
+      shEl.innerHTML = `<div class="start-here">
+        <div class="start-here-label">⭐ Start Here — ${name}</div>
+        <div class="start-here-text">${regionConf.startHere.reason}</div>
+      </div>`;
+    }
+  }
+
+  // Filters
+  const filtersEl = document.getElementById('filters-' + r);
+  [{k:'all',ic:'🗺️',l:'All Sites'},{k:'fishing',ic:'🎣',l:'Fishing'},{k:'biking',ic:'🚲',l:'Biking'},{k:'history',ic:'📜',l:'History'},{k:'easy',ic:'🛤️',l:'Easy Access'}].forEach(f => {
+    const b = document.createElement('button');
+    b.className = 'filter-btn' + (f.k === 'all' ? ' active' : '');
+    b.textContent = f.ic + ' ' + f.l;
+    b.addEventListener('click', () => {
+      activeFilter[r] = f.k;
+      filtersEl.querySelectorAll('.filter-btn').forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      updateMarkerVisibility(r);
+      renderList(r);
+    });
+    filtersEl.appendChild(b);
+  });
+
+  // Legend
+  const lg = document.getElementById('legend-' + r);
+  [...new Set(sites.map(s => s.type))].forEach(type => {
+    const sp = document.createElement('span');
+    sp.className = 'legend-item';
+    sp.innerHTML = `<span class="legend-dot" style="background:${getTypeColor(type)}"></span> ${type}`;
+    lg.appendChild(sp);
+  });
+
+  // Map
+  const v = regionConf;
+  const map = L.map('map-' + r).setView(v.center, v.zoom);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 17
+  }).addTo(map);
+  maps[r] = map;
+  mkrs[r] = {};
+  const isMobile = window.innerWidth <= 768;
+  const sz = r === 'nationwide' ? (isMobile ? 16 : 14) : (isMobile ? 22 : 18);
+  const touchPad = isMobile ? 8 : 0; // Extra invisible padding for touch targets
+
+  // Use marker clustering for nationwide (57 markers)
+  let clusterGroup = null;
+  if (r === 'nationwide' && typeof L.markerClusterGroup === 'function') {
+    clusterGroup = L.markerClusterGroup({
+      maxClusterRadius: isMobile ? 50 : 40,
+      spiderfyOnMaxZoom: true,
+      showCoverageOnHover: false,
+      zoomToBoundsOnClick: true,
+      disableClusteringAtZoom: 7
+    });
+    map.addLayer(clusterGroup);
+  }
+
+  sites.forEach((site, idx) => {
+    const c = getTypeColor(site.type);
+    const visitedRing = site.visited ? 'border:2.5px solid #FFD700;' : '';
+    const totalSz = sz + touchPad * 2;
+    const icon = L.divIcon({
+      className: '',
+      html: `<div style="padding:${touchPad}px;display:flex;align-items:center;justify-content:center"><div class="custom-marker" data-idx="${idx}" style="width:${sz}px;height:${sz}px;background:${c};${visitedRing}"></div></div>`,
+      iconSize: [totalSz, totalSz],
+      iconAnchor: [totalSz / 2, totalSz / 2]
+    });
+    const m = L.marker([site.lat, site.lng], { icon });
+    if (clusterGroup) {
+      clusterGroup.addLayer(m);
+    } else {
+      m.addTo(map);
+    }
+    m.on('click', () => {
+      selected[r] = selected[r] === idx ? null : idx;
+      updateMarkerSelection(r);
+      renderList(r);
+      if (selected[r] !== null) {
+        showPopup(r, idx);
+        scrollToCard(r, idx);
+      } else {
+        map.closePopup();
+      }
+    });
+    mkrs[r][idx] = m;
+  });
+
+  renderList(r);
+
+  // Pre-cache visible tiles for offline use (deferred, non-blocking)
+  map.on('moveend', function onceCache() {
+    map.off('moveend', onceCache); // Only once per region
+    requestTileCaching(map);
+  });
+}
+
+// Request tile caching for the visible map area (±1 zoom level)
+function requestTileCaching(map) {
+  if (!navigator.serviceWorker || !navigator.serviceWorker.controller) return;
+  const bounds = map.getBounds();
+  const zoom = map.getZoom();
+  const tiles = [];
+
+  // Cache current zoom and one level deeper
+  for (let z = Math.max(zoom - 1, 4); z <= Math.min(zoom + 1, 10); z++) {
+    const min = map.project(bounds.getSouthWest(), z).divideBy(256).floor();
+    const max = map.project(bounds.getNorthEast(), z).divideBy(256).floor();
+    for (let x = min.x; x <= max.x; x++) {
+      for (let y = max.y; y <= min.y; y++) { // y is inverted
+        const subdomains = ['a', 'b', 'c'];
+        const s = subdomains[Math.abs(x + y) % 3];
+        tiles.push(`https://${s}.tile.openstreetmap.org/${z}/${x}/${y}.png`);
+      }
+    }
+  }
+
+  if (tiles.length > 0 && tiles.length < 500) {
+    navigator.serviceWorker.controller.postMessage({
+      type: 'CACHE_TILES',
+      tiles
+    });
+  }
+}
+function getDirectionsUrl(site) {
+  return `https://www.google.com/maps/dir/?api=1&destination=${site.lat},${site.lng}&destination_place_id=&travelmode=driving`;
+}
+
+function showPopup(r, idx) {
+  const sites = getSitesForRegion(r);
+  const site = sites[idx];
+  const fl = activeFilter[r];
+  const I = getInterests();
+  let th = '';
+  if (fl !== 'all' && site.highlights[fl]) {
+    th = `<div class="popup-highlight"><strong>${I[fl].icon} ${I[fl].label}:</strong> ${site.highlights[fl]}</div>`;
+  } else {
+    for (const [k, v] of Object.entries(site.highlights)) {
+      th += `<div class="popup-highlight"><strong>${I[k].icon} ${I[k].label}:</strong> ${v}</div>`;
+    }
+  }
+  const fh = site.passSaves
+    ? `<span class="popup-fee">Pass saves ${site.fee}</span>`
+    : (site.fee === 'Free' ? '' : `<span class="popup-fee" style="background:var(--slate)">${site.fee}</span>`);
+  const vh = site.visited ? '<span class="popup-visited">✓ You\'ve been here</span>' : '';
+  const sh = site.state ? `<br><span style="font-size:.7rem;color:#B08968;font-weight:600">${site.state}</span>` : '';
+  const seasonal = site.seasonal ? `<div class="popup-seasonal">📅 Best: ${site.seasonal.best} — ${site.seasonal.note}</div>` : '';
+  const dirUrl = getDirectionsUrl(site);
+  const dirLink = `<a class="popup-directions" href="${dirUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()">🧭 Get Directions</a>`;
+
+  // Popup alerts
+  const popupAlerts = site.npsCode ? (alertsCache[site.npsCode] || []) : [];
+  const popupAlertHtml = popupAlerts.slice(0, 2).map(a => {
+    const icon = ['Danger', 'Park Closure'].includes(a.category) ? '🚨' : a.category === 'Caution' ? '⚠️' : 'ℹ️';
+    return `<div style="font-size:.75rem;padding:.25rem .4rem;margin-top:.3rem;background:#FFF8E1;border-radius:4px;line-height:1.3">${icon} ${a.title}</div>`;
+  }).join('');
+
+  mkrs[r][idx].bindPopup(
+    `<div class="popup-inner"><h3>${site.name}${vh}</h3><div class="popup-type">${site.type}${sh}</div>${fh}<div class="popup-desc">${site.description}</div>${th}${seasonal}${popupAlertHtml}${dirLink}</div>`,
+    { maxWidth: window.innerWidth <= 768 ? 260 : 300, closeButton: true }
+  ).openPopup();
+}
+
+// ===== MARKER UTILS =====
+function updateMarkerVisibility(r) {
+  const sites = getSitesForRegion(r);
+  const fl = activeFilter[r];
+  sites.forEach((site, idx) => {
+    const match = fl === 'all' || site.interests.includes(fl);
+    const el = mkrs[r][idx].getElement();
+    if (el) {
+      el.style.opacity = match ? '1' : '0.15';
+      el.style.pointerEvents = match ? 'auto' : 'none';
+    }
+  });
+}
+
+function updateMarkerSelection(r) {
+  const sites = getSitesForRegion(r);
+  sites.forEach((s, idx) => {
+    const el = mkrs[r][idx].getElement();
+    if (!el) return;
+    const d = el.querySelector('.custom-marker');
+    if (d) d.classList.toggle('selected', selected[r] === idx);
+  });
+}
+
+function scrollToCard(r, idx) {
+  const c = document.querySelector(`#list-${r} [data-site="${idx}"]`);
+  if (c) c.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+// ===== RENDER LIST =====
+const SUBREGION_LABELS = {
+  west: '🏔️ West',
+  southwest: '🏜️ Southwest',
+  southeast: '🌴 Southeast',
+  midatlantic: '🗽 Mid-Atlantic & DC',
+  midwest: '🌾 Midwest & Plains',
+  rivers_lakes: '🛶 Rivers & Lakes',
+  battlefields: '⚔️ Battlefields & Military History',
+};
+const SUBREGION_ORDER = ['west', 'southwest', 'southeast', 'midatlantic', 'midwest', 'rivers_lakes', 'battlefields'];
+
+function renderSiteCard(site, r, I, fl) {
+  const act = selected[r] === site.idx;
+  const bg = act ? getTypeBg(site.type) : 'white';
+  const bc = act ? getTypeColor(site.type) : '#ddd';
+  const tc = getTypeColor(site.type);
+  const ic = site.interests.map(x => `<span class="site-interest-icon">${I[x].icon}</span>`).join('');
+  const sh = site.state ? `<div class="site-state">${site.state}</div>` : '';
+  const vh = site.visited ? '<span class="site-visited-badge">✓ Visited</span>' : '';
+
+  // Fee badge: green for pass-saves, blue for paid-no-save, nothing for free
+  let feeBadge = '';
+  if (site.passSaves) {
+    feeBadge = `<span class="site-fee">${site.fee}</span>`;
+  } else if (site.fee !== 'Free') {
+    feeBadge = `<span class="site-fee-free">${site.fee}</span>`;
+  }
+
+  // Drive time
+  let dt = '';
+  if (site.driveFrom) {
+    const sac = site.driveFrom.sacramento;
+    const bos = site.driveFrom.boston;
+    if (sac) dt = `<div class="site-drive">🚗 ${sac} from Sacramento</div>`;
+    else if (bos) dt = `<div class="site-drive">🚗 ${bos} from Boston</div>`;
+  }
+
+  // Seasonal
+  const seasonal = site.seasonal ? `<div class="site-seasonal">📅 Best: ${site.seasonal.best}${act ? ' — ' + site.seasonal.note : ''}</div>` : '';
+
+  // Highlights
+  let th = '';
+  if (fl !== 'all' && site.highlights[fl]) {
+    th = `<div class="site-highlight" style="background:${tc}08"><strong>${I[fl].icon} ${I[fl].label}:</strong> ${site.highlights[fl]}</div>`;
+  } else if (act) {
+    for (const [k, v] of Object.entries(site.highlights)) {
+      th += `<div class="site-highlight" style="background:${tc}08"><strong>${I[k].icon} ${I[k].label}:</strong> ${v}</div>`;
+    }
+  }
+
+  // Directions link (shown when expanded)
+  const dirLink = act ? `<a class="site-directions" href="${getDirectionsUrl(site)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">🧭 Get Directions</a>` : '';
+
+  // Favorite heart
+  const isFav = favorites.has(site.id);
+  const favHeart = `<button class="fav-btn${isFav ? ' saved' : ''}" data-fav-id="${site.id}" onclick="event.stopPropagation();toggleFavorite('${site.id}')" aria-label="${isFav ? 'Remove from' : 'Add to'} trip list">${isFav ? '❤️' : '♡'}</button>`;
+
+  // Alert dot (if site has active alerts)
+  const siteAlerts = site.npsCode ? (alertsCache[site.npsCode] || []) : [];
+  const hasAlert = siteAlerts.some(a => ['Danger', 'Park Closure', 'Caution'].includes(a.category));
+  const alertDot = hasAlert ? '<span class="site-alert-dot" title="Active alert"></span>' : '';
+
+  // Alert details when expanded
+  let alertHtml = '';
+  if (act && siteAlerts.length > 0) {
+    alertHtml = siteAlerts.slice(0, 3).map(a => {
+      const cat = a.category.toLowerCase().replace(' ', '-').replace('park-', '');
+      const icon = cat === 'danger' || cat === 'closure' ? '🚨' : cat === 'caution' ? '⚠️' : 'ℹ️';
+      return `<div class="alert-banner ${cat}" style="margin-top:.3rem;font-size:.78rem">${icon} <div class="alert-text"><strong>${a.category}:</strong> ${a.title}</div></div>`;
+    }).join('');
+  }
+
+  return `<div class="site-card${act ? ' active' : ''}" data-site="${site.idx}" data-region="${r}" style="background:${bg};border-color:${bc}">
+    ${favHeart}${sh}<h4>${site.name}${alertDot}${vh}</h4>${feeBadge}
+    <div class="site-meta"><span class="site-type-tag" style="background:${tc}18;color:${tc}">${site.type}</span>${ic}</div>
+    <div class="site-desc">${site.description}</div>${th}${alertHtml}${dt}${seasonal}${dirLink}
+  </div>`;
+}
+
+function renderList(r) {
+  const el = document.getElementById('list-' + r);
+  const fl = activeFilter[r];
+  const sites = getSitesForRegion(r);
+  const I = getInterests();
+  const filtered = sites.map((s, i) => ({ ...s, idx: i })).filter(s => fl === 'all' || s.interests.includes(fl));
+
+  let h = `<div class="site-count">${filtered.length} site${filtered.length !== 1 ? 's' : ''} shown${fl !== 'all' ? ' · filtered by ' + I[fl].label : ''}</div>`;
+
+  // Nationwide: group by sub-region
+  if (r === 'nationwide') {
+    for (const sr of SUBREGION_ORDER) {
+      const group = filtered.filter(s => s.subregion === sr);
+      if (group.length === 0) continue;
+      h += `<div class="subregion-header">${SUBREGION_LABELS[sr] || sr} <span style="font-size:.78rem;color:var(--text-muted);font-weight:400">(${group.length})</span></div>`;
+      group.forEach(site => { h += renderSiteCard(site, r, I, fl); });
+    }
+    // Any without subregion
+    const ungrouped = filtered.filter(s => !s.subregion);
+    if (ungrouped.length > 0) {
+      h += `<div class="subregion-header">Other Sites</div>`;
+      ungrouped.forEach(site => { h += renderSiteCard(site, r, I, fl); });
+    }
+  } else {
+    // Regional tabs: flat list
+    filtered.forEach(site => { h += renderSiteCard(site, r, I, fl); });
+  }
+
+  el.innerHTML = h;
+
+  // Card click handlers
+  el.querySelectorAll('.site-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const idx = parseInt(card.dataset.site);
+      const rg = card.dataset.region;
+      selected[rg] = selected[rg] === idx ? null : idx;
+      updateMarkerSelection(rg);
+      renderList(rg);
+      if (selected[rg] !== null) {
+        const s = getSitesForRegion(rg)[idx];
+        maps[rg].flyTo([s.lat, s.lng], rg === 'nationwide' ? 8 : 10, { duration: 0.8 });
+        showPopup(rg, idx);
+      } else {
+        maps[rg].closePopup();
+      }
+    });
+  });
+}
+
+// ===== REGISTER SERVICE WORKER =====
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(err => {
+      console.log('SW registration skipped:', err);
+    });
+  });
+}
+
+// ===== BACK TO MAP BUTTON =====
+(function() {
+  const btn = document.getElementById('back-to-map');
+  let currentRegion = null;
+
+  // Watch which region tab is active
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting && currentRegion && maps[currentRegion]) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px' });
+
+  // Re-observe when tabs change
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const r = tab.dataset.tab;
+      currentRegion = r;
+      btn.classList.remove('visible');
+      // Observe the map container for this region
+      observer.disconnect();
+      const mapEl = document.getElementById('map-' + r);
+      if (mapEl) observer.observe(mapEl);
+    });
+  });
+
+  btn.addEventListener('click', () => {
+    if (currentRegion) {
+      const mapEl = document.getElementById('map-' + currentRegion);
+      if (mapEl) {
+        mapEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  });
+})();
+
+// ===== PWA INSTALL PROMPT =====
+(function() {
+  let deferredPrompt = null;
+  const banner = document.getElementById('pwa-banner');
+  const installBtn = document.getElementById('pwa-install-btn');
+  const dismissBtn = document.getElementById('pwa-dismiss');
+
+  // Detect iOS Safari (no beforeinstallprompt)
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+
+  if (isStandalone) return; // Already installed
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    if (!localStorage.getItem('pwa-dismissed')) {
+      banner.classList.add('visible');
+    }
+  });
+
+  // On iOS, show manual instructions
+  if (isIOS && !isStandalone && !sessionStorage.getItem('pwa-ios-shown')) {
+    setTimeout(() => {
+      banner.querySelector('button:not(.dismiss)').textContent = 'How?';
+      if (!localStorage.getItem('pwa-dismissed')) {
+        banner.classList.add('visible');
+      }
+    }, 3000);
+  }
+
+  if (installBtn) {
+    installBtn.addEventListener('click', async () => {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const result = await deferredPrompt.userChoice;
+        deferredPrompt = null;
+        banner.classList.remove('visible');
+      } else if (isIOS) {
+        alert('To install: tap the Share button (box with arrow) at the bottom of Safari, then tap "Add to Home Screen"');
+        sessionStorage.setItem('pwa-ios-shown', '1');
+        banner.classList.remove('visible');
+      }
+    });
+  }
+
+  if (dismissBtn) {
+    dismissBtn.addEventListener('click', () => {
+      banner.classList.remove('visible');
+      localStorage.setItem('pwa-dismissed', '1');
+    });
+  }
+})();
+
+// ===== SCROLL RESET ON TAB SWITCH =====
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    // Small delay to let content render
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }, 50);
+  });
+});
+
+// ===== INIT =====
+loadData();
+</script>
+</body>
+</html>
