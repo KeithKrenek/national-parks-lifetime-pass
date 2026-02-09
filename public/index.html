@@ -127,57 +127,122 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--tex
 
 /* ===== MOBILE RESPONSIVE ===== */
 @media(max-width:768px){
-  body{font-size:16px;-webkit-text-size-adjust:100%}
+  body{font-size:17px;-webkit-text-size-adjust:100%}
   .header{padding:1.5rem .75rem 1.2rem}
   .header h1{font-size:1.6rem}
-  .header-sub{font-size:.82rem}
+  .header-sub{font-size:.85rem}
   .tabs{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory}
-  .tab{min-width:0;padding:.75rem .25rem;font-size:.72rem;min-height:44px;scroll-snap-align:center}
-  .map-container{height:280px}
-  .map-container[style*="height:500px"]{height:320px !important}
-  .filters{padding:.6rem .75rem;gap:.4rem}
-  .filter-btn{padding:.5rem .75rem;font-size:.8rem;min-height:44px;display:inline-flex;align-items:center}
-  .legend-strip{padding:.4rem .75rem;gap:.5rem;font-size:.72rem;overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch}
+  .tab{min-width:0;padding:.85rem .3rem;font-size:.82rem;min-height:48px;scroll-snap-align:center}
+  .map-container{height:300px}
+  .map-container[style*="height:500px"]{height:340px !important}
+  .filters{padding:.65rem .75rem;gap:.45rem}
+  .filter-btn{padding:.55rem .85rem;font-size:.88rem;min-height:48px;display:inline-flex;align-items:center}
+  .legend-strip{padding:.45rem .75rem;gap:.5rem;font-size:.78rem;overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch}
   .legend-item{white-space:nowrap}
   .site-list{padding:.5rem .75rem 5rem}
-  .site-card{padding:.85rem;margin-bottom:.6rem}
-  .site-card h4{font-size:1.05rem;padding-right:4.5rem}
-  .site-desc{font-size:.88rem;line-height:1.5}
-  .site-highlight{font-size:.85rem;padding:.5rem .65rem}
-  .site-fee,.site-fee-free{font-size:.72rem;padding:.2rem .55rem}
-  .site-interest-icon{font-size:1rem}
-  .site-seasonal{font-size:.82rem}
-  .site-drive{font-size:.8rem}
-  .site-directions{font-size:.8rem;padding:.35rem .6rem;min-height:40px;display:inline-flex;align-items:center}
-  .leaflet-popup-content{width:260px !important;max-width:85vw !important}
-  .popup-inner{padding:.85rem}
-  .popup-inner h3{font-size:1rem}
-  .popup-desc{font-size:.85rem}
-  .popup-highlight{font-size:.82rem}
-  .popup-directions{font-size:.8rem;padding:.35rem .65rem;min-height:40px;display:inline-flex;align-items:center}
+  .site-card{padding:.9rem;margin-bottom:.65rem}
+  .site-card h4{font-size:1.1rem;padding-right:4.5rem}
+  .site-desc{font-size:.92rem;line-height:1.55}
+  .site-highlight{font-size:.9rem;padding:.55rem .7rem}
+  .site-fee,.site-fee-free{font-size:.78rem;padding:.22rem .6rem}
+  .site-interest-icon{font-size:1.05rem}
+  .site-seasonal{font-size:.85rem}
+  .site-drive{font-size:.85rem}
+  .site-directions{font-size:.85rem;padding:.4rem .7rem;min-height:44px;display:inline-flex;align-items:center}
+  .leaflet-popup-content{width:280px !important;max-width:88vw !important}
+  .popup-inner{padding:.9rem}
+  .popup-inner h3{font-size:1.05rem}
+  .popup-desc{font-size:.9rem}
+  .popup-highlight{font-size:.88rem}
+  .popup-directions{font-size:.85rem;padding:.4rem .7rem;min-height:44px;display:inline-flex;align-items:center}
   .overview{padding:.75rem}
   .overview-hero{padding:1.25rem 1rem}
   .overview-hero h2{font-size:1.35rem}
-  .overview-hero p{font-size:.9rem}
+  .overview-hero p{font-size:.95rem}
   .stat-card{padding:.75rem .35rem}
   .stat-num{font-size:1.3rem}
-  .info-card{padding:.65rem .8rem}
-  .info-card-text{font-size:.88rem}
-  .savings-label{font-size:.8rem;width:40%}
-  .savings-bar-fill{font-size:.75rem}
-  .subregion-header{font-size:1rem;padding:.5rem 0 .25rem}
+  .info-card{padding:.7rem .85rem}
+  .info-card-text{font-size:.92rem}
+  .savings-label{font-size:.85rem;width:40%}
+  .savings-bar-fill{font-size:.78rem}
+  .subregion-header{font-size:1.05rem;padding:.5rem 0 .25rem}
   .region-intro{padding:.65rem .75rem}
-  .region-intro p{font-size:.85rem}
+  .region-intro p{font-size:.9rem}
   .start-here{margin:.6rem .75rem}
-  .start-here-text{font-size:.88rem}
+  .start-here-text{font-size:.92rem}
   .websites{padding:.75rem}
   .not-covered{padding:.85rem}
-  .checklist-item{font-size:.88rem}
-  .booklet-note{font-size:.88rem;padding:.65rem .85rem}
-  .footer p{font-size:.88rem}
+  .not-covered p{font-size:.9rem}
+  .checklist-item{font-size:.92rem}
+  .booklet-note{font-size:.92rem;padding:.7rem .85rem}
+  .footer p{font-size:.92rem}
+  .site-type-tag{font-size:.78rem;padding:.15rem .55rem}
+  .site-count{font-size:.88rem}
+  .alert-banner{font-size:.88rem;padding:.5rem .7rem}
 }
 
-/* Marker cluster custom styling */
+/* ===== ONBOARDING ===== */
+.onboard-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:2000;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;transition:opacity .3s ease}
+.onboard-overlay.visible{opacity:1}
+.onboard-card{background:white;border-radius:16px;max-width:380px;width:100%;box-shadow:0 12px 40px rgba(0,0,0,.25);overflow:hidden;transform:translateY(20px);transition:transform .3s ease}
+.onboard-overlay.visible .onboard-card{transform:translateY(0)}
+.onboard-header{background:linear-gradient(135deg,var(--forest),var(--forest-light));color:white;padding:1.5rem 1.25rem 1.2rem;text-align:center}
+.onboard-header h2{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:.3rem}
+.onboard-header p{font-size:.9rem;opacity:.85}
+.onboard-body{padding:1.25rem}
+.onboard-step{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:1rem}
+.onboard-step:last-child{margin-bottom:0}
+.onboard-step-icon{font-size:1.5rem;flex-shrink:0;width:2.2rem;height:2.2rem;display:flex;align-items:center;justify-content:center;background:var(--cream);border-radius:50%}
+.onboard-step-text{font-size:.92rem;color:var(--text);line-height:1.5}
+.onboard-step-text strong{color:var(--forest)}
+.onboard-dismiss{display:block;width:100%;padding:.85rem;background:var(--forest);color:white;border:none;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;margin-top:1.2rem;transition:background .15s}
+.onboard-dismiss:hover{background:var(--forest-light)}
+
+/* ===== PWA INSTALL MODAL ===== */
+.pwa-modal{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:2001;display:flex;align-items:flex-end;justify-content:center;padding:0;opacity:0;pointer-events:none;transition:opacity .3s ease}
+.pwa-modal.visible{opacity:1;pointer-events:auto}
+.pwa-modal-card{background:white;border-radius:16px 16px 0 0;max-width:420px;width:100%;padding:1.5rem 1.25rem 2rem;box-shadow:0 -4px 30px rgba(0,0,0,.2);transform:translateY(100%);transition:transform .3s ease}
+.pwa-modal.visible .pwa-modal-card{transform:translateY(0)}
+.pwa-modal-card h3{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--forest);margin-bottom:.75rem;text-align:center}
+.pwa-modal-step{display:flex;align-items:center;gap:.75rem;padding:.6rem 0;font-size:.92rem;color:var(--text)}
+.pwa-modal-step-num{width:28px;height:28px;border-radius:50%;background:var(--forest);color:white;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;flex-shrink:0}
+.pwa-modal-note{font-size:.82rem;color:var(--text-muted);text-align:center;margin-top:.75rem;line-height:1.4}
+.pwa-modal-close{display:block;width:100%;padding:.75rem;background:var(--forest);color:white;border:none;border-radius:10px;font-size:.95rem;font-weight:700;cursor:pointer;font-family:inherit;margin-top:1rem}
+
+/* ===== SUGGESTED TRIPS ===== */
+.trip-cards{display:flex;flex-direction:column;gap:.75rem;margin-top:.75rem}
+.trip-idea{border-left:4px solid var(--forest);background:white;padding:.85rem 1rem;border-radius:0 10px 10px 0;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.trip-idea-title{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--forest);margin-bottom:.15rem}
+.trip-idea-route{font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:.2rem}
+.trip-idea-detail{font-size:.85rem;color:var(--brown);font-style:italic;margin-bottom:.35rem}
+.trip-idea-desc{font-size:.9rem;color:var(--text-muted);line-height:1.5;margin-bottom:.5rem}
+.trip-idea-add{background:var(--forest);color:white;border:none;border-radius:6px;padding:.45rem .9rem;font-size:.85rem;font-weight:600;cursor:pointer;font-family:inherit;transition:background .15s;min-height:44px}
+.trip-idea-add:hover{background:var(--forest-light)}
+.trip-idea-add.added{background:var(--sand);cursor:default}
+
+/* ===== PRINT BUTTON ===== */
+.print-region-btn{display:inline-flex;align-items:center;gap:.35rem;background:white;color:var(--forest);border:2px solid var(--forest-muted);border-radius:8px;padding:.45rem .9rem;font-size:.85rem;font-weight:600;cursor:pointer;font-family:inherit;margin:.5rem 1.25rem;transition:all .15s;min-height:44px}
+.print-region-btn:hover{background:var(--forest);color:white}
+
+/* ===== PRINT STYLESHEET ===== */
+@media print{
+  .header,.tabs,.filters,.legend-strip,.map-container,.back-to-map,.trip-fab,.trip-panel,.trip-panel-overlay,.pwa-install-banner,.pwa-modal,.onboard-overlay,.fav-btn,.site-directions,.popup-directions,.print-region-btn,.region-alerts,.overview,.footer{display:none !important}
+  body{font-size:11pt;color:#000;background:white}
+  .tab-content.print-active{display:block !important}
+  .tab-content:not(.print-active){display:none !important}
+  .site-list{padding:.25rem 0 !important}
+  .site-card{border:1px solid #ccc !important;page-break-inside:avoid;margin-bottom:.4rem;padding:.5rem .6rem}
+  .site-card h4{font-size:11pt;color:#1B4332}
+  .site-desc{font-size:10pt}
+  .site-highlight{font-size:9.5pt;background:#f5f5f5 !important}
+  .site-fee,.site-fee-free{font-size:8pt}
+  .region-intro{padding:.3rem 0;border:none;display:block !important}
+  .start-here{margin:.3rem 0;border:1px solid #1B4332;display:block !important}
+  .subregion-header{font-size:11pt;margin-top:.5rem}
+  .hidden{display:none !important}
+  @page{margin:0.6in}
+}
+
 .marker-cluster-small{background-color:rgba(45,106,79,.4) !important}
 .marker-cluster-small div{background-color:rgba(45,106,79,.7) !important;color:white !important;font-weight:700}
 .marker-cluster-medium{background-color:rgba(27,67,50,.4) !important}
@@ -246,30 +311,85 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--tex
 .trip-panel-overlay.open{opacity:1;pointer-events:auto}
 
 @media(max-width:768px){
-  .fav-btn{top:2.2rem;font-size:1.2rem}
+  .fav-btn{top:2.2rem;font-size:1.3rem;padding:.35rem;min-width:44px;min-height:44px}
   .trip-panel{max-height:85vh}
+  .trip-fab{font-size:.88rem;padding:.6rem 1.1rem}
+  .trip-site-name{font-size:1rem}
+  .trip-site-meta{font-size:.82rem}
+  .trip-site-remove{font-size:1.1rem;padding:.4rem;min-width:44px;min-height:44px}
+  .trip-panel-footer button{padding:.6rem;font-size:.88rem;min-height:44px}
   .region-alerts{padding:.4rem .75rem 0}
-  .alert-banner{font-size:.82rem;padding:.45rem .65rem}
+  .alert-banner{font-size:.85rem;padding:.5rem .7rem}
 }
 </style>
 </head>
 <body>
+<!-- Onboarding overlay (shown on first visit) -->
+<div class="onboard-overlay" id="onboard-overlay">
+  <div class="onboard-card">
+    <div class="onboard-header">
+      <h2>Welcome, Lenny!</h2>
+      <p>Here's how to use your Adventure Guide</p>
+    </div>
+    <div class="onboard-body">
+      <div class="onboard-step">
+        <div class="onboard-step-icon">🗺️</div>
+        <div class="onboard-step-text">Tap a <strong>region tab</strong> above to explore sites on the map</div>
+      </div>
+      <div class="onboard-step">
+        <div class="onboard-step-icon">🎣</div>
+        <div class="onboard-step-text">Use the <strong>filter buttons</strong> to show just fishing, biking, history, or easy-access sites</div>
+      </div>
+      <div class="onboard-step">
+        <div class="onboard-step-icon">♡</div>
+        <div class="onboard-step-text">Tap the <strong>heart</strong> on any site to save it to your trip list</div>
+      </div>
+      <div class="onboard-step">
+        <div class="onboard-step-icon">📱</div>
+        <div class="onboard-step-text">This works <strong>offline in the parks</strong> — add it to your home screen for easy access</div>
+      </div>
+      <button class="onboard-dismiss" id="onboard-dismiss">Got it — let's explore!</button>
+    </div>
+  </div>
+</div>
+
+<!-- iOS PWA install modal -->
+<div class="pwa-modal" id="pwa-modal">
+  <div class="pwa-modal-card">
+    <h3>Add to Your Home Screen</h3>
+    <div class="pwa-modal-step">
+      <div class="pwa-modal-step-num">1</div>
+      <div>Tap the <strong>Share button</strong> <span style="font-size:1.1rem">⬆️</span> at the bottom of your screen</div>
+    </div>
+    <div class="pwa-modal-step">
+      <div class="pwa-modal-step-num">2</div>
+      <div>Scroll down and tap <strong>"Add to Home Screen"</strong></div>
+    </div>
+    <div class="pwa-modal-step">
+      <div class="pwa-modal-step-num">3</div>
+      <div>Tap <strong>"Add"</strong> in the top right corner</div>
+    </div>
+    <div class="pwa-modal-note">This lets you use the guide even without cell service in the parks.</div>
+    <button class="pwa-modal-close" id="pwa-modal-close">Got it</button>
+  </div>
+</div>
+
 <div class="header">
   <div class="header-eyebrow">America the Beautiful — Lifetime Senior Pass</div>
   <h1>Lenny's Adventure Guide</h1>
   <div class="header-sub">Your key to 2,000+ federal recreation sites — for life</div>
 </div>
 <div class="pwa-install-banner" id="pwa-banner">
-  📱 Add to your home screen for offline access in parks
+  📱 Save this guide to your phone — it works even without cell service in the parks!
   <button id="pwa-install-btn">Install</button>
-  <button class="dismiss" id="pwa-dismiss" aria-label="Dismiss">✕</button>
+  <button class="dismiss" id="pwa-dismiss" aria-label="Dismiss install banner">✕</button>
 </div>
-<div class="tabs">
-  <button class="tab active" data-tab="overview">🏔️ Overview</button>
-  <button class="tab" data-tab="norcal">🌲 N. California</button>
-  <button class="tab" data-tab="socal">🌴 S. California</button>
-  <button class="tab" data-tab="newengland">🍂 New England</button>
-  <button class="tab" data-tab="nationwide">🇺🇸 Rest of USA</button>
+<div class="tabs" role="tablist" aria-label="Region navigation">
+  <button class="tab active" data-tab="overview" role="tab" aria-selected="true" aria-label="Overview">🏔️ Overview</button>
+  <button class="tab" data-tab="norcal" role="tab" aria-selected="false" aria-label="Northern California">🌲 N. California</button>
+  <button class="tab" data-tab="socal" role="tab" aria-selected="false" aria-label="Southern California">🌴 S. California</button>
+  <button class="tab" data-tab="newengland" role="tab" aria-selected="false" aria-label="New England">🍂 New England</button>
+  <button class="tab" data-tab="nationwide" role="tab" aria-selected="false" aria-label="Rest of USA">🇺🇸 Rest of USA</button>
 </div>
 
 <div id="tab-overview" class="tab-content">
@@ -311,6 +431,33 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--tex
         <div class="checklist-item">✅ Camera</div>
       </div>
     </div>
+    <div class="info-section" id="suggested-trips">
+      <h3>🗺️ Your First Three Trips</h3>
+      <p style="font-size:.9rem;color:var(--text-muted);line-height:1.5;margin-bottom:.5rem">Not sure where to start? These are built around your interests — quiet lake fishing, modern American history, and easy biking.</p>
+      <div class="trip-cards">
+        <div class="trip-idea" style="border-left-color:var(--forest)">
+          <div class="trip-idea-title">Spring Day Trip: Whiskeytown Lake</div>
+          <div class="trip-idea-route">Sacramento → Whiskeytown NRA → Home by dinner</div>
+          <div class="trip-idea-detail">2.5 hours each way · Save $25 entrance fee</div>
+          <div class="trip-idea-desc">Drive up I-5 to Whiskeytown for bass and trout fishing on the quiet lake. Pack a lunch for the lakeside picnic areas. Swing by the Camden House for Gold Rush history. The lake is calm enough for shore fishing or a rented kayak.</div>
+          <button class="trip-idea-add" data-trip-sites="whiskeytown-nra" onclick="addTripSites(this)">♡ Add to My Trip</button>
+        </div>
+        <div class="trip-idea" style="border-left-color:var(--forest)">
+          <div class="trip-idea-title">Sierra Weekend: Lassen & Eagle Lake</div>
+          <div class="trip-idea-route">Day 1: Sacramento → Lassen Volcanic NP · Day 2: Lassen → Eagle Lake → Home</div>
+          <div class="trip-idea-detail">3.5 hours to Lassen · Save $30 entrance + camping discount</div>
+          <div class="trip-idea-desc">Camp at Manzanita Lake and fish for trout with Mt. Lassen reflected in the water. Walk the Sulphur Works boardwalk to see volcanic vents from the car. Day 2, drive an hour east to Eagle Lake for the famous Eagle Lake trout. Both lakes are perfect for quiet shoreline fishing.</div>
+          <button class="trip-idea-add" data-trip-sites="lassen-volcanic-np,eagle-lake-lassen-nf" onclick="addTripSites(this)">♡ Add to My Trip</button>
+        </div>
+        <div class="trip-idea" style="border-left-color:var(--slate)">
+          <div class="trip-idea-title">New England History Ride: Battle Road to Great Meadows</div>
+          <div class="trip-idea-route">Boston → Minute Man NHP → Great Meadows NWR → Concord → Home</div>
+          <div class="trip-idea-detail">30 minutes from Boston · Half-day trip · Free entry</div>
+          <div class="trip-idea-desc">Bike the 5-mile paved Battle Road Trail at Minute Man — flat, shaded, and traces the route of the first Revolutionary War battle. At the western end, you're right next to Great Meadows NWR for peaceful birdwatching. Finish with lunch in Concord, a few minutes away.</div>
+          <button class="trip-idea-add" data-trip-sites="minute-man-nhp,great-meadows-nwr" onclick="addTripSites(this)">♡ Add to My Trip</button>
+        </div>
+      </div>
+    </div>
     <div class="booklet-note">📖 <strong>Have your printed booklet?</strong> It covers Northern California, Southern California, and New England in detail with maps you can take in the car. This online guide adds 57 more sites nationwide, plus interactive maps and filters.</div>
     <div class="info-section"><h3>Helpful Websites</h3>
       <div class="websites">
@@ -331,6 +478,7 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--tex
   <div class="legend-strip" id="legend-norcal"></div>
   <div id="map-norcal" class="map-container"></div>
   <div class="site-list" id="list-norcal"></div>
+  <button class="print-region-btn" onclick="printRegion('norcal')">🖨️ Print N. California Sites</button>
 </div>
 
 <div id="tab-socal" class="tab-content hidden">
@@ -341,6 +489,7 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--tex
   <div class="legend-strip" id="legend-socal"></div>
   <div id="map-socal" class="map-container"></div>
   <div class="site-list" id="list-socal"></div>
+  <button class="print-region-btn" onclick="printRegion('socal')">🖨️ Print S. California Sites</button>
 </div>
 
 <div id="tab-newengland" class="tab-content hidden">
@@ -351,6 +500,7 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--tex
   <div class="legend-strip" id="legend-newengland"></div>
   <div id="map-newengland" class="map-container"></div>
   <div class="site-list" id="list-newengland"></div>
+  <button class="print-region-btn" onclick="printRegion('newengland')">🖨️ Print New England Sites</button>
 </div>
 
 <div id="tab-nationwide" class="tab-content hidden">
@@ -360,6 +510,7 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--tex
   <div class="legend-strip" id="legend-nationwide"></div>
   <div id="map-nationwide" class="map-container" style="height:500px"></div>
   <div class="site-list" id="list-nationwide"></div>
+  <button class="print-region-btn" onclick="printRegion('nationwide')">🖨️ Print Nationwide Sites</button>
 </div>
 
 <button class="trip-fab" id="trip-fab" style="display:none" aria-label="My Trip List">📋 My Trip <span class="badge" id="trip-count">0</span></button>
@@ -383,7 +534,7 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--tex
 <div class="footer">
   <p>"The world is big and I want to have a good look at it before it gets dark." — John Muir</p>
   <p class="signoff">Your pass. Your guide. Your America. 🌿</p>
-  <p style="font-family:'Source Sans 3',sans-serif;font-style:normal;font-size:.72rem;color:#bbb;margin-top:.5rem">Lenny's Adventure Guide v2 · Data last updated Feb 2026 · Made with ❤️</p>
+  <p style="font-family:'Source Sans 3',sans-serif;font-style:normal;font-size:.72rem;color:#bbb;margin-top:.5rem">Lenny's Adventure Guide · Data last updated Feb 2026</p>
 </div>
 
 <script>
@@ -640,9 +791,13 @@ function renderFishingLicenses() {
 function setupTabs() {
   document.querySelectorAll('.tab').forEach(tab => {
     tab.addEventListener('click', () => {
-      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
       document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
       tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
       const r = tab.dataset.tab;
       document.getElementById('tab-' + r).classList.remove('hidden');
       if (r !== 'overview' && !initialized[r]) initRegion(r);
@@ -681,14 +836,22 @@ function initRegion(r) {
 
   // Filters
   const filtersEl = document.getElementById('filters-' + r);
-  [{k:'all',ic:'🗺️',l:'All Sites'},{k:'fishing',ic:'🎣',l:'Fishing'},{k:'biking',ic:'🚲',l:'Biking'},{k:'history',ic:'📜',l:'History'},{k:'easy',ic:'🛤️',l:'Easy Access'}].forEach(f => {
+  filtersEl.setAttribute('role', 'group');
+  filtersEl.setAttribute('aria-label', 'Filter sites by interest');
+  [{k:'all',ic:'🗺️',l:'All Sites'},{k:'fishing',ic:'🎣',l:'Fishing'},{k:'lakefishing',ic:'🏞️',l:'Lake Fishing'},{k:'biking',ic:'🚲',l:'Biking'},{k:'history',ic:'📜',l:'History'},{k:'easy',ic:'🛤️',l:'Easy Access'}].forEach(f => {
     const b = document.createElement('button');
     b.className = 'filter-btn' + (f.k === 'all' ? ' active' : '');
     b.textContent = f.ic + ' ' + f.l;
+    b.setAttribute('aria-label', 'Filter by ' + f.l);
+    b.setAttribute('aria-pressed', f.k === 'all' ? 'true' : 'false');
     b.addEventListener('click', () => {
       activeFilter[r] = f.k;
-      filtersEl.querySelectorAll('.filter-btn').forEach(x => x.classList.remove('active'));
+      filtersEl.querySelectorAll('.filter-btn').forEach(x => {
+        x.classList.remove('active');
+        x.setAttribute('aria-pressed', 'false');
+      });
       b.classList.add('active');
+      b.setAttribute('aria-pressed', 'true');
       updateMarkerVisibility(r);
       renderList(r);
     });
@@ -698,9 +861,10 @@ function initRegion(r) {
   // Legend
   const lg = document.getElementById('legend-' + r);
   [...new Set(sites.map(s => s.type))].forEach(type => {
+    const abbrev = TYPE_ABBREV[type] || '•';
     const sp = document.createElement('span');
     sp.className = 'legend-item';
-    sp.innerHTML = `<span class="legend-dot" style="background:${getTypeColor(type)}"></span> ${type}`;
+    sp.innerHTML = `<span class="legend-dot" style="background:${getTypeColor(type)};color:white;font-size:7px;font-weight:700;display:flex;align-items:center;justify-content:center">${abbrev}</span> ${type}`;
     lg.appendChild(sp);
   });
 
@@ -714,8 +878,8 @@ function initRegion(r) {
   maps[r] = map;
   mkrs[r] = {};
   const isMobile = window.innerWidth <= 768;
-  const sz = r === 'nationwide' ? (isMobile ? 16 : 14) : (isMobile ? 22 : 18);
-  const touchPad = isMobile ? 8 : 0; // Extra invisible padding for touch targets
+  const sz = r === 'nationwide' ? (isMobile ? 18 : 16) : (isMobile ? 26 : 22);
+  const touchPad = isMobile ? 6 : 0; // Extra invisible padding for touch targets
 
   // Use marker clustering for nationwide (57 markers)
   let clusterGroup = null;
@@ -730,13 +894,37 @@ function initRegion(r) {
     map.addLayer(clusterGroup);
   }
 
+  // Type abbreviation for accessibility (not color-only)
+  const TYPE_ABBREV = {
+    'National Park': 'P',
+    "Nat'l Monument": 'M',
+    "Nat'l Recreation Area": 'R',
+    "Nat'l Seashore": 'S',
+    "Nat'l Forest": 'F',
+    'Wildlife Refuge': 'W',
+    'Historic Site': 'H',
+    "Nat'l Historical Park": 'H',
+    "Nat'l Preserve": 'V',
+    "Nat'l Memorial": 'L',
+    "Nat'l Battlefield": 'B',
+    "Nat'l Battlefield Park": 'B',
+    "Nat'l Wild & Scenic River": 'R',
+    "Nat'l Lakeshore": 'S',
+    "Nat'l Scenic Trail": 'T',
+    "Nat'l Riverway": 'R',
+    "Nat'l River & Rec Area": 'R',
+    "Nat'l Grassland": 'G',
+  };
+
   sites.forEach((site, idx) => {
     const c = getTypeColor(site.type);
     const visitedRing = site.visited ? 'border:2.5px solid #FFD700;' : '';
     const totalSz = sz + touchPad * 2;
+    const abbrev = TYPE_ABBREV[site.type] || '•';
+    const letterSize = Math.max(8, sz * 0.5);
     const icon = L.divIcon({
       className: '',
-      html: `<div style="padding:${touchPad}px;display:flex;align-items:center;justify-content:center"><div class="custom-marker" data-idx="${idx}" style="width:${sz}px;height:${sz}px;background:${c};${visitedRing}"></div></div>`,
+      html: `<div style="padding:${touchPad}px;display:flex;align-items:center;justify-content:center"><div class="custom-marker" data-idx="${idx}" style="width:${sz}px;height:${sz}px;background:${c};${visitedRing}display:flex;align-items:center;justify-content:center" title="${site.name} (${site.type})"><span style="color:white;font-size:${letterSize}px;font-weight:700;line-height:1;text-shadow:0 1px 1px rgba(0,0,0,.3)">${abbrev}</span></div></div>`,
       iconSize: [totalSz, totalSz],
       iconAnchor: [totalSz / 2, totalSz / 2]
     });
@@ -881,7 +1069,7 @@ function renderSiteCard(site, r, I, fl) {
   const bg = act ? getTypeBg(site.type) : 'white';
   const bc = act ? getTypeColor(site.type) : '#ddd';
   const tc = getTypeColor(site.type);
-  const ic = site.interests.map(x => `<span class="site-interest-icon">${I[x].icon}</span>`).join('');
+  const ic = site.interests.map(x => `<span class="site-interest-icon" role="img" aria-label="${I[x].label}" title="${I[x].label}">${I[x].icon}</span>`).join('');
   const sh = site.state ? `<div class="site-state">${site.state}</div>` : '';
   const vh = site.visited ? '<span class="site-visited-badge">✓ Visited</span>' : '';
 
@@ -1047,6 +1235,8 @@ if ('serviceWorker' in navigator) {
   const banner = document.getElementById('pwa-banner');
   const installBtn = document.getElementById('pwa-install-btn');
   const dismissBtn = document.getElementById('pwa-dismiss');
+  const pwaModal = document.getElementById('pwa-modal');
+  const pwaModalClose = document.getElementById('pwa-modal-close');
 
   // Detect iOS Safari (no beforeinstallprompt)
   const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
@@ -1080,10 +1270,20 @@ if ('serviceWorker' in navigator) {
         deferredPrompt = null;
         banner.classList.remove('visible');
       } else if (isIOS) {
-        alert('To install: tap the Share button (box with arrow) at the bottom of Safari, then tap "Add to Home Screen"');
+        // Show styled modal instead of alert()
+        pwaModal.classList.add('visible');
         sessionStorage.setItem('pwa-ios-shown', '1');
         banner.classList.remove('visible');
       }
+    });
+  }
+
+  if (pwaModalClose) {
+    pwaModalClose.addEventListener('click', () => {
+      pwaModal.classList.remove('visible');
+    });
+    pwaModal.addEventListener('click', (e) => {
+      if (e.target === pwaModal) pwaModal.classList.remove('visible');
     });
   }
 
@@ -1091,6 +1291,39 @@ if ('serviceWorker' in navigator) {
     dismissBtn.addEventListener('click', () => {
       banner.classList.remove('visible');
       localStorage.setItem('pwa-dismissed', '1');
+    });
+  }
+})();
+
+// ===== ONBOARDING (first visit) =====
+(function() {
+  const overlay = document.getElementById('onboard-overlay');
+  const dismissBtn = document.getElementById('onboard-dismiss');
+  
+  if (!localStorage.getItem('lennys-onboarded')) {
+    // Show after a brief delay to let the page render
+    setTimeout(() => {
+      overlay.classList.add('visible');
+    }, 800);
+  }
+
+  if (dismissBtn) {
+    dismissBtn.addEventListener('click', () => {
+      overlay.classList.remove('visible');
+      localStorage.setItem('lennys-onboarded', '1');
+      // Remove from DOM after animation
+      setTimeout(() => overlay.remove(), 400);
+    });
+  }
+
+  // Also dismiss by clicking overlay background
+  if (overlay) {
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        overlay.classList.remove('visible');
+        localStorage.setItem('lennys-onboarded', '1');
+        setTimeout(() => overlay.remove(), 400);
+      }
     });
   }
 })();
@@ -1104,6 +1337,86 @@ document.querySelectorAll('.tab').forEach(tab => {
     }, 50);
   });
 });
+
+// ===== SUGGESTED TRIP ADD =====
+function addTripSites(btn) {
+  const ids = btn.dataset.tripSites.split(',');
+  let added = 0;
+  ids.forEach(id => {
+    if (!favorites.has(id)) {
+      favorites.add(id);
+      added++;
+    }
+  });
+  saveFavorites();
+  if (added > 0) {
+    btn.textContent = `✓ Added ${ids.length} site${ids.length > 1 ? 's' : ''}`;
+    btn.classList.add('added');
+  } else {
+    btn.textContent = '✓ Already in trip list';
+    btn.classList.add('added');
+  }
+  renderTripPanel();
+}
+
+// ===== PRINT REGION =====
+function printRegion(region) {
+  // Expand all cards before printing so highlights are visible
+  const el = document.getElementById('list-' + region);
+  const sites = getSitesForRegion(region);
+  const I = getInterests();
+  const fl = activeFilter[region];
+  const filtered = sites.map((s, i) => ({ ...s, idx: i })).filter(s => fl === 'all' || s.interests.includes(fl));
+
+  // Temporarily render all cards in expanded state
+  let h = `<div class="site-count" style="font-weight:700;font-size:1rem;margin-bottom:.5rem">${DATA.regions[region].intro || region}</div>`;
+  filtered.forEach(site => {
+    const tc = getTypeColor(site.type);
+    const ic = site.interests.map(x => `<span class="site-interest-icon">${I[x].icon}</span>`).join('');
+    let feeBadge = '';
+    if (site.passSaves) feeBadge = `<span class="site-fee">${site.fee}</span>`;
+    else if (site.fee !== 'Free') feeBadge = `<span class="site-fee-free">${site.fee}</span>`;
+    let th = '';
+    for (const [k, v] of Object.entries(site.highlights)) {
+      th += `<div class="site-highlight" style="background:${tc}08"><strong>${I[k].icon} ${I[k].label}:</strong> ${v}</div>`;
+    }
+    let dt = '';
+    if (site.driveFrom) {
+      const sac = site.driveFrom.sacramento;
+      const bos = site.driveFrom.boston;
+      if (sac) dt = `<div class="site-drive">🚗 ${sac} from Sacramento</div>`;
+      else if (bos) dt = `<div class="site-drive">🚗 ${bos} from Boston</div>`;
+    }
+    const seasonal = site.seasonal ? `<div class="site-seasonal">📅 Best: ${site.seasonal.best} — ${site.seasonal.note}</div>` : '';
+    h += `<div class="site-card" style="background:white;border-color:#ddd">
+      <h4>${site.name}</h4>${feeBadge}
+      <div class="site-meta"><span class="site-type-tag" style="background:${tc}18;color:${tc}">${site.type}</span>${ic}</div>
+      <div class="site-desc">${site.description}</div>${th}${dt}${seasonal}
+    </div>`;
+  });
+
+  // Mark this tab for print
+  const tabEl = document.getElementById('tab-' + region);
+  tabEl.classList.add('print-active');
+  tabEl.classList.remove('hidden');
+
+  // Temporarily replace list content with expanded version
+  const origHTML = el.innerHTML;
+  el.innerHTML = h;
+
+  window.print();
+
+  // Restore
+  el.innerHTML = origHTML;
+  tabEl.classList.remove('print-active');
+  // Re-render with click handlers
+  renderList(region);
+  // Re-add hidden class if not the active tab
+  const activeTab = document.querySelector('.tab.active');
+  if (activeTab && activeTab.dataset.tab !== region) {
+    tabEl.classList.add('hidden');
+  }
+}
 
 // ===== INIT =====
 loadData();

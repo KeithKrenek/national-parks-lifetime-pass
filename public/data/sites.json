@@ -6,20 +6,24 @@
   },
   "interests": {
     "fishing": {
-      "icon": "\ud83c\udfa3",
+      "icon": "🎣",
       "label": "Fishing"
     },
     "biking": {
-      "icon": "\ud83d\udeb2",
+      "icon": "🚲",
       "label": "Biking"
     },
     "history": {
-      "icon": "\ud83d\udcdc",
+      "icon": "📜",
       "label": "History"
     },
     "easy": {
-      "icon": "\ud83d\udee4\ufe0f",
+      "icon": "🛤️",
       "label": "Easy Access"
+    },
+    "lakefishing": {
+      "icon": "🏞️",
+      "label": "Quiet Lake Fishing"
     }
   },
   "typeColors": {
@@ -67,7 +71,7 @@
       "intro": "From coastal redwoods to Sierra peaks, these are the sites that match your interests best. Every site below accepts your Lifetime Senior Pass.",
       "startHere": {
         "siteId": "whiskeytown-nra",
-        "reason": "Outstanding fishing, Gold Rush history, and your pass saves $25. Just 2.5 hours from Sacramento \u2014 a perfect spring day trip."
+        "reason": "Outstanding fishing, Gold Rush history, and your pass saves $25. Just 2.5 hours from Sacramento — a perfect spring day trip."
       }
     },
     "socal": {
@@ -80,7 +84,7 @@
       "intro": "A weekend drive south from Sacramento opens up desert wonders, island adventures, and some of the most moving American history sites in the West.",
       "startHere": {
         "siteId": "manzanar-nhs",
-        "reason": "One of America's most powerful WWII sites \u2014 the internment camp where 10,000 Japanese Americans were confined. 4.5 hours from Sacramento, and your pass saves $15."
+        "reason": "One of America's most powerful WWII sites — the internment camp where 10,000 Japanese Americans were confined. 4.5 hours from Sacramento, and your pass saves $15."
       }
     },
     "newengland": {
@@ -93,7 +97,7 @@
       "intro": "New England combines American history with rugged coastlines and mountain forests. The concentration of Revolutionary War, industrial, and maritime sites here is unmatched.",
       "startHere": {
         "siteId": "minute-man-nhp",
-        "reason": "You already know this one \u2014 and the 5-mile paved Battle Road Trail is perfect for a February bike ride. Free entry, always."
+        "reason": "You already know this one — and the 5-mile paved Battle Road Trail is perfect for a February bike ride. Free entry, always."
       }
     },
     "nationwide": {
@@ -103,7 +107,7 @@
         -98
       ],
       "zoom": 4,
-      "intro": "Your pass works everywhere \u2014 these are 75 of the best sites across the rest of the country, curated for fishing, biking, history, and easy access.",
+      "intro": "Your pass works everywhere — these are 75 of the best sites across the rest of the country, curated for fishing, biking, history, and easy access.",
       "subregions": {
         "west": "West",
         "southwest": "Southwest",
@@ -119,7 +123,7 @@
     "california": {
       "state": "California",
       "seniorDiscount": false,
-      "details": "Standard annual sport fishing license (~$55 for residents). No general senior discount \u2014 the reduced fee (~$8) is only for low-income seniors on SSI/CAPI.",
+      "details": "Standard annual sport fishing license (~$55 for residents). No general senior discount — the reduced fee (~$8) is only for low-income seniors on SSI/CAPI.",
       "url": "https://wildlife.ca.gov/Licensing/Fishing",
       "tip": "Purchase online at wildlife.ca.gov or at sporting goods stores. Remember to buy any required report cards for salmon, steelhead, or sturgeon."
     },
@@ -133,7 +137,7 @@
     "maine": {
       "state": "Maine",
       "seniorDiscount": true,
-      "details": "One-time $8 lifetime license for residents age 65+. Covers fishing, hunting, and more \u2014 an incredible deal.",
+      "details": "One-time $8 lifetime license for residents age 65+. Covers fishing, hunting, and more — an incredible deal.",
       "url": "https://www.maine.gov/ifw/fishing-boating/fishing/laws-rules/license-requirements.html",
       "tip": "Apply at maine.gov/ifw. This is one of the best senior fishing deals in the country."
     },
@@ -142,7 +146,7 @@
       "seniorDiscount": true,
       "details": "Discounted senior freshwater license for residents born in/after 1948 who are 68+. Free permanent license for residents born in/before 1947.",
       "url": "https://www.wildlife.nh.gov/licenses-and-permits/senior-and-milestone-licenses",
-      "tip": "NH saltwater license is separate \u2014 but it's reciprocal with MA and ME coastal waters."
+      "tip": "NH saltwater license is separate — but it's reciprocal with MA and ME coastal waters."
     },
     "vermont": {
       "state": "Vermont",
@@ -171,7 +175,8 @@
       "passSaves": true,
       "interests": [
         "fishing",
-        "easy"
+        "easy",
+        "lakefishing"
       ],
       "description": "World Heritage Site with Half Dome, El Capitan, and iconic waterfalls.",
       "highlights": {
@@ -179,8 +184,8 @@
         "easy": "Glacier Point paved viewpoint; valley shuttle accessible; Mirror Lake trail partially paved."
       },
       "seasonal": {
-        "best": "May\u2013Oct",
-        "note": "Tioga Road closed Nov\u2013May. Valley accessible year-round."
+        "best": "May–Oct",
+        "note": "Tioga Road closed Nov–May. Valley accessible year-round."
       },
       "visited": false,
       "driveFrom": {
@@ -202,14 +207,14 @@
         "fishing",
         "easy"
       ],
-      "description": "Home to Earth's tallest trees \u2014 coast redwoods exceeding 380 feet.",
+      "description": "Home to Earth's tallest trees — coast redwoods exceeding 380 feet.",
       "highlights": {
         "fishing": "Steelhead and salmon in Redwood Creek and Smith River.",
         "easy": "Big Tree Trail: paved 0.3-mi loop. Newton B. Drury Parkway: 10-mi drive through old-growth."
       },
       "seasonal": {
         "best": "Year-round",
-        "note": "Drier months (Jun\u2013Sep) best for trails. Elk viewing peaks in fall."
+        "note": "Drier months (Jun–Sep) best for trails. Elk viewing peaks in fall."
       },
       "visited": false,
       "driveFrom": {
@@ -229,16 +234,17 @@
       "passSaves": true,
       "interests": [
         "fishing",
-        "easy"
+        "easy",
+        "lakefishing"
       ],
       "description": "The only place on Earth with all four volcano types. Active mud pots and fumaroles.",
       "highlights": {
-        "fishing": "Manzanita Lake and Summit Lake \u2014 quiet trout fishing with mountain reflections.",
+        "fishing": "Manzanita Lake and Summit Lake — quiet trout fishing with mountain reflections.",
         "easy": "Sulphur Works boardwalk from car; 30-mile scenic drive with pullouts."
       },
       "seasonal": {
-        "best": "Jun\u2013Oct",
-        "note": "Main park road closed by snow Nov\u2013May. Manzanita Lake area may open earlier."
+        "best": "Jun–Oct",
+        "note": "Main park road closed by snow Nov–May. Manzanita Lake area may open earlier."
       },
       "visited": false,
       "driveFrom": {
@@ -264,14 +270,14 @@
       ],
       "description": "Dramatic coastal cliffs on the San Andreas Fault with tule elk herds.",
       "highlights": {
-        "fishing": "Quiet kayak fishing in Tomales Bay \u2014 bass, halibut, and perch.",
+        "fishing": "Quiet kayak fishing in Tomales Bay — bass, halibut, and perch.",
         "biking": "Fire roads with sweeping Pacific views. Relatively flat terrain for road bikes.",
         "history": "Historic Point Reyes Lighthouse and Coast Miwok village sites.",
         "easy": "Earthquake Trail: 0.7-mile fully paved and level."
       },
       "seasonal": {
         "best": "Year-round",
-        "note": "Whale watching best Jan\u2013Apr. Elk rut in Sep. Foggy in summer."
+        "note": "Whale watching best Jan–Apr. Elk rut in Sep. Foggy in summer."
       },
       "visited": false,
       "driveFrom": {
@@ -293,7 +299,7 @@
         "history",
         "easy"
       ],
-      "description": "Old-growth coast redwoods 600\u20131,200 years old, closest grove to San Francisco.",
+      "description": "Old-growth coast redwoods 600–1,200 years old, closest grove to San Francisco.",
       "highlights": {
         "history": "Site of preliminary UN Charter meetings in 1945.",
         "easy": "Main loop: 0.5-mile accessible boardwalk through ancient redwoods."
@@ -323,7 +329,7 @@
         "history",
         "easy"
       ],
-      "description": "19 ecosystems spanning SF Bay Area \u2014 Alcatraz, Presidio, Marin Headlands.",
+      "description": "19 ecosystems spanning SF Bay Area — Alcatraz, Presidio, Marin Headlands.",
       "highlights": {
         "biking": "Extensive paved bike paths through the Presidio and along the Bay.",
         "history": "Alcatraz prison, Fort Point (Civil War), Presidio from 1776, Nike missile sites.",
@@ -331,7 +337,7 @@
       },
       "seasonal": {
         "best": "Year-round",
-        "note": "Alcatraz sells out weeks ahead \u2014 book early. Sept\u2013Oct warmest weather."
+        "note": "Alcatraz sells out weeks ahead — book early. Sept–Oct warmest weather."
       },
       "visited": false,
       "driveFrom": {
@@ -352,17 +358,18 @@
       "interests": [
         "fishing",
         "biking",
-        "history"
+        "history",
+        "lakefishing"
       ],
       "description": "Crystal-clear lake with excellent fishing and Gold Rush history near Redding.",
       "highlights": {
         "fishing": "Outstanding bass, trout, and kokanee salmon. Superb boat fishing.",
         "biking": "Over 20 miles of mountain bike trails.",
-        "history": "Camden House and Tower House \u2014 Gold Rush era."
+        "history": "Camden House and Tower House — Gold Rush era."
       },
       "seasonal": {
-        "best": "Apr\u2013Oct",
-        "note": "Spring fishing is excellent. Summer gets hot (100\u00b0F+). Fall is ideal."
+        "best": "Apr–Oct",
+        "note": "Spring fishing is excellent. Summer gets hot (100°F+). Fall is ideal."
       },
       "visited": false,
       "driveFrom": {
@@ -391,7 +398,7 @@
       },
       "seasonal": {
         "best": "Year-round",
-        "note": "Open Wed\u2013Sun. Check nps.gov for tour times."
+        "note": "Open Wed–Sun. Check nps.gov for tour times."
       },
       "visited": false,
       "driveFrom": {
@@ -415,7 +422,7 @@
       ],
       "description": "Honors WWII home front workers in Richmond.",
       "highlights": {
-        "history": "WWII \u2014 stories of women and minorities who powered the war effort.",
+        "history": "WWII — stories of women and minorities who powered the war effort.",
         "easy": "Fully accessible visitor center with excellent exhibits."
       },
       "seasonal": {
@@ -446,7 +453,7 @@
         "easy": "6-mile auto tour with accessible observation decks."
       },
       "seasonal": {
-        "best": "Nov\u2013Feb",
+        "best": "Nov–Feb",
         "note": "Peak waterfowl season is winter. You're in the perfect window right now!"
       },
       "visited": false,
@@ -469,7 +476,7 @@
       ],
       "description": "Former military base with 86 miles of trails in Monterey County.",
       "highlights": {
-        "biking": "Extensive mountain biking network \u2014 86 miles of trails."
+        "biking": "Extensive mountain biking network — 86 miles of trails."
       },
       "seasonal": {
         "best": "Year-round",
@@ -488,19 +495,20 @@
       "lat": 40.573,
       "lng": -120.744,
       "type": "Nat'l Forest",
-      "fee": "$5\u201310/day",
+      "fee": "$5–10/day",
       "passSaves": true,
       "interests": [
         "fishing",
-        "easy"
+        "easy",
+        "lakefishing"
       ],
       "description": "California's second-largest natural lake with accessible facilities.",
       "highlights": {
-        "fishing": "Renowned Eagle Lake trout \u2014 excellent boat fishing on calm waters.",
+        "fishing": "Renowned Eagle Lake trout — excellent boat fishing on calm waters.",
         "easy": "Accessible boat launch and lakeside facilities."
       },
       "seasonal": {
-        "best": "May\u2013Oct",
+        "best": "May–Oct",
         "note": "Eagle Lake trout fishing peaks in late spring and fall."
       },
       "visited": false,
@@ -523,10 +531,10 @@
       ],
       "description": "World-renowned fly fishing in the shadow of Lassen Peak.",
       "highlights": {
-        "fishing": "Wild trout section \u2014 world-class fly fishing in pristine mountain stream."
+        "fishing": "Wild trout section — world-class fly fishing in pristine mountain stream."
       },
       "seasonal": {
-        "best": "Apr\u2013Oct",
+        "best": "Apr–Oct",
         "note": "Best fly fishing is late spring through early fall."
       },
       "visited": false,
@@ -542,7 +550,7 @@
       "lat": 39.5596,
       "lng": -120.827,
       "type": "Nat'l Forest",
-      "fee": "$5\u201310/day",
+      "fee": "$5–10/day",
       "passSaves": true,
       "interests": [
         "biking",
@@ -554,8 +562,8 @@
         "fishing": "Truckee River, Yuba River, and alpine lakes."
       },
       "seasonal": {
-        "best": "May\u2013Oct",
-        "note": "Snow closes higher elevations in winter. Downieville trails best Jun\u2013Oct."
+        "best": "May–Oct",
+        "note": "Snow closes higher elevations in winter. Downieville trails best Jun–Oct."
       },
       "visited": false,
       "driveFrom": {
@@ -583,7 +591,7 @@
       },
       "seasonal": {
         "best": "Year-round",
-        "note": "Migratory bird season peaks Oct\u2013Apr."
+        "note": "Migratory bird season peaks Oct–Apr."
       },
       "visited": false,
       "driveFrom": {
@@ -603,13 +611,13 @@
       "interests": [
         "history"
       ],
-      "description": "Over 800 lava tube caves \u2014 North America's largest concentration.",
+      "description": "Over 800 lava tube caves — North America's largest concentration.",
       "highlights": {
-        "history": "Captain Jack's Stronghold: 1872\u201373 Modoc War battlefields and rock art."
+        "history": "Captain Jack's Stronghold: 1872–73 Modoc War battlefields and rock art."
       },
       "seasonal": {
-        "best": "May\u2013Oct",
-        "note": "Cave temperature is constant 55\u00b0F year-round. Bring a jacket underground."
+        "best": "May–Oct",
+        "note": "Cave temperature is constant 55°F year-round. Bring a jacket underground."
       },
       "visited": false,
       "driveFrom": {
@@ -635,8 +643,8 @@
         "history": "One of America's most significant WWII civil rights sites."
       },
       "seasonal": {
-        "best": "May\u2013Oct",
-        "note": "Combine with Lava Beds \u2014 they're adjacent."
+        "best": "May–Oct",
+        "note": "Combine with Lava Beds — they're adjacent."
       },
       "visited": false,
       "driveFrom": {
@@ -652,7 +660,7 @@
       "lat": 39.756,
       "lng": -120.749,
       "type": "Nat'l Forest",
-      "fee": "$5\u201310/day",
+      "fee": "$5–10/day",
       "passSaves": true,
       "interests": [
         "easy"
@@ -662,7 +670,7 @@
         "easy": "1-mile fully paved trail to waterfall viewpoint."
       },
       "seasonal": {
-        "best": "Jun\u2013Oct",
+        "best": "Jun–Oct",
         "note": "Best waterfall flow in late spring / early summer."
       },
       "visited": false,
@@ -714,7 +722,7 @@
         "easy": "Auto tour through one of the largest bald eagle concentrations in the lower 48."
       },
       "seasonal": {
-        "best": "Nov\u2013Mar",
+        "best": "Nov–Mar",
         "note": "Peak bald eagle season is winter."
       },
       "visited": false,
@@ -741,7 +749,7 @@
       },
       "seasonal": {
         "best": "Year-round",
-        "note": "Reservation required \u2014 access is through a military base. Plan ahead."
+        "note": "Reservation required — access is through a military base. Plan ahead."
       },
       "visited": false,
       "driveFrom": {
@@ -766,8 +774,8 @@
         "easy": "Balconies Cave and Bear Gulch Cave are walkable. Condor viewing from easy trails."
       },
       "seasonal": {
-        "best": "Feb\u2013May, Oct\u2013Nov",
-        "note": "Summer is brutally hot (100\u00b0F+). Spring wildflowers are spectacular."
+        "best": "Feb–May, Oct–Nov",
+        "note": "Summer is brutally hot (100°F+). Spring wildflowers are spectacular."
       },
       "visited": false,
       "driveFrom": {
@@ -787,15 +795,16 @@
       "passSaves": true,
       "interests": [
         "fishing",
-        "easy"
+        "easy",
+        "lakefishing"
       ],
-      "description": "Home to General Sherman \u2014 Earth's largest living tree \u2014 and the deepest canyon in the US.",
+      "description": "Home to General Sherman — Earth's largest living tree — and the deepest canyon in the US.",
       "highlights": {
         "fishing": "Kaweah River and high-country lakes for trout in pristine Sierra settings.",
         "easy": "Giant Forest paved trails to General Sherman and Moro Rock overlook. Scenic drives throughout."
       },
       "seasonal": {
-        "best": "May\u2013Oct",
+        "best": "May–Oct",
         "note": "Generals Highway may close in winter. Giant Forest accessible most of the year."
       },
       "visited": false,
@@ -817,7 +826,7 @@
         "history",
         "easy"
       ],
-      "description": "WWII Japanese American internment camp where 10,000+ were confined 1942\u201345.",
+      "description": "WWII Japanese American internment camp where 10,000+ were confined 1942–45.",
       "highlights": {
         "history": "Restored barracks, mess hall, guard tower, and deeply moving interpretive exhibits. One of the most important civil rights sites in America.",
         "easy": "Visitor center fully accessible. 3.2-mile auto tour through the camp grounds."
@@ -846,14 +855,14 @@
         "history",
         "easy"
       ],
-      "description": "Hottest, driest, lowest \u2014 extremes define this otherworldly landscape.",
+      "description": "Hottest, driest, lowest — extremes define this otherworldly landscape.",
       "highlights": {
         "history": "Scotty's Castle, Harmony Borax Works, ghost towns.",
         "easy": "Badwater Basin, Artist's Drive, Zabriskie Point all accessible from car."
       },
       "seasonal": {
-        "best": "Nov\u2013Mar",
-        "note": "Visit in winter or spring. Summer temperatures exceed 120\u00b0F \u2014 dangerous."
+        "best": "Nov–Mar",
+        "note": "Visit in winter or spring. Summer temperatures exceed 120°F — dangerous."
       },
       "visited": false,
       "driveFrom": {
@@ -874,13 +883,13 @@
       "interests": [
         "easy"
       ],
-      "description": "Where Mojave and Colorado deserts meet \u2014 iconic twisted trees and boulder landscapes.",
+      "description": "Where Mojave and Colorado deserts meet — iconic twisted trees and boulder landscapes.",
       "highlights": {
         "easy": "Park Boulevard scenic drive with dozens of pullouts. Skull Rock and Arch Rock short walks."
       },
       "seasonal": {
-        "best": "Oct\u2013May",
-        "note": "Spring wildflower bloom (Mar\u2013Apr) can be extraordinary. Avoid summer heat."
+        "best": "Oct–May",
+        "note": "Spring wildflower bloom (Mar–Apr) can be extraordinary. Avoid summer heat."
       },
       "visited": false,
       "driveFrom": {
@@ -902,14 +911,14 @@
         "fishing",
         "easy"
       ],
-      "description": "Five remote islands off the coast \u2014 California's Gal\u00e1pagos. Accessible only by boat.",
+      "description": "Five remote islands off the coast — California's Galápagos. Accessible only by boat.",
       "highlights": {
         "fishing": "Outstanding ocean fishing on the boat ride over and around the islands. Kelp forests with incredible marine life.",
-        "easy": "Visitor center in Ventura is fully accessible. Island Access requires boat \u2014 moderate physical ability."
+        "easy": "Visitor center in Ventura is fully accessible. Island Access requires boat — moderate physical ability."
       },
       "seasonal": {
         "best": "Year-round",
-        "note": "Whale watching Dec\u2013Apr. Clearest water Jul\u2013Oct. Book Island Packers boat early."
+        "note": "Whale watching Dec–Apr. Clearest water Jul–Oct. Book Island Packers boat early."
       },
       "visited": false,
       "driveFrom": {
@@ -931,14 +940,14 @@
         "biking",
         "easy"
       ],
-      "description": "Mediterranean landscape between LA and the Pacific \u2014 the world's largest urban national park.",
+      "description": "Mediterranean landscape between LA and the Pacific — the world's largest urban national park.",
       "highlights": {
         "biking": "Backbone Trail and Mulholland Drive offer road and mountain biking with ocean views.",
         "easy": "Paramount Ranch (former movie set), Satwiwa Cultural Center, accessible visitor areas."
       },
       "seasonal": {
         "best": "Year-round",
-        "note": "Wildflower season Feb\u2013May. Summer can be hot inland."
+        "note": "Wildflower season Feb–May. Summer can be hot inland."
       },
       "visited": false,
       "driveFrom": {
@@ -948,7 +957,7 @@
     },
     {
       "id": "cesar-chavez-nm",
-      "name": "C\u00e9sar E. Ch\u00e1vez NM",
+      "name": "César E. Chávez NM",
       "region": "socal",
       "lat": 35.2241,
       "lng": -118.561,
@@ -959,14 +968,14 @@
         "history",
         "easy"
       ],
-      "description": "Headquarters of the United Farm Workers \u2014 where C\u00e9sar Ch\u00e1vez lived and is buried.",
+      "description": "Headquarters of the United Farm Workers — where César Chávez lived and is buried.",
       "highlights": {
-        "history": "The labor movement that changed American agriculture. Ch\u00e1vez's office preserved as it was. A powerful piece of modern American history.",
+        "history": "The labor movement that changed American agriculture. Chávez's office preserved as it was. A powerful piece of modern American history.",
         "easy": "Visitor center and memorial garden fully accessible."
       },
       "seasonal": {
         "best": "Year-round",
-        "note": "Open Mon\u2013Sat. Located in Keene, CA between Bakersfield and LA."
+        "note": "Open Mon–Sat. Located in Keene, CA between Bakersfield and LA."
       },
       "visited": false,
       "driveFrom": {
@@ -994,7 +1003,7 @@
         "easy": "Short trail from shuttle stop to the Postpile. Rainbow Falls trail is 2.5 mi round trip."
       },
       "seasonal": {
-        "best": "Jun\u2013Oct",
+        "best": "Jun–Oct",
         "note": "Only accessible mid-June to October. Mandatory shuttle in summer."
       },
       "visited": false,
@@ -1017,13 +1026,13 @@
         "history",
         "easy"
       ],
-      "description": "1.6 million acres of desert beauty \u2014 singing dunes, lava flows, and Joshua tree forests.",
+      "description": "1.6 million acres of desert beauty — singing dunes, lava flows, and Joshua tree forests.",
       "highlights": {
         "history": "Kelso Depot: beautifully restored 1924 Union Pacific railroad station, now the visitor center.",
         "easy": "Kelso Dunes and Hole-in-the-Wall accessible by car. Scenic drives through vast open desert."
       },
       "seasonal": {
-        "best": "Oct\u2013Apr",
+        "best": "Oct–Apr",
         "note": "Avoid summer. Spring wildflowers can be extraordinary."
       },
       "visited": false,
@@ -1046,14 +1055,14 @@
         "history",
         "easy"
       ],
-      "description": "Where European exploration of the West Coast began \u2014 stunning views of San Diego Bay.",
+      "description": "Where European exploration of the West Coast began — stunning views of San Diego Bay.",
       "highlights": {
-        "history": "Juan Rodr\u00edguez Cabrillo landed here in 1542. Old Point Loma Lighthouse (1855). WWII coastal defense exhibits.",
+        "history": "Juan Rodríguez Cabrillo landed here in 1542. Old Point Loma Lighthouse (1855). WWII coastal defense exhibits.",
         "easy": "Bayside Trail is paved. Tide pools accessible at low tide. All viewpoints accessible."
       },
       "seasonal": {
         "best": "Year-round",
-        "note": "Whale watching Dec\u2013Mar from the overlook. Tide pools best at low tide \u2014 check schedules."
+        "note": "Whale watching Dec–Mar from the overlook. Tide pools best at low tide — check schedules."
       },
       "visited": false,
       "driveFrom": {
@@ -1074,17 +1083,18 @@
       "interests": [
         "fishing",
         "biking",
-        "easy"
+        "easy",
+        "lakefishing"
       ],
       "description": "Rugged coastline, granite peaks, and 45+ miles of historic carriage roads.",
       "highlights": {
-        "fishing": "Jordan Pond and Eagle Lake \u2014 quiet freshwater fishing. Ocean fishing off Bass Harbor.",
-        "biking": "45+ mi crushed stone carriage roads. Gentle grades, no cars \u2014 built by Rockefeller Jr.",
+        "fishing": "Jordan Pond and Eagle Lake — quiet freshwater fishing. Ocean fishing off Bass Harbor.",
+        "biking": "45+ mi crushed stone carriage roads. Gentle grades, no cars — built by Rockefeller Jr.",
         "easy": "Many carriage roads accommodate wheelchairs; accessible visitor centers."
       },
       "seasonal": {
-        "best": "May\u2013Oct",
-        "note": "Fall foliage (late Sep\u2013mid Oct) is spectacular. Carriage roads open Apr\u2013Nov."
+        "best": "May–Oct",
+        "note": "Fall foliage (late Sep–mid Oct) is spectacular. Carriage roads open Apr–Nov."
       },
       "visited": false,
       "driveFrom": {
@@ -1106,7 +1116,8 @@
         "fishing",
         "biking",
         "history",
-        "easy"
+        "easy",
+        "lakefishing"
       ],
       "description": "40 miles of pristine sandy beaches, marshes, ponds, and lighthouses.",
       "highlights": {
@@ -1116,8 +1127,8 @@
         "easy": "Buttonbush Trail fully accessible; beach wheelchairs available."
       },
       "seasonal": {
-        "best": "May\u2013Oct",
-        "note": "Surf fishing for stripers peaks Sep\u2013Oct. Summer beaches are crowded \u2014 go early."
+        "best": "May–Oct",
+        "note": "Surf fishing for stripers peaks Sep–Oct. Summer beaches are crowded — go early."
       },
       "visited": false,
       "driveFrom": {
@@ -1145,7 +1156,7 @@
         "biking": "Forest roads ideal for road cycling through mountain scenery."
       },
       "seasonal": {
-        "best": "May\u2013Oct",
+        "best": "May–Oct",
         "note": "Fall foliage is world-class. Kancamagus Highway scenic drive peaks late Sep."
       },
       "visited": false,
@@ -1165,7 +1176,8 @@
       "passSaves": true,
       "interests": [
         "fishing",
-        "biking"
+        "biking",
+        "lakefishing"
       ],
       "description": "400,000 acres of Vermont's mountain forests with 900 miles of trails.",
       "highlights": {
@@ -1173,8 +1185,8 @@
         "biking": "Robert Frost Trail and forest road cycling."
       },
       "seasonal": {
-        "best": "May\u2013Oct",
-        "note": "Maple syrup season (Feb\u2013Mar) is a fun side trip. Fall colors peak early Oct."
+        "best": "May–Oct",
+        "note": "Maple syrup season (Feb–Mar) is a fun side trip. Fall colors peak early Oct."
       },
       "visited": false,
       "driveFrom": {
@@ -1195,9 +1207,9 @@
         "history",
         "easy"
       ],
-      "description": "Freedom Trail \u2014 Faneuil Hall, Old North Church, Bunker Hill, USS Constitution.",
+      "description": "Freedom Trail — Faneuil Hall, Old North Church, Bunker Hill, USS Constitution.",
       "highlights": {
-        "history": "Revolutionary War history \u2014 walk through America's founding.",
+        "history": "Revolutionary War history — walk through America's founding.",
         "easy": "Urban setting with excellent accessibility."
       },
       "seasonal": {
@@ -1225,10 +1237,10 @@
         "biking",
         "easy"
       ],
-      "description": "Where the American Revolution began \u2014 April 19, 1775.",
+      "description": "Where the American Revolution began — April 19, 1775.",
       "highlights": {
         "history": "'The shot heard round the world.' Battle Road traces the first clashes.",
-        "biking": "5 mi paved, flat \u2014 perfect for road bikes.",
+        "biking": "5 mi paved, flat — perfect for road bikes.",
         "easy": "Battle Road Trail: fully paved, flat, accessible."
       },
       "seasonal": {
@@ -1256,10 +1268,10 @@
       ],
       "description": "Birthplaces and homes of Presidents John Adams and John Quincy Adams.",
       "highlights": {
-        "history": "Tour the homes of two presidents \u2014 father and son."
+        "history": "Tour the homes of two presidents — father and son."
       },
       "seasonal": {
-        "best": "May\u2013Nov",
+        "best": "May–Nov",
         "note": "Tours run seasonally. Check nps.gov for current schedule."
       },
       "visited": false,
@@ -1282,7 +1294,7 @@
         "history",
         "easy"
       ],
-      "description": "America's first National Historic Site (1938) \u2014 600 years of maritime history.",
+      "description": "America's first National Historic Site (1938) — 600 years of maritime history.",
       "highlights": {
         "history": "12 historic buildings, wharves, replica ship. Maritime golden age.",
         "easy": "Waterfront areas mostly accessible."
@@ -1346,7 +1358,7 @@
         "easy": "Main house and gardens accessible."
       },
       "seasonal": {
-        "best": "May\u2013Oct",
+        "best": "May–Oct",
         "note": "Grounds open year-round; buildings and exhibits seasonal."
       },
       "visited": false,
@@ -1375,7 +1387,7 @@
         "biking": "Carriage roads for gentle cycling."
       },
       "seasonal": {
-        "best": "May\u2013Oct",
+        "best": "May–Oct",
         "note": "Mansion tours summer only. Grounds and trails year-round."
       },
       "visited": false,
@@ -1397,14 +1409,14 @@
         "fishing",
         "biking"
       ],
-      "description": "Plum Island barrier beach \u2014 premier fishing destination.",
+      "description": "Plum Island barrier beach — premier fishing destination.",
       "highlights": {
-        "fishing": "Surf fishing \u2014 striped bass, bluefish, flounder.",
+        "fishing": "Surf fishing — striped bass, bluefish, flounder.",
         "biking": "Refuge Road open to cycling along the coast."
       },
       "seasonal": {
         "best": "Year-round",
-        "note": "Surf fishing peaks Sep\u2013Oct. Beach closes partially for nesting piping plovers Apr\u2013Aug."
+        "note": "Surf fishing peaks Sep–Oct. Beach closes partially for nesting piping plovers Apr–Aug."
       },
       "visited": false,
       "driveFrom": {
@@ -1426,7 +1438,7 @@
       ],
       "description": "America's whaling capital at its 19th-century peak.",
       "highlights": {
-        "history": "Melville set Moby-Dick here \u2014 the city that lit the world's lamps."
+        "history": "Melville set Moby-Dick here — the city that lit the world's lamps."
       },
       "seasonal": {
         "best": "Year-round",
@@ -1459,7 +1471,7 @@
       },
       "seasonal": {
         "best": "Year-round",
-        "note": "Small site \u2014 combine with other Providence attractions."
+        "note": "Small site — combine with other Providence attractions."
       },
       "visited": false,
       "driveFrom": {
@@ -1508,7 +1520,7 @@
       ],
       "description": "Former military base converted to wildlife refuge.",
       "highlights": {
-        "biking": "15+ miles of trails \u2014 flat and easy."
+        "biking": "15+ miles of trails — flat and easy."
       },
       "seasonal": {
         "best": "Year-round",
@@ -1534,7 +1546,7 @@
       ],
       "description": "Freshwater wetlands near Concord with 220+ bird species.",
       "highlights": {
-        "easy": "Dike trails flat and accessible \u2014 peaceful birdwatching."
+        "easy": "Dike trails flat and accessible — peaceful birdwatching."
       },
       "seasonal": {
         "best": "Year-round",
@@ -1615,14 +1627,14 @@
         "fishing",
         "easy"
       ],
-      "description": "America's first national park \u2014 geysers, hot springs, and abundant wildlife.",
+      "description": "America's first national park — geysers, hot springs, and abundant wildlife.",
       "highlights": {
         "fishing": "World-class fly fishing in the Yellowstone, Madison, and Firehole rivers.",
         "easy": "Old Faithful boardwalks, Grand Prismatic overlook, and scenic drives."
       },
       "seasonal": {
-        "best": "May\u2013Oct",
-        "note": "Most roads closed Nov\u2013Apr. Old Faithful area accessible year-round."
+        "best": "May–Oct",
+        "note": "Most roads closed Nov–Apr. Old Faithful area accessible year-round."
       },
       "visited": false,
       "driveFrom": {
@@ -1645,17 +1657,18 @@
       "interests": [
         "fishing",
         "biking",
-        "easy"
+        "easy",
+        "lakefishing"
       ],
       "description": "Dramatic Teton Range rising 7,000 feet above the valley floor.",
       "highlights": {
-        "fishing": "Jenny Lake and the Snake River \u2014 outstanding trout fishing.",
+        "fishing": "Jenny Lake and the Snake River — outstanding trout fishing.",
         "biking": "20+ miles of paved multi-use pathway through the park.",
         "easy": "Jenny Lake boat shuttle; many paved viewpoints."
       },
       "seasonal": {
-        "best": "Jun\u2013Sep",
-        "note": "Teton Park Road closed Nov\u2013Apr. Combine with Yellowstone."
+        "best": "Jun–Sep",
+        "note": "Teton Park Road closed Nov–Apr. Combine with Yellowstone."
       },
       "visited": false,
       "driveFrom": {
@@ -1677,15 +1690,16 @@
       "state": "Montana",
       "interests": [
         "fishing",
-        "easy"
+        "easy",
+        "lakefishing"
       ],
-      "description": "Crown of the Continent \u2014 130+ named lakes, 25 glaciers.",
+      "description": "Crown of the Continent — 130+ named lakes, 25 glaciers.",
       "highlights": {
         "fishing": "Lake McDonald, St. Mary Lake for cutthroat trout.",
         "easy": "Going-to-the-Sun Road: 50-mile scenic drive with accessible overlooks."
       },
       "seasonal": {
-        "best": "Jul\u2013Sep",
+        "best": "Jul–Sep",
         "note": "Going-to-the-Sun Road opens mid-June to mid-October. Vehicle reservations required."
       },
       "visited": false,
@@ -1708,7 +1722,8 @@
       "state": "Washington",
       "interests": [
         "fishing",
-        "easy"
+        "easy",
+        "lakefishing"
       ],
       "description": "Temperate rainforest, alpine peaks, and rugged Pacific coast.",
       "highlights": {
@@ -1716,8 +1731,8 @@
         "easy": "Hall of Mosses: 0.8-mi trail. Hurricane Ridge: paved trails with mountain views."
       },
       "seasonal": {
-        "best": "Jun\u2013Sep",
-        "note": "Rain is heavy Oct\u2013May. Rainforest is lush year-round."
+        "best": "Jun–Sep",
+        "note": "Rain is heavy Oct–May. Rainforest is lush year-round."
       },
       "visited": false,
       "driveFrom": {
@@ -1745,7 +1760,7 @@
         "easy": "Paradise area: paved trails. Sunrise has accessible overlooks."
       },
       "seasonal": {
-        "best": "Jul\u2013Sep",
+        "best": "Jul–Sep",
         "note": "Wildflower peak is late July. Paradise road open year-round; other roads seasonal."
       },
       "visited": false,
@@ -1768,15 +1783,16 @@
       "state": "Oregon",
       "interests": [
         "fishing",
-        "easy"
+        "easy",
+        "lakefishing"
       ],
-      "description": "Deepest lake in the US \u2014 stunning sapphire blue water in a volcanic caldera.",
+      "description": "Deepest lake in the US — stunning sapphire blue water in a volcanic caldera.",
       "highlights": {
-        "fishing": "Rainbow trout and kokanee \u2014 no license required in the lake.",
+        "fishing": "Rainbow trout and kokanee — no license required in the lake.",
         "easy": "33-mile Rim Drive with 30+ scenic overlooks."
       },
       "seasonal": {
-        "best": "Jul\u2013Oct",
+        "best": "Jul–Oct",
         "note": "Rim Drive opens late June. North entrance may not open until July."
       },
       "visited": false,
@@ -1799,7 +1815,8 @@
       "state": "Colorado",
       "interests": [
         "fishing",
-        "easy"
+        "easy",
+        "lakefishing"
       ],
       "description": "Alpine tundra, peaks, and pristine lakes above 12,000 feet.",
       "highlights": {
@@ -1807,7 +1824,7 @@
         "easy": "Trail Ridge Road: highest paved road in any NP (12,183 ft). Bear Lake paved."
       },
       "seasonal": {
-        "best": "Jun\u2013Oct",
+        "best": "Jun–Oct",
         "note": "Trail Ridge Road closed mid-Oct to Memorial Day. Timed entry required in summer."
       },
       "visited": false,
@@ -1831,13 +1848,13 @@
       "interests": [
         "easy"
       ],
-      "description": "Two active volcanoes \u2014 K\u012blauea and Mauna Loa.",
+      "description": "Two active volcanoes — Kīlauea and Mauna Loa.",
       "highlights": {
         "easy": "Crater Rim Drive with accessible overlooks; Devastation Trail is paved boardwalk."
       },
       "seasonal": {
         "best": "Year-round",
-        "note": "Volcanic activity varies \u2014 check nps.gov for current eruption status."
+        "note": "Volcanic activity varies — check nps.gov for current eruption status."
       },
       "visited": false,
       "driveFrom": {
@@ -1866,7 +1883,7 @@
         "easy": "Park bus tours: see wildlife and Denali from your seat."
       },
       "seasonal": {
-        "best": "Jun\u2013Sep",
+        "best": "Jun–Sep",
         "note": "Park road beyond Mile 15 is bus-access only. Book bus tours well in advance."
       },
       "visited": false,
@@ -1889,13 +1906,13 @@
       "interests": [
         "easy"
       ],
-      "description": "Tallest sand dunes in North America \u2014 750 feet.",
+      "description": "Tallest sand dunes in North America — 750 feet.",
       "highlights": {
         "easy": "Walk from parking lot onto dunes. Accessible boardwalk to dune field."
       },
       "seasonal": {
-        "best": "May\u2013Sep",
-        "note": "Medano Creek flows late May\u2013early July \u2014 a unique experience."
+        "best": "May–Sep",
+        "note": "Medano Creek flows late May–early July — a unique experience."
       },
       "visited": false,
       "driveFrom": {
@@ -1925,7 +1942,7 @@
         "easy": "South Rim Trail: 13 mi paved. Shuttle accessible. All overlooks paved."
       },
       "seasonal": {
-        "best": "Mar\u2013May, Sep\u2013Nov",
+        "best": "Mar–May, Sep–Nov",
         "note": "South Rim open year-round. North Rim closes mid-Oct to mid-May."
       },
       "visited": false,
@@ -1956,7 +1973,7 @@
         "easy": "Shuttle scenic drive; Riverside Walk partially paved."
       },
       "seasonal": {
-        "best": "Mar\u2013May, Sep\u2013Nov",
+        "best": "Mar–May, Sep–Nov",
         "note": "Summer is very hot and crowded. Spring and fall are ideal."
       },
       "visited": false,
@@ -1980,13 +1997,13 @@
       "interests": [
         "easy"
       ],
-      "description": "Largest concentration of hoodoos on Earth \u2014 otherworldly red rock spires.",
+      "description": "Largest concentration of hoodoos on Earth — otherworldly red rock spires.",
       "highlights": {
         "easy": "Rim Trail between Sunset and Sunrise Points is paved and mostly level."
       },
       "seasonal": {
-        "best": "May\u2013Sep",
-        "note": "At 8,000 ft, snow is possible Oct\u2013May. Stargazing is extraordinary."
+        "best": "May–Sep",
+        "note": "At 8,000 ft, snow is possible Oct–May. Stargazing is extraordinary."
       },
       "visited": false,
       "driveFrom": {
@@ -2014,8 +2031,8 @@
         "easy": "Scenic drive; many arches visible from car; short paved viewpoint trails."
       },
       "seasonal": {
-        "best": "Mar\u2013May, Sep\u2013Nov",
-        "note": "Timed entry required Apr\u2013Oct. Book at recreation.gov."
+        "best": "Mar–May, Sep–Nov",
+        "note": "Timed entry required Apr–Oct. Book at recreation.gov."
       },
       "visited": false,
       "driveFrom": {
@@ -2044,7 +2061,7 @@
       },
       "seasonal": {
         "best": "Year-round",
-        "note": "Cave is 56\u00b0F always. Bat flight program May\u2013Oct at sunset."
+        "note": "Cave is 56°F always. Bat flight program May–Oct at sunset."
       },
       "visited": false,
       "driveFrom": {
@@ -2072,8 +2089,8 @@
         "easy": "8-mi scenic drive. Interdune Boardwalk wheelchair accessible."
       },
       "seasonal": {
-        "best": "Oct\u2013Apr",
-        "note": "Sunset is magical. Check for missile range closures (1\u20132 hrs, sporadic)."
+        "best": "Oct–Apr",
+        "note": "Sunset is magical. Check for missile range closures (1–2 hrs, sporadic)."
       },
       "visited": false,
       "driveFrom": {
@@ -2134,8 +2151,8 @@
         "easy": "Scenic drives; Desert Discovery Nature Trail is flat and accessible."
       },
       "seasonal": {
-        "best": "Oct\u2013Apr",
-        "note": "Saguaro blooms May\u2013Jun. Avoid summer midday heat."
+        "best": "Oct–Apr",
+        "note": "Saguaro blooms May–Jun. Avoid summer midday heat."
       },
       "visited": false,
       "driveFrom": {
@@ -2159,13 +2176,13 @@
         "history",
         "easy"
       ],
-      "description": "Spectacular 800-year-old cliff dwellings \u2014 600+ in the park.",
+      "description": "Spectacular 800-year-old cliff dwellings — 600+ in the park.",
       "highlights": {
         "history": "Cliff Palace and Balcony House: apartment complexes in sandstone alcoves.",
         "easy": "Mesa Top Loop: 6-mi drive with overlooks of cliff dwellings from above."
       },
       "seasonal": {
-        "best": "May\u2013Sep",
+        "best": "May–Sep",
         "note": "Cliff Palace tours summer only. Mesa Top Loop year-round."
       },
       "visited": false,
@@ -2220,7 +2237,7 @@
         "fishing",
         "easy"
       ],
-      "description": "America's most visited NP \u2014 misty peaks and old-growth forest.",
+      "description": "America's most visited NP — misty peaks and old-growth forest.",
       "highlights": {
         "fishing": "700+ miles of streams. Excellent smallmouth bass and trout.",
         "easy": "Cades Cove: 11-mi scenic loop with wildlife. Sugarlands accessible trails."
@@ -2281,13 +2298,13 @@
         "fishing",
         "easy"
       ],
-      "description": "Largest subtropical wilderness \u2014 alligators, manatees, and mangroves.",
+      "description": "Largest subtropical wilderness — alligators, manatees, and mangroves.",
       "highlights": {
         "fishing": "World-class backcountry: snook, tarpon, redfish.",
         "easy": "Anhinga Trail: 0.8-mi boardwalk. Shark Valley tram tour."
       },
       "seasonal": {
-        "best": "Dec\u2013Apr",
+        "best": "Dec–Apr",
         "note": "Dry season is best. Summer is hot, buggy, and hurricane season."
       },
       "visited": false,
@@ -2346,7 +2363,7 @@
       "description": "Largest old-growth bottomland hardwood forest in the Southeast.",
       "highlights": {
         "fishing": "Canoe fishing on Cedar Creek for bass and catfish.",
-        "easy": "2.4-mile boardwalk loop \u2014 flat and accessible."
+        "easy": "2.4-mile boardwalk loop — flat and accessible."
       },
       "seasonal": {
         "best": "Year-round",
@@ -2374,14 +2391,14 @@
         "fishing",
         "easy"
       ],
-      "description": "World's longest cave system \u2014 420+ mapped miles underground.",
+      "description": "World's longest cave system — 420+ mapped miles underground.",
       "highlights": {
         "fishing": "Green and Nolin Rivers for bass and catfish.",
         "easy": "Accessible cave tour; Heritage Trail is paved."
       },
       "seasonal": {
         "best": "Year-round",
-        "note": "Cave is 54\u00b0F always. Accessible tour available \u2014 book at recreation.gov."
+        "note": "Cave is 54°F always. Accessible tour available — book at recreation.gov."
       },
       "visited": false,
       "driveFrom": {
@@ -2405,7 +2422,7 @@
         "history",
         "easy"
       ],
-      "description": "America's oldest federal reserve \u2014 thermal springs and Bathhouse Row.",
+      "description": "America's oldest federal reserve — thermal springs and Bathhouse Row.",
       "highlights": {
         "history": "Eight ornate early-1900s bathhouses, including a working 1915 bathhouse.",
         "easy": "Grand Promenade: 0.5-mi paved. Bathhouses accessible."
@@ -2436,10 +2453,10 @@
         "biking",
         "easy"
       ],
-      "description": "Decisive Civil War battle \u2014 July 1863. Lincoln's Gettysburg Address.",
+      "description": "Decisive Civil War battle — July 1863. Lincoln's Gettysburg Address.",
       "highlights": {
         "history": "Turning point of the Civil War. 1,300+ monuments and markers.",
-        "biking": "40+ miles of paved battlefield roads \u2014 excellent for cycling.",
+        "biking": "40+ miles of paved battlefield roads — excellent for cycling.",
         "easy": "Auto tour loop. Museum and Cyclorama accessible."
       },
       "seasonal": {
@@ -2471,7 +2488,7 @@
       "description": "Pivotal 1863 siege that split the Confederacy.",
       "highlights": {
         "history": "47-day siege gave the Union control of the Mississippi. 1,300+ monuments.",
-        "easy": "16-mile auto tour \u2014 mostly accessible from the car."
+        "easy": "16-mile auto tour — mostly accessible from the car."
       },
       "seasonal": {
         "best": "Year-round",
@@ -2500,7 +2517,7 @@
         "biking",
         "easy"
       ],
-      "description": "Bloodiest single day in American history \u2014 September 17, 1862.",
+      "description": "Bloodiest single day in American history — September 17, 1862.",
       "highlights": {
         "history": "23,000 casualties in one day. Burnside Bridge and Dunker Church.",
         "biking": "8.5-mile tour road popular with cyclists.",
@@ -2532,7 +2549,7 @@
         "history",
         "easy"
       ],
-      "description": "Two major Civil War battles \u2014 First and Second Bull Run.",
+      "description": "Two major Civil War battles — First and Second Bull Run.",
       "highlights": {
         "history": "Where Stonewall Jackson earned his name.",
         "easy": "Driving tour with accessible waysides."
@@ -2562,7 +2579,7 @@
         "history",
         "easy"
       ],
-      "description": "Four major Civil War battles \u2014 85,000 total casualties.",
+      "description": "Four major Civil War battles — 85,000 total casualties.",
       "highlights": {
         "history": "Fredericksburg, Chancellorsville, Wilderness, and Spotsylvania.",
         "easy": "Driving tours with accessible stops."
@@ -2592,13 +2609,13 @@
         "history",
         "easy"
       ],
-      "description": "Custer's Last Stand \u2014 June 25, 1876.",
+      "description": "Custer's Last Stand — June 25, 1876.",
       "highlights": {
         "history": "Lakota, Cheyenne, and Arapaho defeated the 7th Cavalry. Markers show where soldiers fell.",
         "easy": "4.5-mi driving tour with accessible overlooks."
       },
       "seasonal": {
-        "best": "May\u2013Sep",
+        "best": "May–Sep",
         "note": "Anniversary reenactment in late June. Haunting at any time of year."
       },
       "visited": false,
@@ -2622,7 +2639,7 @@
         "history",
         "easy"
       ],
-      "description": "USS Arizona Memorial \u2014 December 7, 1941.",
+      "description": "USS Arizona Memorial — December 7, 1941.",
       "highlights": {
         "history": "The attack that brought America into WWII. Arizona, Missouri, and submarine tours.",
         "easy": "Visitor center accessible; boat to memorial is wheelchair accessible."
@@ -2682,14 +2699,14 @@
         "history",
         "easy"
       ],
-      "description": "Independence Hall and the Liberty Bell \u2014 birthplace of the nation.",
+      "description": "Independence Hall and the Liberty Bell — birthplace of the nation.",
       "highlights": {
         "history": "Declaration of Independence and Constitution both signed here.",
         "easy": "Urban, all major sites accessible."
       },
       "seasonal": {
         "best": "Year-round",
-        "note": "Timed tickets for Independence Hall \u2014 get early morning slots."
+        "note": "Timed tickets for Independence Hall — get early morning slots."
       },
       "visited": false,
       "driveFrom": {
@@ -2714,7 +2731,7 @@
         "biking",
         "easy"
       ],
-      "description": "Washington's Continental Army winter encampment, 1777\u201378.",
+      "description": "Washington's Continental Army winter encampment, 1777–78.",
       "highlights": {
         "history": "The winter that forged an army. Headquarters, soldier huts, monuments.",
         "biking": "6-mile paved loop with dedicated bike lanes.",
@@ -2746,7 +2763,7 @@
         "history",
         "biking"
       ],
-      "description": "Where rivers meet \u2014 John Brown's 1859 raid.",
+      "description": "Where rivers meet — John Brown's 1859 raid.",
       "highlights": {
         "history": "Raid that helped spark the Civil War.",
         "biking": "C&O Canal Towpath: 185 miles of flat, packed gravel."
@@ -2777,7 +2794,7 @@
         "history",
         "easy"
       ],
-      "description": "Where President Lincoln was assassinated \u2014 April 14, 1865.",
+      "description": "Where President Lincoln was assassinated — April 14, 1865.",
       "highlights": {
         "history": "The theater, the presidential box, and Petersen House where Lincoln died.",
         "easy": "Fully accessible museum and theater."
@@ -2814,7 +2831,7 @@
       },
       "seasonal": {
         "best": "Year-round",
-        "note": "Cherry blossom season (late Mar\u2013early Apr) is magical here. Best at night."
+        "note": "Cherry blossom season (late Mar–early Apr) is magical here. Best at night."
       },
       "visited": false,
       "driveFrom": {
@@ -2839,7 +2856,7 @@
       ],
       "description": "Honors 16 million who served and 400,000+ who died in WWII.",
       "highlights": {
-        "history": "Pillars for each state. Freedom Wall: 4,048 gold stars \u2014 one per 100 who died.",
+        "history": "Pillars for each state. Freedom Wall: 4,048 gold stars — one per 100 who died.",
         "easy": "Open plaza, fully accessible."
       },
       "seasonal": {
@@ -2867,7 +2884,7 @@
         "history",
         "easy"
       ],
-      "description": "Where powered flight began \u2014 December 17, 1903.",
+      "description": "Where powered flight began — December 17, 1903.",
       "highlights": {
         "history": "Stand where the Wright Flyer took off. Markers show all four flight distances.",
         "easy": "Flat terrain, paved paths, accessible visitor center."
@@ -2897,13 +2914,13 @@
       "interests": [
         "history"
       ],
-      "description": "Where the Civil War began \u2014 April 12, 1861.",
+      "description": "Where the Civil War began — April 12, 1861.",
       "highlights": {
         "history": "The first shots of the Civil War. Ferry from Charleston."
       },
       "seasonal": {
         "best": "Year-round",
-        "note": "Ferry required \u2014 book at fort-sumter-tours.com. Anniversary events in April."
+        "note": "Ferry required — book at fort-sumter-tours.com. Anniversary events in April."
       },
       "visited": false,
       "driveFrom": {
@@ -2923,14 +2940,15 @@
       "passSaves": false,
       "state": "Minnesota",
       "interests": [
-        "fishing"
+        "fishing",
+        "lakefishing"
       ],
-      "description": "Water-based park \u2014 interconnected lakes on the Canadian border.",
+      "description": "Water-based park — interconnected lakes on the Canadian border.",
       "highlights": {
-        "fishing": "Walleye, northern pike, smallmouth bass \u2014 some of the best lake fishing in America."
+        "fishing": "Walleye, northern pike, smallmouth bass — some of the best lake fishing in America."
       },
       "seasonal": {
-        "best": "Jun\u2013Sep",
+        "best": "Jun–Sep",
         "note": "Boat or canoe required for most of the park. Ice fishing in winter."
       },
       "visited": false,
@@ -2961,8 +2979,8 @@
         "easy": "West Beach accessible boardwalk and short paved trails."
       },
       "seasonal": {
-        "best": "May\u2013Oct",
-        "note": "Swimming in Lake Michigan Jun\u2013Sep. Uncrowded in shoulder seasons."
+        "best": "May–Oct",
+        "note": "Swimming in Lake Michigan Jun–Sep. Uncrowded in shoulder seasons."
       },
       "visited": false,
       "driveFrom": {
@@ -2990,7 +3008,7 @@
         "easy": "36-mile Scenic Loop with accessible pullouts and wildlife viewing."
       },
       "seasonal": {
-        "best": "May\u2013Sep",
+        "best": "May–Sep",
         "note": "Bison and wild horses visible from the road. Painted Canyon overlook is stunning."
       },
       "visited": false,
@@ -3014,12 +3032,12 @@
       "interests": [
         "easy"
       ],
-      "description": "Sharply eroded buttes and pinnacles \u2014 one of Earth's great landscapes.",
+      "description": "Sharply eroded buttes and pinnacles — one of Earth's great landscapes.",
       "highlights": {
         "easy": "Badlands Loop: 30 mi with 14 scenic overlooks. Short accessible trails."
       },
       "seasonal": {
-        "best": "Apr\u2013Oct",
+        "best": "Apr–Oct",
         "note": "Combine with Mount Rushmore (1 hr away). Night sky program is excellent."
       },
       "visited": false,
@@ -3050,7 +3068,7 @@
         "easy": "Presidential Trail: 0.6-mi paved. All viewing terraces accessible."
       },
       "seasonal": {
-        "best": "May\u2013Oct",
+        "best": "May–Oct",
         "note": "Evening lighting ceremony summer nights. Parking fee ($10) not covered by pass."
       },
       "visited": false,
@@ -3081,7 +3099,7 @@
       },
       "seasonal": {
         "best": "Year-round",
-        "note": "Tours fill up \u2014 arrive early or get tickets online."
+        "note": "Tours fill up — arrive early or get tickets online."
       },
       "visited": false,
       "driveFrom": {
@@ -3137,7 +3155,7 @@
         "biking",
         "easy"
       ],
-      "description": "America's newest NP (2020) \u2014 dramatic gorge and whitewater.",
+      "description": "America's newest NP (2020) — dramatic gorge and whitewater.",
       "highlights": {
         "fishing": "Smallmouth bass in the New and Gauley Rivers.",
         "biking": "Road cycling routes along the gorge rim.",
@@ -3145,7 +3163,7 @@
       },
       "seasonal": {
         "best": "Year-round",
-        "note": "Bridge Day (3rd Sat in Oct) \u2014 BASE jumpers from the New River Gorge Bridge."
+        "note": "Bridge Day (3rd Sat in Oct) — BASE jumpers from the New River Gorge Bridge."
       },
       "visited": false,
       "driveFrom": {
@@ -3167,15 +3185,16 @@
       "state": "Nevada",
       "interests": [
         "fishing",
-        "easy"
+        "easy",
+        "lakefishing"
       ],
-      "description": "Largest US reservoir \u2014 Hoover Dam holds back the Colorado River.",
+      "description": "Largest US reservoir — Hoover Dam holds back the Colorado River.",
       "highlights": {
-        "fishing": "Striped bass, largemouth bass, catfish \u2014 great boat fishing.",
+        "fishing": "Striped bass, largemouth bass, catfish — great boat fishing.",
         "easy": "Scenic drives, accessible overlooks. Near Hoover Dam."
       },
       "seasonal": {
-        "best": "Oct\u2013Apr",
+        "best": "Oct–Apr",
         "note": "Summer is extremely hot. Hoover Dam tours separate fee."
       },
       "visited": false,
@@ -3197,15 +3216,16 @@
       "state": "Utah",
       "interests": [
         "fishing",
-        "easy"
+        "easy",
+        "lakefishing"
       ],
-      "description": "Lake Powell \u2014 186 miles surrounded by red rock canyons.",
+      "description": "Lake Powell — 186 miles surrounded by red rock canyons.",
       "highlights": {
         "fishing": "Striped bass, smallmouth bass, walleye on the lake.",
         "easy": "Marinas accessible. Glen Canyon Dam overlook paved."
       },
       "seasonal": {
-        "best": "Apr\u2013Oct",
+        "best": "Apr–Oct",
         "note": "Houseboat rentals available. Water levels have been recovering."
       },
       "visited": false,
@@ -3229,13 +3249,13 @@
         "biking",
         "easy"
       ],
-      "description": "Towering dunes on Lake Michigan \u2014 voted 'Most Beautiful Place in America.'",
+      "description": "Towering dunes on Lake Michigan — voted 'Most Beautiful Place in America.'",
       "highlights": {
         "biking": "Heritage Trail: 22 mi paved through dunes, forest, and towns.",
         "easy": "Pierce Stocking Scenic Drive: 7.4 mi with stunning overlooks."
       },
       "seasonal": {
-        "best": "Jun\u2013Oct",
+        "best": "Jun–Oct",
         "note": "Fall colors are spectacular. Cherry season in July."
       },
       "visited": false,
@@ -3291,14 +3311,14 @@
         "history",
         "easy"
       ],
-      "description": "Where Lewis and Clark reached the Pacific \u2014 November 1805.",
+      "description": "Where Lewis and Clark reached the Pacific — November 1805.",
       "highlights": {
-        "history": "Fort Clatsop replica where the expedition wintered 1805\u201306.",
+        "history": "Fort Clatsop replica where the expedition wintered 1805–06.",
         "easy": "Fort and trails accessible; visitor center with exhibits."
       },
       "seasonal": {
         "best": "Year-round",
-        "note": "Living history demonstrations in summer. It rains a lot \u2014 bring rain gear."
+        "note": "Living history demonstrations in summer. It rains a lot — bring rain gear."
       },
       "visited": false,
       "driveFrom": {
@@ -3327,8 +3347,8 @@
         "easy": "Ross Maxwell Drive: 30 mi to Santa Elena Canyon overlook."
       },
       "seasonal": {
-        "best": "Oct\u2013Apr",
-        "note": "Summer is dangerously hot (110\u00b0F+). Spring wildflowers can be incredible."
+        "best": "Oct–Apr",
+        "note": "Summer is dangerously hot (110°F+). Spring wildflowers can be incredible."
       },
       "visited": false,
       "driveFrom": {
