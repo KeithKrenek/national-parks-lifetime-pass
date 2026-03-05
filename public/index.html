@@ -386,9 +386,9 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--tex
 </div>
 <div class="tabs" role="tablist" aria-label="Region navigation">
   <button class="tab active" data-tab="overview" role="tab" aria-selected="true" aria-label="Overview">🏔️ Overview</button>
+  <button class="tab" data-tab="newengland" role="tab" aria-selected="false" aria-label="New England">🍂 New England</button>
   <button class="tab" data-tab="norcal" role="tab" aria-selected="false" aria-label="Northern California">🌲 N. California</button>
   <button class="tab" data-tab="socal" role="tab" aria-selected="false" aria-label="Southern California">🌴 S. California</button>
-  <button class="tab" data-tab="newengland" role="tab" aria-selected="false" aria-label="New England">🍂 New England</button>
   <button class="tab" data-tab="nationwide" role="tab" aria-selected="false" aria-label="Rest of USA">🇺🇸 Rest of USA</button>
 </div>
 
@@ -436,29 +436,29 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--tex
       <p style="font-size:.9rem;color:var(--text-muted);line-height:1.5;margin-bottom:.5rem">Not sure where to start? These are built around your interests — quiet lake fishing, modern American history, and easy biking.</p>
       <div class="trip-cards">
         <div class="trip-idea" style="border-left-color:var(--forest)">
-          <div class="trip-idea-title">Spring Day Trip: Whiskeytown Lake</div>
-          <div class="trip-idea-route">Sacramento → Whiskeytown NRA → Home by dinner</div>
-          <div class="trip-idea-detail">2.5 hours each way · Save $25 entrance fee</div>
-          <div class="trip-idea-desc">Drive up I-5 to Whiskeytown for bass and trout fishing on the quiet lake. Pack a lunch for the lakeside picnic areas. Swing by the Camden House for Gold Rush history. The lake is calm enough for shore fishing or a rented kayak.</div>
-          <button class="trip-idea-add" data-trip-sites="whiskeytown-nra" onclick="addTripSites(this)">♡ Add to My Trip</button>
-        </div>
-        <div class="trip-idea" style="border-left-color:var(--forest)">
-          <div class="trip-idea-title">Sierra Weekend: Lassen & Eagle Lake</div>
-          <div class="trip-idea-route">Day 1: Sacramento → Lassen Volcanic NP · Day 2: Lassen → Eagle Lake → Home</div>
-          <div class="trip-idea-detail">3.5 hours to Lassen · Save $30 entrance + camping discount</div>
-          <div class="trip-idea-desc">Camp at Manzanita Lake and fish for trout with Mt. Lassen reflected in the water. Walk the Sulphur Works boardwalk to see volcanic vents from the car. Day 2, drive an hour east to Eagle Lake for the famous Eagle Lake trout. Both lakes are perfect for quiet shoreline fishing.</div>
-          <button class="trip-idea-add" data-trip-sites="lassen-volcanic-np,eagle-lake-lassen-nf" onclick="addTripSites(this)">♡ Add to My Trip</button>
-        </div>
-        <div class="trip-idea" style="border-left-color:var(--slate)">
           <div class="trip-idea-title">New England History Ride: Battle Road to Great Meadows</div>
           <div class="trip-idea-route">Boston → Minute Man NHP → Great Meadows NWR → Concord → Home</div>
           <div class="trip-idea-detail">30 minutes from Boston · Half-day trip · Free entry</div>
           <div class="trip-idea-desc">Bike the 5-mile paved Battle Road Trail at Minute Man — flat, shaded, and traces the route of the first Revolutionary War battle. At the western end, you're right next to Great Meadows NWR for peaceful birdwatching. Finish with lunch in Concord, a few minutes away.</div>
           <button class="trip-idea-add" data-trip-sites="minute-man-nhp,great-meadows-nwr" onclick="addTripSites(this)">♡ Add to My Trip</button>
         </div>
+        <div class="trip-idea" style="border-left-color:var(--forest)">
+          <div class="trip-idea-title">Cape Cod Day Trip: Kettle Ponds & Province Lands</div>
+          <div class="trip-idea-route">Boston → Cape Cod Nat'l Seashore → Home by evening</div>
+          <div class="trip-idea-detail">1.5 hours each way · Save $25 entrance fee</div>
+          <div class="trip-idea-desc">Start with quiet freshwater fishing at one of Cape Cod's secluded kettle ponds — hidden in the dunes and uncrowded. Then bike the 5.5-mile paved Province Lands Trail through rolling dunes and forest. Stop at the Salt Pond Visitor Center for Pilgrim and maritime history. A perfect day combining all your interests.</div>
+          <button class="trip-idea-add" data-trip-sites="cape-cod-ns" onclick="addTripSites(this)">♡ Add to My Trip</button>
+        </div>
+        <div class="trip-idea" style="border-left-color:var(--slate)">
+          <div class="trip-idea-title">Spring Day Trip: Whiskeytown Lake</div>
+          <div class="trip-idea-route">Sacramento → Whiskeytown NRA → Home by dinner</div>
+          <div class="trip-idea-detail">2.5 hours each way · Save $25 entrance fee</div>
+          <div class="trip-idea-desc">Drive up I-5 to Whiskeytown for bass and trout fishing on the quiet lake. Pack a lunch for the lakeside picnic areas. Swing by the Camden House for Gold Rush history. The lake is calm enough for shore fishing or a rented kayak.</div>
+          <button class="trip-idea-add" data-trip-sites="whiskeytown-nra" onclick="addTripSites(this)">♡ Add to My Trip</button>
+        </div>
       </div>
     </div>
-    <div class="booklet-note">📖 <strong>Have your printed booklet?</strong> It covers Northern California, Southern California, and New England in detail with maps you can take in the car. This online guide adds 57 more sites nationwide, plus interactive maps and filters.</div>
+    <div class="booklet-note">📖 <strong>Have your printed booklet?</strong> It covers New England, Northern California, and Southern California in detail with maps you can take in the car. This online guide adds 57 more sites nationwide, plus interactive maps and filters.</div>
     <div class="info-section"><h3>Helpful Websites</h3>
       <div class="websites">
         <div class="website-item"><strong>nps.gov</strong> — Trip planning & maps</div>
@@ -468,6 +468,17 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--tex
       </div>
     </div>
   </div>
+</div>
+
+<div id="tab-newengland" class="tab-content hidden">
+  <div class="region-alerts" id="alerts-newengland"></div>
+  <div class="region-intro" id="intro-newengland"></div>
+  <div id="start-here-newengland"></div>
+  <div class="filters" id="filters-newengland"></div>
+  <div class="legend-strip" id="legend-newengland"></div>
+  <div id="map-newengland" class="map-container"></div>
+  <div class="site-list" id="list-newengland"></div>
+  <button class="print-region-btn" onclick="printRegion('newengland')">🖨️ Print New England Sites</button>
 </div>
 
 <div id="tab-norcal" class="tab-content hidden">
@@ -490,17 +501,6 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--tex
   <div id="map-socal" class="map-container"></div>
   <div class="site-list" id="list-socal"></div>
   <button class="print-region-btn" onclick="printRegion('socal')">🖨️ Print S. California Sites</button>
-</div>
-
-<div id="tab-newengland" class="tab-content hidden">
-  <div class="region-alerts" id="alerts-newengland"></div>
-  <div class="region-intro" id="intro-newengland"></div>
-  <div id="start-here-newengland"></div>
-  <div class="filters" id="filters-newengland"></div>
-  <div class="legend-strip" id="legend-newengland"></div>
-  <div id="map-newengland" class="map-container"></div>
-  <div class="site-list" id="list-newengland"></div>
-  <button class="print-region-btn" onclick="printRegion('newengland')">🖨️ Print New England Sites</button>
 </div>
 
 <div id="tab-nationwide" class="tab-content hidden">
@@ -541,7 +541,7 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--tex
 // ===== APP STATE =====
 let DATA = null;
 const maps = {}, mkrs = {}, activeFilter = {}, selected = {}, initialized = {};
-const REGIONS = ['norcal', 'socal', 'newengland', 'nationwide'];
+const REGIONS = ['newengland', 'norcal', 'socal', 'nationwide'];
 
 // ===== LOAD DATA =====
 async function loadData() {
@@ -624,9 +624,9 @@ function renderTripPanel() {
   }
   const sites = DATA.sites.filter(s => favorites.has(s.id));
   // Group by region
-  const groups = { norcal: [], socal: [], newengland: [], nationwide: [] };
+  const groups = { newengland: [], norcal: [], socal: [], nationwide: [] };
   sites.forEach(s => { if (groups[s.region]) groups[s.region].push(s); });
-  const regionLabels = { norcal: '🌲 Northern California', socal: '🌴 Southern California', newengland: '🍂 New England', nationwide: '🇺🇸 Nationwide' };
+  const regionLabels = { newengland: '🍂 New England', norcal: '🌲 Northern California', socal: '🌴 Southern California', nationwide: '🇺🇸 Nationwide' };
 
   let h = '';
   for (const [r, rSites] of Object.entries(groups)) {
